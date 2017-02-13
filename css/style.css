@@ -1,3 +1,7 @@
+body {
+  padding-top: 5rem;
+}
+
 .content {
   border: solid 1px lightgrey;
   border-radius: 3px;
@@ -10,7 +14,7 @@
 .monster-card {
   margin: 5px;
   float: left;
-  width: 15rem;
+  width: 16rem;
 }
 
 .monster-card:hover {
