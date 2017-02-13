@@ -1,0 +1,19 @@
+.content {
+  border: solid 1px lightgrey;
+  border-radius: 3px;
+  padding: 10px;
+  height:800px;
+  overflow-y:scroll;
+  width:100%;
+}
+
+.monster-card {
+  margin: 5px;
+  float: left;
+  width: 15rem;
+}
+
+.monster-card:hover {
+  background-color: #ddddfb;
+  transition: .5s;
+}

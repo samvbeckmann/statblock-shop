@@ -4,6 +4,7 @@
 
   <meta charset="UTF-8">
   <title>Statblocks for Fun and Profit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
@@ -16,6 +17,8 @@
   <link rel="import" href="src/property-block.html">
   <link rel="import" href="src/property-line.html">
   <link rel="import" href="src/stat-block.html">
+
+  <link rel="stylesheet" href="css/style.css">
 
   <style>
     body {
@@ -45,7 +48,7 @@
             <a class="nav-link disabled" href="#">Docs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">GitHub</a>
+            <a class="nav-link" href="https://github.com/samvbeckmann/statblock-manager">GitHub</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -55,12 +58,38 @@
       </div>
     </nav>
 
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-7">
+          <form class="form-inline">
+            <button type="button" class="btn btn-info mr-2 mb-2">Add SRE</button>
+            <button type="button" class="btn btn-primary mr-2 mb-2">Import</button>
+            <button type="button" class="btn btn-primary mr-2 mb-2">Export</button>
+            <button type="button" class="btn btn-success mr-2 mb-2">New</button>
+            <input type="search" class="form-control col-5 mb-2" placeholder="Search">
+          </form>
+          <div class="content">
+            <div class="card monster-card">
+              <div class="card-block">
+                <h4 class="card-title">Manticore</h4>
+                <p class="card-text">Big fancy cat</p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div>
+            <div class="card monster-card">
+              <div class="card-block">
+                <h4 class="card-title">Manticore, but it gets longer everytime someone says manticore</h4>
+                <p class="card-text">Big fancy cat</p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          other
+        </div>
       </div>
+    </div>
 
     </div>
 </body>
