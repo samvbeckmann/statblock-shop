@@ -15,9 +15,9 @@ body {
   margin: 5px;
   float: left;
   width: 16rem;
+  transition: .5s;
 }
 
 .monster-card:hover {
   background-color: #ddddfb;
-  transition: .5s;
 }

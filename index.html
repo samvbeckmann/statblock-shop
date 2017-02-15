@@ -7,7 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
@@ -19,6 +22,8 @@
   <link rel="import" href="src/stat-block.html">
 
   <link rel="stylesheet" href="css/style.css">
+
+  <script src="scripts/main.js"></script>
 
   <style>
     body {
@@ -57,14 +62,17 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-7" style="max-width:600px;">
-          <form class="form-inline">
-            <button type="button" class="btn btn-info mr-2 mb-2">Add SRE</button>
-            <button type="button" class="btn btn-primary mr-2 mb-2">Import</button>
-            <button type="button" class="btn btn-primary mr-2 mb-2">Export</button>
-            <button type="button" class="btn btn-success mr-2 mb-2">New</button>
-            <input type="search" class="form-control col-5 mb-2" placeholder="Search">
+          <form>
+            <div class="form-group">
+              <button type="button" id="add-srd" class="btn btn-secondary">Add SRD</button>
+              <button type="button" id="import" class="btn btn-secondary">Import</button>
+              <button type="button" id="export" class="btn btn-secondary">Export</button>
+              <button type="button" id="new-monster" class="btn btn-success">New</button>
+              <button type="button" id="clear-list" class="btn btn-danger">Clear</button>
+            </div>
+            <input type="search" class="form-control" placeholder="Search">
           </form>
-          <div class="content">
+          <div class="content mt-2" id="monster-list">
             <div class="card monster-card">
               <div class="card-block">
                 <h4 class="card-title">Manticore</h4>
@@ -82,10 +90,12 @@
           </div>
         </div>
         <div class="col">
-          <button type="button" class="btn btn-primary">Add</button>
-          <button type="button" class="btn btn-secondary">Edit</button>
-          <button type="button" class="btn btn-secondary">Duplicate</button>
-          <ul class="list-group mt-2 mb-2">
+          <button type="button" id="add-monster" class="btn btn-primary">Add</button>
+          <button type="button" id="edit" class="btn btn-secondary">Edit</button>
+          <button type="button" id="duplicate" class="btn btn-secondary">Duplicate</button>
+          <button type="button" id="delete" class="btn btn-danger">Delete</button>
+          <button type="button" id="view-encounter" class="btn btn-primary">View Encounter</button>
+          <ul class="list-group mt-2 mb-2" id="encounter-list">
             <li class="list-group-item">
               <button type="button" class="btn btn-danger btn-sm mr-2">&times;</button>
               Manticore
