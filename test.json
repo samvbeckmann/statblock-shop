@@ -1,18 +1,15 @@
 [{
 	"name": "Animated Armor",
 	"heading": "Medium construct, unaligned",
-	"basic_info": [
-		{
-			"name": "Armor Class",
-			"desc": "18 (natural armor)"
-		},
-    {
-			"name": "Hit Points",
-			"desc": "33 (6d8 + 6)"
-	  },
-    {
-			"name": "Speed",
-			"desc": "25ft"
+	"basic_info": [{
+		"name": "Armor Class",
+		"desc": "18 (natural armor)"
+	}, {
+		"name": "Hit Points",
+		"desc": "33 (6d8 + 6)"
+	}, {
+		"name": "Speed",
+		"desc": "25ft"
 	}],
 	"ability_scores": {
 		"str": 14,
@@ -22,49 +19,137 @@
 		"wis": 3,
 		"cha": 1
 	},
-	"traits": [
-		{
-			"name": "Damage Immunities",
-			"desc": "poison, psychic"
-		},
-    {
-			"name": "Condition Immunities",
-			"desc": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned"
-		},
-		{
-			"name": "Senses",
-			"desc": "blindsight 60 ft. (blind beyond this radius), passive Perception 6"
-		},
-		{
-			"name": "Languages",
-			"desc": "—"
-		},
-    {
-			"name": "Challenge",
-			"desc": "1 (200 XP)"
-		}
-	],
+	"traits": [{
+		"name": "Damage Immunities",
+		"desc": "poison, psychic"
+	}, {
+		"name": "Condition Immunities",
+		"desc": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned"
+	}, {
+		"name": "Senses",
+		"desc": "blindsight 60 ft. (blind beyond this radius), passive Perception 6"
+	}, {
+		"name": "Languages",
+		"desc": "—"
+	}, {
+		"name": "Challenge",
+		"desc": "1 (200 XP)"
+	}],
 	"content": [{
-		"property-block": {
+		"property_block": {
 			"name": "Antimagic Susceptibility",
 			"desc": "The armor is incapacitated while in the area of an _antimagic field_. If targeted by _dispel magic_, the armor must succeed on a Constitution saving throw against the caster’s spell save DC or fall unconscious for 1 minute."
 		}
 	}, {
-		"property-block": {
+		"property_block": {
 			"name": "False Appearance",
 			"desc": "While the armor remains motionless, it is indistinguishable from a normal suit of armor."
 		}
 	}, {
 		"subtitle": "Actions"
 	}, {
-		"property-block": {
+		"property_block": {
 			"name": "Multiattack",
 			"desc": "The armor makes two melee attacks."
 		}
 	}, {
-		"property-block": {
+		"property_block": {
 			"name": "Slam",
 			"desc": "_Melee Weapon Attack:_ +4 to hit, reach 5 ft., one target. _Hit:_ 5 (1d6 + 2) bludgeoning damage."
+		}
+	}]
+}, {
+	"name": "Aboleth",
+	"heading": "Large aberration, lawful evil",
+	"basic_info": [{
+		"name": "Armor Class",
+		"desc": "17 (natural armor)"
+	}, {
+		"name": "Hit Points",
+		"desc": "135 (18d10 + 16)"
+	}, {
+		"name": "Speed",
+		"desc": "20ft., swin 40ft."
+	}],
+	"ability_scores": {
+		"str": 21,
+		"dex": 9,
+		"con": 15,
+		"int": 18,
+		"wis": 15,
+		"cha": 18
+	},
+	"traits": [{
+		"name": "Saving Throws",
+		"desc": "Con +6, Int +8, Wis +6"
+	}, {
+		"name": "Skills",
+		"desc": "History +12, Perception +10"
+	}, {
+		"name": "Senses",
+		"desc": "darkvision 120ft., passive Perception 20"
+	}, {
+		"name": "Languages",
+		"desc": "Deep Speech, telepathy 120 ft."
+	}, {
+		"name": "Challenge",
+		"desc": "10 (5,900 XP)"
+	}],
+	"content": [{
+		"property_block": {
+			"name": "Amphibious",
+			"desc": "The aboleth cam breathe air and water."
+		}
+	}, {
+		"property_block": {
+			"name": "Mucous Cloud",
+			"desc": "While underwater, the aboleth is surrounded by transformative mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a DC 14 Constitution saving throw. On a failure, the creature is diseased for 1d4 hours. The diseased creature can breathe only underwater."
+		}
+	}, {
+		"property_block": {
+			"name": "Probing Telepathy",
+			"desc": "If a creature communicates telepahically with the aboleth, the aboleth learns the creature's greatest desires if the aboleth can see the creature."
+		}
+	}, {
+		"subtitle": "Actions"
+	}, {
+		"property_block": {
+			"name": "Multiattack",
+			"desc": "The aboleth makes three tentacle attacks."
+		}
+	}, {
+		"property_block": {
+			"name": "Tentacle",
+			"desc": "_Melee Weapon Attack:_ +9 to hit, reach 10 ft., one target. _Hit:_ 12 (2d6 + 5) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Constitution saving throw of become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only be _heal_ or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."
+		}
+	}, {
+		"property_block": {
+			"name": "Tail",
+			"desc": "_Melee Weapon Attack:_ +9 to hit, reach 10 ft., one target. _Hit:_ 15 (3d6 + 5) bludgeoning damage."
+		}
+	}, {
+		"property_block": {
+			"name": "Enslave (3/Day)",
+			"desc": "The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed creature is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth."
+		}
+	}, {
+		"subtitle": "Legendary Actions"
+	}, {
+		"text": "The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. The aboleth regains spent legendary actions at the start of its turn."
+	}, {
+		"property_line": {
+			"name": "Detect.",
+			"desc": "The aboleth makes a Wisdom (Perception) check."
+		}
+	}, {
+		"property_line": {
+			"name": "Tail Swipe.",
+			"desc": "The aboleth makes one tail attack."
+		}
+	}, {
+		"property_line": {
+			"name": "Psychic Drain (Costs 2 Actions).",
+			"desc": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes."
 		}
 	}]
 }]

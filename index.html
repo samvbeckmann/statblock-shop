@@ -61,18 +61,18 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-7" style="max-width:600px;">
+        <div class="col-md-5">
           <form>
-            <div class="form-group">
-              <button type="button" id="add-srd" class="btn btn-secondary">Add SRD</button>
-              <button type="button" id="import" class="btn btn-secondary">Import</button>
-              <button type="button" id="export" class="btn btn-secondary">Export</button>
-              <button type="button" id="new-monster" class="btn btn-success">New</button>
-              <button type="button" id="clear-list" class="btn btn-danger">Clear</button>
+            <div class="form-group mb-2">
+              <button type="button" id="add-srd" class="btn btn-secondary mb-2">Add SRD</button>
+              <button type="button" id="import" class="btn btn-secondary mb-2">Import</button>
+              <button type="button" id="export" class="btn btn-secondary mb-2">Export</button>
+              <button type="button" id="new-monster" class="btn btn-success mb-2">New</button>
+              <button type="button" id="clear-list" class="btn btn-danger mb-2">Clear</button>
             </div>
             <input type="search" class="form-control" placeholder="Search">
           </form>
-          <div class="content mt-2" id="monster-list">
+          <div class="content mt-2 mb-4" id="monster-list">
             <div class="card monster-card">
               <div class="card-block">
                 <h4 class="card-title">Manticore</h4>
@@ -90,11 +90,11 @@
           </div>
         </div>
         <div class="col">
-          <button type="button" id="add-monster" class="btn btn-primary">Add</button>
-          <button type="button" id="edit" class="btn btn-secondary">Edit</button>
-          <button type="button" id="duplicate" class="btn btn-secondary">Duplicate</button>
-          <button type="button" id="delete" class="btn btn-danger">Delete</button>
-          <button type="button" id="view-encounter" class="btn btn-primary">View Encounter</button>
+          <button type="button" id="add-monster" class="btn btn-primary mb-2">Add</button>
+          <button type="button" id="edit" class="btn btn-secondary mb-2">Edit</button>
+          <button type="button" id="duplicate" class="btn btn-secondary mb-2">Duplicate</button>
+          <button type="button" id="delete" class="btn btn-danger mb-2">Delete</button>
+          <button type="button" id="view-encounter" class="btn btn-primary mb-2">View Encounter</button>
           <ul class="list-group mt-2 mb-2" id="encounter-list">
             <li class="list-group-item">
               <button type="button" class="btn btn-danger btn-sm mr-2">&times;</button>
@@ -106,82 +106,85 @@
             </li>
           </ul>
 
-          <stat-block>
-            <creature-heading>
-              <h1>Animated Armor</h1>
-              <h2>Medium construct, unaligned</h2>
-            </creature-heading>
+          <div id="stat-block-location">
+            <stat-block>
+              <creature-heading>
+                <h1>Animated Armor</h1>
+                <h2>Medium construct, unaligned</h2>
+              </creature-heading>
 
-            <top-stats>
-              <property-line>
-                <h4>Armor Class</h4>
-                <p>18 (natural armor)</p>
-              </property-line>
-              <property-line>
-                <h4>Hit Points</h4>
-                <p>33 (6d8 + 6)</p>
-              </property-line>
-              <property-line>
-                <h4>Speed</h4>
-                <p>25ft</p>
-              </property-line>
+              <top-stats>
+                <property-line>
+                  <h4>Armor Class</h4>
+                  <p>18 (natural armor)</p>
+                </property-line>
+                <property-line>
+                  <h4>Hit Points</h4>
+                  <p>33 (6d8 + 6)</p>
+                </property-line>
+                <property-line>
+                  <h4>Speed</h4>
+                  <p>25ft</p>
+                </property-line>
 
-              <abilities-block data-str="14"
-                               data-dex="11"
-                               data-con="13"
-                               data-int="1"
-                               data-wis="3"
-                               data-cha="1"></abilities-block>
+                <abilities-block data-str="14"
+                                 data-dex="11"
+                                 data-con="13"
+                                 data-int="1"
+                                 data-wis="3"
+                                 data-cha="1"></abilities-block>
 
-              <property-line>
-                <h4>Damage Immunities</h4>
-                <p>poison, psychic</p>
-              </property-line>
-              <property-line>
-                <h4>Condition Immunities</h4>
-                <p>blinded, charmed, deafened, exhaustion, frightened, paralyzed,
-                  petrified, poisoned</p>
-              </property-line>
-              <property-line>
-                <h4>Senses</h4>
-                <p>blindsight 60 ft. (blind beyond this radius), passive Perception 6</p>
-              </property-line>
-              <property-line>
-                <h4>Languages</h4>
-                <p>—</p>
-              </property-line>
-              <property-line>
-                <h4>Challenge</h4>
-                <p>1 (200 XP)</p>
-              </property-line>
-            </top-stats>
+                <property-line>
+                  <h4>Damage Immunities</h4>
+                  <p>poison, psychic</p>
+                </property-line>
+                <property-line>
+                  <h4>Condition Immunities</h4>
+                  <p>blinded, charmed, deafened, exhaustion, frightened, paralyzed,
+                    petrified, poisoned</p>
+                </property-line>
+                <property-line>
+                  <h4>Senses</h4>
+                  <p>blindsight 60 ft. (blind beyond this radius), passive Perception 6</p>
+                </property-line>
+                <property-line>
+                  <h4>Languages</h4>
+                  <p>—</p>
+                </property-line>
+                <property-line>
+                  <h4>Challenge</h4>
+                  <p>1 (200 XP)</p>
+                </property-line>
+              </top-stats>
 
-            <property-block>
-              <h4>Antimagic Susceptibility.</h4>
-              <p>The armor is incapacitated while in the area of an <i>antimagic
-                field</i>.  If targeted by <i>dispel magic</i>, the armor must succeed
-                on a Constitution saving throw against the caster’s spell save DC or
-                fall unconscious for 1 minute.</p>
-            </property-block>
-            <property-block>
-              <h4>False Appearance.</h4>
-              <p>While the armor remains motionless, it is indistinguishable from a
-                normal suit of armor.</p>
-            </property-block>
+              <property-block>
+                <h4>Antimagic Susceptibility.</h4>
+                <p>The armor is incapacitated while in the area of an <i>antimagic
+                  field</i>.  If targeted by <i>dispel magic</i>, the armor must succeed
+                  on a Constitution saving throw against the caster’s spell save DC or
+                  fall unconscious for 1 minute.</p>
+              </property-block>
+              <property-block>
+                <h4>False Appearance.</h4>
+                <p>While the armor remains motionless, it is indistinguishable from a
+                  normal suit of armor.</p>
+              </property-block>
 
-            <h3>Actions</h3>
+              <h3>Actions</h3>
 
-            <property-block>
-              <h4>Multiattack.</h4>
-              <p>The armor makes two melee attacks.</p>
-            </property-block>
+              <property-block>
+                <h4>Multiattack.</h4>
+                <p>The armor makes two melee attacks.</p>
+              </property-block>
 
-            <property-block>
-              <h4>Slam.</h4>
-              <p><i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target.
-                <i>Hit:</i> 5 (1d6 + 2) bludgeoning damage.</p>
-            </property-block>
-          </stat-block>
+              <property-block>
+                <h4>Slam.</h4>
+                <p><i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target.
+                  <i>Hit:</i> 5 (1d6 + 2) bludgeoning damage.</p>
+              </property-block>
+            </stat-block>
+          </div>
+
         </div>
       </div>
     </div>
