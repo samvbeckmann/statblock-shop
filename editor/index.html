@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <title>Statblocks for Fun and Profit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  <link rel="import" href="/src/top-stats.html">
+  <link rel="import" href="/src/creature-heading.html">
+  <link rel="import" href="/src/abilities-block.html">
+  <link rel="import" href="/src/property-block.html">
+  <link rel="import" href="/src/property-line.html">
+  <link rel="import" href="/src/stat-block.html">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/scripts/main.js"></script>
+
+  <style>
+    body {
+      padding-top: 5rem;
+    }
+  </style>
+
+
+</head>
+<body>
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Statblock Manager</a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Docs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/samvbeckmann/statblock-manager">GitHub</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+
+            <div class="form-group">
+              <button type="button" id="add-srd" class="btn btn-success">Save</button>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group pb-2">
+                <span class="input-group-addon col-md-3 col-2">Name</span>
+                <input class="form-control" type="text" id="monster-name">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon col-md-3 col-2">Header</span>
+                <input class="form-control" type="text" id="monster-header">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="basic-info-box">Basic Info:</label>
+              <textarea class="form-control" rows="3" id="basic-info-box"></textarea>
+            </div>
+
+            <div class="form-group row">
+              <div class="input-group col-lg-4 col-6 pb-2">
+                <span class="input-group-addon col-6">STR</span>
+                <input class="form-control" type="number" min="1" id="str-score">
+              </div>
+              <div class="input-group col-lg-4 col-6 pb-2">
+                <span class="input-group-addon col-6">DEX</span>
+                <input class="form-control" type="number" min="1" id="dex-score">
+              </div>
+              <div class="input-group col-lg-4 col-6 pb-2">
+                <span class="input-group-addon col-6">CON</span>
+                <input class="form-control" type="number" min="1" id="cons-score">
+              </div>
+              <div class="input-group col-lg-4 col-6 pb-2">
+                <span class="input-group-addon col-6">INT</span>
+                <input class="form-control" type="number" min="1" id="int-score">
+              </div>
+              <div class="input-group col-lg-4 col-6 pb-2">
+                <span class="input-group-addon col-6">WIS</span>
+                <input class="form-control" type="number" min="1" id="wis-score">
+              </div>
+              <div class="input-group col-lg-4 col-6 pb-2">
+                <span class="input-group-addon col-6">CHA</span>
+                <input class="form-control" type="number" min="1" id="cha-score">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="traits-box">Traits:</label>
+              <textarea class="form-control" rows="3" id="traits-box"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="main-content">Traits:</label>
+              <textarea class="form-control" rows="5" id="main-content"></textarea>
+            </div>
+
+          </form>
+
+        </div>
+        <div class="col-md-6">
+          <stat-block>
+            <creature-heading>
+              <h1>Animated Armor</h1>
+              <h2>Medium construct, unaligned</h2>
+            </creature-heading>
+
+            <top-stats>
+              <property-line>
+                <h4>Armor Class</h4>
+                <p>18 (natural armor)</p>
+              </property-line>
+              <property-line>
+                <h4>Hit Points</h4>
+                <p>33 (6d8 + 6)</p>
+              </property-line>
+              <property-line>
+                <h4>Speed</h4>
+                <p>25ft</p>
+              </property-line>
+
+              <abilities-block data-str="14"
+                               data-dex="11"
+                               data-con="13"
+                               data-int="1"
+                               data-wis="3"
+                               data-cha="1"></abilities-block>
+
+              <property-line>
+                <h4>Damage Immunities</h4>
+                <p>poison, psychic</p>
+              </property-line>
+              <property-line>
+                <h4>Condition Immunities</h4>
+                <p>blinded, charmed, deafened, exhaustion, frightened, paralyzed,
+                  petrified, poisoned</p>
+              </property-line>
+              <property-line>
+                <h4>Senses</h4>
+                <p>blindsight 60 ft. (blind beyond this radius), passive Perception 6</p>
+              </property-line>
+              <property-line>
+                <h4>Languages</h4>
+                <p>—</p>
+              </property-line>
+              <property-line>
+                <h4>Challenge</h4>
+                <p>1 (200 XP)</p>
+              </property-line>
+            </top-stats>
+
+            <property-block>
+              <h4>Antimagic Susceptibility.</h4>
+              <p>The armor is incapacitated while in the area of an <i>antimagic
+                field</i>.  If targeted by <i>dispel magic</i>, the armor must succeed
+                on a Constitution saving throw against the caster’s spell save DC or
+                fall unconscious for 1 minute.</p>
+            </property-block>
+            <property-block>
+              <h4>False Appearance.</h4>
+              <p>While the armor remains motionless, it is indistinguishable from a
+                normal suit of armor.</p>
+            </property-block>
+
+            <h3>Actions</h3>
+
+            <property-block>
+              <h4>Multiattack.</h4>
+              <p>The armor makes two melee attacks.</p>
+            </property-block>
+
+            <property-block>
+              <h4>Slam.</h4>
+              <p><i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target.
+                <i>Hit:</i> 5 (1d6 + 2) bludgeoning damage.</p>
+            </property-block>
+          </stat-block>
+        </div>
+      </div>
+    </div>
+
+    </div>
+</body>
+</html>
