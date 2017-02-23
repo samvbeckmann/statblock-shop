@@ -21,3 +21,7 @@ body {
 .monster-card:hover {
   border-color: #6f9cff;
 }
+
+.active-monster {
+  background-color: #ddf3fb;
+}

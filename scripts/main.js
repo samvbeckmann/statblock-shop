@@ -1,30 +1,85 @@
-var monsters = new Array();
-var selectedEncounter = new Array();
-
-
+var monsters = []
+var selectedEncounter = []
+var selectedMonster = null
 
 $(document).ready(function(){
 
   monsters = JSON.parse(localStorage.getItem('monsters'));
-
+  if (monsters != null)
+    makeMonsterCards();
 
   $("#add-srd").click(function() {
     $.getJSON("test.json", function(json) {
       addMonsters(json);
     });
-  })
+  });
 
   $("#import").click(function() {
-    $("#stat-block-location").html(makeStatblockHTML(monsters[1]));
-  })
+
+  });
 
 
   $("#add-monster").click(function() {
-    $("#encounter-list").append('<li class="list-group-item"><button type="button" class="btn btn-danger btn-sm mr-2">&times;</button>Manticore</li>');
+    if (selectedMonster != null) {
+      var found = false;
+      for (var i = 0; i < selectedEncounter.length; i++) {
+        if (selectedEncounter[i].name == selectedMonster.name) {
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        selectedEncounter.push(selectedMonster);
+
+        var item = '<li class="list-group-item">';
+        item += '<button type="button" class="btn btn-danger btn-sm mr-2 rm-encounter-btn">&times;</button>'
+        item += selectedMonster.name;
+        item += '</li>';
+        $("#encounter-list").append(item);
+      }
+    }
   });
 
-  $("#clear-list").click(function() {
+  $("#confirm-clear-list").click(function() {
     clearMonsters();
+  });
+
+  $("#new-monster").click(function() {
+    window.location.href='editor/';
+  });
+
+  $('#delete').click(function() {
+    for (var i = 0; i < monsters.length; i++) {
+      if (selectedMonster.name == monsters[i].name)
+        monsters.splice(i, 1)
+        break;
+    }
+
+    localStorage.setItem('monsters', JSON.stringify(monsters));
+    makeMonsterCards();
+    $("#stat-block-location").empty();
+  });
+
+  $(document).on("click", ".rm-encounter-btn", function() {
+    var listItem = $(this).parent();
+    for (var i = 0; i < selectedEncounter.length; i++) {
+      if (listItem.text().substring(1) == selectedEncounter[i].name)
+        selectedEncounter.splice(i, 1);
+    }
+    listItem.remove();
+  });
+
+  $(document).on("click", ".monster-card", function() {
+    var monsterName = $(this).find('.card-title').text();
+    var monsterObject = monsters.filter(function(item) {
+      return item.name === monsterName;
+    });
+
+    $(".active-monster").removeClass("active-monster");
+    $(this).addClass("active-monster");
+    selectedMonster = monsterObject[0];
+
+    $("#stat-block-location").html(makeStatblockHTML(selectedMonster));
   });
 
 });
@@ -33,11 +88,27 @@ function addMonsters(data) {
   if (monsters == null) {
     monsters = data
   } else {
-    monsters.push.apply(monsters, data)
+    for (var i = 0; i < data.length; i++) {
+      var found = false;
+      for (var j = 0; j < monsters.length; j++) {
+        if (monsters[j].name == data[i].name) {
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        monsters.push(data[i]);
+      }
+    }
   }
 
-  cards = ""
-  for(i = 0; i < monsters.length; i++) {
+  localStorage.setItem('monsters', JSON.stringify(monsters));
+  makeMonsterCards();
+}
+
+function makeMonsterCards() {
+  var cards = ""
+  for (i = 0; i < monsters.length; i++) {
     cards += '<div class="card monster-card">';
     cards += '<div class="card-block">';
     cards += '<h4 class="card-title">' + monsters[i].name + '</h4>';
@@ -51,6 +122,7 @@ function addMonsters(data) {
 function clearMonsters() {
   monsters = null;
   $("#monster-list").empty();
+  localStorage.setItem('monsters', monsters);
 }
 
 function makeStatblockHTML(monster) {
@@ -62,22 +134,22 @@ function makeStatblockHTML(monster) {
   for (let line of monster.basic_info) {
     statblock += '<property-line>';
     statblock += '<h4>' + line.name + ' </h4>';
-    statblock += '<p>' + line.desc + '</p>';
+    statblock += markdown.toHTML(line.desc);
     statblock += '</property-line>';
   }
 
   statblock += '<abilities-block data-str="' + monster.ability_scores.str;
   statblock += '" data-dex="' + monster.ability_scores.dex;
-  statblock += '" data-con="' + monster.ability_scores.dex;
-  statblock += '" data-int="' + monster.ability_scores.dex;
-  statblock += '" data-wis="' + monster.ability_scores.dex;
-  statblock += '" data-cha="' + monster.ability_scores.dex;
+  statblock += '" data-con="' + monster.ability_scores.con;
+  statblock += '" data-int="' + monster.ability_scores.int;
+  statblock += '" data-wis="' + monster.ability_scores.wis;
+  statblock += '" data-cha="' + monster.ability_scores.cha;
   statblock += '"></abilities-block>';
 
   for (let line of monster.traits) {
     statblock += '<property-line>';
     statblock += '<h4>' + line.name + ' </h4>';
-    statblock += '<p>' + line.desc + '</p>';
+    statblock += markdown.toHTML(line.desc);
     statblock += '</property-line>';
   }
 
@@ -87,17 +159,17 @@ function makeStatblockHTML(monster) {
     if (info.property_line) {
       statblock += '<property-line>';
       statblock += '<h4>' + info.property_line.name + '</h4>';
-      statblock += '<p>' + info.property_line.desc + '</p>';
+      statblock += markdown.toHTML(info.property_line.desc);
       statblock += '</property-line>';
     } else if (info.property_block) {
       statblock += '<property-block>';
       statblock += '<h4>' + info.property_block.name + '. </h4>';
-      statblock += '<p>' + info.property_block.desc + '</p>';
+      statblock += markdown.toHTML(info.property_block.desc);
       statblock += '</property-block>';
     } else if (info.spell_block) {
       // TODO
     } else if (info.text) {
-      statblock += '<p>' + info.text + '</p>';
+      statblock += markdown.toHTML(info.text);
     } else if (info.subtitle) {
       statblock += '<h3>' + info.subtitle + '</h3>';
     } else if (info.numbered_list) {
