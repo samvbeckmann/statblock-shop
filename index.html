@@ -73,36 +73,58 @@
           </div>
         </div>
 
-        <div class="modal fade" id="clear-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Confirm Clear?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>
-          Are you sure you wish to clear all stat blocks? This operation cannot be undone.
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" id="confirm-clear-list" data-dismiss="modal" class="btn btn-danger">Clear Statblocks</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="modal fade" id="clear-modal" tabindex="-1" role="dialog" aria-labelledby="clear-model-label" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="clear-model-lable">Confirm Clear?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Are you sure you wish to clear all stat blocks? This operation cannot be undone.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" id="confirm-clear-list" data-dismiss="modal" class="btn btn-danger">Clear Statblocks</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="col">
           <button type="button" id="add-monster" class="btn btn-primary mb-2">Add</button>
           <button type="button" id="edit" class="btn btn-secondary mb-2">Edit</button>
           <button type="button" id="duplicate" class="btn btn-secondary mb-2">Duplicate</button>
-          <button type="button" id="delete" class="btn btn-danger mb-2">Delete</button>
+          <button type="button" id="delete" class="btn btn-danger mb-2" data-toggle="modal" data-target="#delete-modal">Delete</button>
           <button type="button" id="view-encounter" class="btn btn-primary mb-2">View Encounter</button>
           <ul class="list-group mt-2 mb-2" id="encounter-list">
           </ul>
+
+          <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="delete-modal-label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="delete-modal-label">Confirm Delete?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Are you sure you wish to delete this statblock? This operation cannot be undone.
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="button" id="confirm-delete-statblock" data-dismiss="modal" class="btn btn-danger">Delete Statblock</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div id="stat-block-location">
           </div>

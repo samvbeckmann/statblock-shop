@@ -42,21 +42,32 @@ $(document).ready(function(){
 
   $("#confirm-clear-list").click(function() {
     clearMonsters();
+    $("#stat-block-location").empty();
   });
 
   $("#new-monster").click(function() {
     window.location.href='editor/';
   });
 
-  $('#delete').click(function() {
+  $('#confirm-delete-statblock').on("click", function() {
     for (var i = 0; i < monsters.length; i++) {
-      if (selectedMonster.name == monsters[i].name)
+      if (selectedMonster.name == monsters[i].name) {
         monsters.splice(i, 1)
         break;
+      }
     }
 
-    localStorage.setItem('monsters', JSON.stringify(monsters));
+    for (var i = 0; i < selectedEncounter.length; i++) {
+      if (selectedMonster.name == selectedEncounter[i].name) {
+        selectedEncounter.splice(i, 1)
+        break;
+      }
+    }
+
+    selectedMonster = null;
+    makeEncounterList();
     makeMonsterCards();
+    localStorage.setItem('monsters', JSON.stringify(monsters));
     $("#stat-block-location").empty();
   });
 
@@ -117,6 +128,17 @@ function makeMonsterCards() {
   }
 
   $("#monster-list").html(cards)
+}
+
+function makeEncounterList() {
+  var encounterList = "";
+  for (var i = 0; i < selectedEncounter.length; i++) {
+    encounterList += '<li class="list-group-item">';
+    encounterList += '<button type="button" class="btn btn-danger btn-sm mr-2 rm-encounter-btn">&times;</button>'
+    encounterList += selectedEncounter[i].name;
+    encounterList += '</li>';
+  }
+  $("#encounter-list").html(encounterList);
 }
 
 function clearMonsters() {
