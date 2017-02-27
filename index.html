@@ -23,8 +23,9 @@
 
   <link rel="stylesheet" href="css/style.css">
 
-  <script src="scripts/main.js"></script>
-  <script src="scripts/markdown.min.js"></script>
+  <script src="/scripts/main.js"></script>
+  <script src="/scripts/common.js"></script>
+  <script src="/scripts/markdown.min.js"></script>
 
   <style>
     body {
@@ -62,7 +63,10 @@
           <form>
             <div class="form-group mb-2">
               <button type="button" id="add-srd" class="btn btn-secondary mb-2">Add SRD</button>
-              <button type="button" id="import" class="btn btn-secondary mb-2">Import</button>
+              <label class="btn btn-secondary btn-file mb-2">
+                Import<input type="file" id="import" style="display: none;">
+              </label>
+              <!-- <button type="button" id="import" class="btn btn-secondary mb-2">Import</button> -->
               <button type="button" id="export" class="btn btn-secondary mb-2">Export</button>
               <button type="button" id="new-monster" class="btn btn-success mb-2">New</button>
               <button type="button" id="clear-list" class="btn btn-danger mb-2" data-toggle="modal" data-target="#clear-modal">Clear</button>

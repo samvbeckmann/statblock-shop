@@ -1,6 +1,7 @@
 [{
 	"name": "Animated Armor",
 	"heading": "Medium construct, unaligned",
+  "two_column": false,
 	"basic_info": [{
 		"name": "Armor Class",
 		"desc": "18 (natural armor)"
@@ -61,6 +62,7 @@
 }, {
 	"name": "Aboleth",
 	"heading": "Large aberration, lawful evil",
+  "two_column": true,
 	"basic_info": [{
 		"name": "Armor Class",
 		"desc": "17 (natural armor)"
@@ -130,7 +132,7 @@
 	}, {
 		"property_block": {
 			"name": "Enslave (3/Day)",
-			"desc": "The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed creature is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth."
+			"desc": "The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed creature is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\n\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth."
 		}
 	}, {
 		"subtitle": "Legendary Actions"
@@ -152,4 +154,72 @@
 			"desc": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes."
 		}
 	}]
+}, {
+	"name": "Animathopter Construct",
+	"heading": "Large construct, unaligned",
+  "two_column": false,
+	"basic_info": [{
+		"name": "Armor Class",
+		"desc": "13"
+	}, {
+		"name": "Hit Points",
+		"desc": "26 (4d10 + 4)"
+	}, {
+		"name": "Speed",
+		"desc": "10ft., fly 80ft."
+	}],
+	"ability_scores": {
+		"str": 16,
+		"dex": 17,
+		"con": 13,
+		"int": 8,
+		"wis": 14,
+		"cha": 10
+	},
+	"traits": [{
+		"name": "Damage Immunities",
+		"desc": "poison"
+	}, {
+		"name": "Condition Immunities",
+		"desc": "poisoned, charmed"
+	}, {
+		"name": "Senses",
+		"desc": "darkvision 60 ft., passive Perception 14"
+	}, {
+		"name": "Languages",
+		"desc": "understands common but can't speak it"
+	}, {
+		"name": "Challenge",
+		"desc": "1 (200 XP)"
+	}],
+	"content": [{
+		"property_block": {
+			"name": "Keen Sight",
+			"desc": "The animathopter has advantage on Wisdom (Perception) checks that rely on sight."
+		}
+	}, {
+		"subtitle": "Actions"
+	}, {
+		"property_block": {
+			"name": "Multiattack",
+			"desc": "The animathopter makes two attacks: one with its beak and one with its talons."
+		}
+	}, {
+		"property_block": {
+			"name": "Beak",
+			"desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 6 (1d6 + 3) piercing damage."
+		}
+	}, {
+		"property_block": {
+			"name": "Talons",
+			"desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 10 (2d6 + 3) slashing damage."
+		}
+	}, {
+    "subtitle": "Reactions"
+  }, {
+    "property_block": {
+      "name": "Servant Defense",
+      "desc": "When this servant's controller is attacked and this servant is within 5 feet of the attacker, the controller can use its reaction to command this servent to respond. This servant can then use its own reaction to make a melle attack against the attacker."
+    }
+  }]
 }]

@@ -6,7 +6,7 @@ body {
   border: solid 1px lightgrey;
   border-radius: 3px;
   padding: 10px;
-  height:800px;
+  height:600px;
   overflow-y:scroll;
   width:100%;
 }
