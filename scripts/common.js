@@ -1,5 +1,7 @@
 /*jshint esversion: 6 */
 
+var monster = JSON.parse(sessionStorage.getItem('activeMonster'));
+
 function makeStatblockHTML(monster) {
   if (monster.two_column) {
     statblock = '<stat-block data-two-column><creature-heading>';
@@ -44,7 +46,14 @@ function makeStatblockHTML(monster) {
     } else if (info.subtitle) {
       statblock += '<h3>' + info.subtitle + '</h3>';
     } else if (info.numbered_list) {
-      // TODO
+      statblock += '<ol>';
+      for (var i = 0; i < info.numbered_list.length; i++) {
+        statblock += '<li>';
+        statblock += info.numbered_list[i];
+        statblock += '</li>';
+      }
+      statblock += '</ol>';
+      // TODO: Test
     }
   }
 

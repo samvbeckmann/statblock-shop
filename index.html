@@ -23,8 +23,8 @@
 
   <link rel="stylesheet" href="css/style.css">
 
-  <script src="/scripts/main.js"></script>
   <script src="/scripts/common.js"></script>
+  <script src="/scripts/main.js"></script>
   <script src="/scripts/markdown.min.js"></script>
 
   <style>
@@ -36,11 +36,14 @@
 
 </head>
 <body>
+  <a id="downloadAnchorElem" style="display:none"></a>
+
   <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Statblock Manager</a>
+      <a class="navbar-brand" href="#">Statblock Manager
+        <span class="badge badge-warning badge-outline ml-1">Beta</span></a>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
@@ -71,7 +74,7 @@
               <button type="button" id="new-monster" class="btn btn-success mb-2">New</button>
               <button type="button" id="clear-list" class="btn btn-danger mb-2" data-toggle="modal" data-target="#clear-modal">Clear</button>
             </div>
-            <input type="search" class="form-control" placeholder="Search">
+            <input id="search-bar" type="search" class="form-control" placeholder="Search">
           </form>
           <div class="content mt-2 mb-4" id="monster-list">
           </div>

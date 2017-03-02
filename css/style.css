@@ -25,3 +25,14 @@ body {
 .active-monster {
   background-color: #ddf3fb;
 }
+
+.badge-outline {
+    color: black;
+    border: 1px solid #999;
+    background-color: transparent;
+}
+
+.badge-outline.badge-warning {
+  border-color: #ffeb67;
+  color: #ffeb67;
+}

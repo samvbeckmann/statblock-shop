@@ -23,8 +23,8 @@
 
   <link rel="stylesheet" href="/css/style.css">
 
-  <script src="/scripts/statblock-builder.js"></script>
   <script src="/scripts/common.js"></script>
+  <script src="/scripts/statblock-builder.js"></script>
   <script src="/scripts/markdown.min.js"></script>
 
   <style>
@@ -40,7 +40,8 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="/">Statblock Manager</a>
+      <a class="navbar-brand" href="/">Statblock Manager
+        <span class="badge badge-warning badge-outline ml-1">Beta</span></a>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
@@ -63,7 +64,8 @@
           <form class="form-inline">
 
             <div class="form-group inline mb-3">
-              <button type="button" id="add-srd" class="btn btn-success mr-2">Save</button>
+              <button type="button" id="save" class="btn btn-success mr-2">Save</button>
+              <button type="button" id="get-pdf" class="btn btn-primary mr-2">Download PDF</button>
               <input type="checkbox" class="form-check-input" id="two-column-checkbox">Two Column Layout</input>
             </div>
 

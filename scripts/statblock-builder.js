@@ -1,11 +1,12 @@
-var monster = {};
 
 $(document).ready(function() {
 
-  $.getJSON("/default_template.json", function(json) {
-    monster = json;
-    $("#live-statblock").html(makeStatblockHTML(monster));
-  });
+  $("#live-statblock").html(makeStatblockHTML(monster));
+
+  // $.getJSON("/default_template.json", function(json) {
+  //   monster = json;
+  //   $("#live-statblock").html(makeStatblockHTML(monster));
+  // });
 
   $('#two-column-checkbox').change(function() {
     monster.two_column = this.checked;
@@ -55,7 +56,7 @@ $(document).ready(function() {
   $("#basic-info-box").keyup(function() {
     try {
       var parsedInfo = propertyLineParser($(this).val());
-      monster.traits = parsedInfo.result;
+      monster.basic_info = parsedInfo.result;
       if (parsedInfo.error) {
         $(this).parent().addClass("has-danger");
       } else {
