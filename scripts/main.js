@@ -1,9 +1,9 @@
-var monsters = [];
 var selectedEncounter = [];
 
 $(document).ready(function(){
 
-  monsters = JSON.parse(localStorage.getItem('monsters'));
+  $("#stat-block-location").html(makeStatblockHTML(monster));
+
   if (monsters !== null)
     makeMonsterCards();
 
@@ -15,6 +15,7 @@ $(document).ready(function(){
     $.getJSON("test.json", function(json) {
       addMonsters(json);
     });
+    makeMonsterCards();
   });
 
   $("#import").click(function() {
@@ -22,9 +23,10 @@ $(document).ready(function(){
   });
 
   $("#export").click(function() {
-    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(monsters, null, '\t'));
+    var dataStr = "data:text/json;charset=utf-8," +
+                  encodeURIComponent(JSON.stringify(monsters, null, '\t'));
     var dlAnchorElem = document.getElementById('downloadAnchorElem');
-    dlAnchorElem.setAttribute("href",     dataStr     );
+    dlAnchorElem.setAttribute("href", dataStr);
     dlAnchorElem.setAttribute("download", "monsterLibrary.json");
     dlAnchorElem.click();
   });
@@ -34,7 +36,7 @@ $(document).ready(function(){
     if (monster !== null) {
       var found = false;
       for (var i = 0; i < selectedEncounter.length; i++) {
-        if (selectedEncounter[i].name == selectedMonster.name) {
+        if (selectedEncounter[i].name == monster.name) {
           found = true;
           break;
         }
@@ -44,7 +46,7 @@ $(document).ready(function(){
 
         var item = '<li class="list-group-item">';
         item += '<button type="button" class="btn btn-danger btn-sm mr-2 rm-encounter-btn">&times;</button>';
-        item += selectedMonster.name;
+        item += monster.name;
         item += '</li>';
         $("#encounter-list").append(item);
       }
@@ -57,16 +59,23 @@ $(document).ready(function(){
   });
 
   $("#new-monster").click(function() {
+    sessionStorage.setItem('mode', 'new');
+    window.location.href='editor/';
+  });
+
+  $("#edit").click(function() {
+    sessionStorage.setItem('mode', 'edit');
+    sessionStorage.setItem('editing-monster', monster.name);
+    window.location.href='editor/';
+  });
+
+  $("#duplicate").click(function() {
+    sessionStorage.setItem('mode', 'duplicate');
     window.location.href='editor/';
   });
 
   $('#confirm-delete-statblock').on("click", function() {
-    for (var i = 0; i < monsters.length; i++) {
-      if (monster.name == monsters[i].name) {
-        monsters.splice(i, 1);
-        break;
-      }
-    }
+    removeMonster(monster.name);
 
     for (var j = 0; j < selectedEncounter.length; j++) {
       if (monster.name == selectedEncounter[j].name) {
@@ -107,28 +116,6 @@ $(document).ready(function(){
 
 });
 
-function addMonsters(data) {
-  if (monsters === null) {
-    monsters = data;
-  } else {
-    for (var i = 0; i < data.length; i++) {
-      var found = false;
-      for (var j = 0; j < monsters.length; j++) {
-        if (monsters[j].name == data[i].name) {
-          found = true;
-          break;
-        }
-      }
-      if (!found) {
-        monsters.push(data[i]);
-      }
-    }
-  }
-
-  localStorage.setItem('monsters', JSON.stringify(monsters));
-  makeMonsterCards();
-}
-
 function makeMonsterCards() {
   var monsterList = [];
   var searchString = $("#search-bar").val().toLowerCase();
@@ -140,6 +127,11 @@ function makeMonsterCards() {
       if (monsters[i].name.toLowerCase().indexOf(searchString) !== -1)
         monsterList.push(monsters[i]);
     }
+  }
+
+  if (monsterList === null) {
+    $("#monster-list").html('');
+    return;
   }
 
   var cards = "";

@@ -1,12 +1,40 @@
 
 $(document).ready(function() {
 
+  var mode = sessionStorage.getItem('mode');
+
+  switch (mode) {
+    case 'new':
+      $.getJSON("/default_template.json", function(json) {
+        monster = json;
+      });
+      break;
+    case 'duplicate':
+      monster.name = monster.name + ' (2)';
+      break;
+  }
+
+  // TODO: Fill in form from monste stats.
+
   $("#live-statblock").html(makeStatblockHTML(monster));
 
-  // $.getJSON("/default_template.json", function(json) {
-  //   monster = json;
-  //   $("#live-statblock").html(makeStatblockHTML(monster));
-  // });
+  $("#live-statblock").html(makeStatblockHTML(monster));
+
+  // TODO: Handle naming conflict errors.
+  $('#save').click(function() {
+    switch (mode) {
+      case 'new':
+      case 'duplicate':
+        addMonsters([monster]);
+        break;
+      case 'edit':
+        removeMonster(sessionStorage.getItem('editing-monster'));
+        addMonsters([monster]);
+        break;
+      default:
+
+    }
+  });
 
   $('#two-column-checkbox').change(function() {
     monster.two_column = this.checked;

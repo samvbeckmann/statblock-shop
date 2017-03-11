@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 
+var monsters = JSON.parse(localStorage.getItem('monsters'));
 var monster = JSON.parse(sessionStorage.getItem('activeMonster'));
 
 function makeStatblockHTML(monster) {
@@ -75,4 +76,34 @@ function processPropertyLines(array) {
     }
   }
   return result;
+}
+
+function addMonsters(data) {
+  if (monsters === null) {
+    monsters = data;
+  } else {
+    for (var i = 0; i < data.length; i++) {
+      var found = false;
+      for (var j = 0; j < monsters.length; j++) {
+        if (monsters[j].name == data[i].name) {
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        monsters.push(data[i]);
+      }
+    }
+  }
+
+  localStorage.setItem('monsters', JSON.stringify(monsters));
+}
+
+function removeMonster(name) {
+  for (var i = 0; i < monsters.length; i++) {
+    if (name == monsters[i].name) {
+      monsters.splice(i, 1);
+      break;
+    }
+  }
 }

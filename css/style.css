@@ -36,3 +36,8 @@ body {
   border-color: #ffeb67;
   color: #ffeb67;
 }
+
+.badge-outline.badge-danger {
+  border-color: #de5244;
+  color: #de5244;
+}
