@@ -38,7 +38,7 @@ function makeStatblockHTML(monster) {
     } else if (info.property_block) {
       statblock += '<property-block>';
       statblock += '<h4>' + info.property_block.name + '. </h4>';
-      statblock += markdown.toHTML(info.property_block.desc);
+      statblock += markdown.toHTML(info.property_block.desc).replace('\\n', '<p>');
       statblock += '</property-block>';
     } else if (info.spell_block) {
       // TODO

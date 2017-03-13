@@ -15,6 +15,7 @@ $(document).ready(function() {
   }
 
   // TODO: Fill in form from monster stats.
+  fillForm(monster);
 
   $("#live-statblock").html(makeStatblockHTML(monster));
 
@@ -34,6 +35,8 @@ $(document).ready(function() {
       default:
 
     }
+    sessionStorage.setItem('activeMonster', JSON.stringify(monster));
+    window.location.href='/';
   });
 
   $('#two-column-checkbox').change(function() {
@@ -158,7 +161,7 @@ function contentParser(string) {
   for (var i = 0; i < lines.length; i++) {
     if (lines[i] === '')
       continue;
-    var parts = lines[i].match(/([^\\\][^\|]|\\\|)+/g);
+    var parts = lines[i].match(/(\\.|[^|])+/g);
     try {
       switch (parts[0].trim().toLowerCase()) {
         case 'property':
@@ -185,4 +188,46 @@ function contentParser(string) {
     }
   }
   return {result: result, error: error};
+}
+
+function fillForm(monster) {
+  $('#two-column-checkbox').prop('checked', monster.two_column);
+  $('#monster-name').val(monster.name);
+  $('#monster-header').val(monster.heading);
+  $('#basic-info-box').val(propertiesToText(monster.basic_info));
+  $('#str-score').val(monster.ability_scores.str);
+  $('#dex-score').val(monster.ability_scores.dex);
+  $('#con-score').val(monster.ability_scores.con);
+  $('#int-score').val(monster.ability_scores.int);
+  $('#wis-score').val(monster.ability_scores.wis);
+  $('#cha-score').val(monster.ability_scores.cha);
+  $('#traits-box').val(propertiesToText(monster.traits));
+  $('#main-content').val(contentToText(monster.content));
+
+  function propertiesToText(obj) {
+    var result = '';
+    for (var i = 0; i < obj.length; i++) {
+      result += obj[i].name + ' | ' + obj[i].desc + '\n';
+    }
+    return result;
+  }
+
+  function contentToText(obj) {
+    var result = '';
+    for (var i = 0; i < obj.length; i ++) {
+      if (obj[i].hasOwnProperty('property_block')) {
+        result += 'description | ' + obj[i].property_block.name;
+        result +=  ' | ' + obj[i].property_block.desc + '\n\n';
+      } else if (obj[i].hasOwnProperty('property_line')) {
+        result += 'property | ' + obj[i].property_line.name;
+        result += ' | ' + obj[i].property_line.desc + '\n\n';
+      } else if (obj[i].hasOwnProperty('subtitle')) {
+        result += 'subtitle | ' + obj[i].subtitle + '\n\n';
+      } else if (obj[i].hasOwnProperty('text')) {
+        result += 'text | ' + obj[i].text + '\n\n';
+      }
+    }
+    return result;
+  }
+
 }
