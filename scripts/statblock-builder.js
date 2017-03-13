@@ -14,7 +14,7 @@ $(document).ready(function() {
       break;
   }
 
-  // TODO: Fill in form from monste stats.
+  // TODO: Fill in form from monster stats.
 
   $("#live-statblock").html(makeStatblockHTML(monster));
 

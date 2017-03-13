@@ -1,8 +1,11 @@
-var selectedEncounter = [];
+var selectedEncounter = JSON.parse(localStorage.getItem('selectedEncounter'));
+if (selectedEncounter === null)
+  selectedEncounter = [];
 
 $(document).ready(function(){
 
-  $("#stat-block-location").html(makeStatblockHTML(monster));
+  if (monster)
+    $("#stat-block-location").html(makeStatblockHTML(monster));
 
   if (monsters !== null)
     makeMonsterCards();
@@ -14,13 +17,13 @@ $(document).ready(function(){
   $("#add-srd").click(function() {
     $.getJSON("test.json", function(json) {
       addMonsters(json);
+      makeMonsterCards();
     });
-    makeMonsterCards();
   });
 
-  $("#import").click(function() {
+  $("#import").click(function () { $("#file-load").click(); });
 
-  });
+  $('#file-load').change(ui_load_files);
 
   $("#export").click(function() {
     var dataStr = "data:text/json;charset=utf-8," +
@@ -43,6 +46,7 @@ $(document).ready(function(){
       }
       if (!found) {
         selectedEncounter.push(monster);
+        sessionStorage.setItem('selectedEncounter', JSON.stringify(selectedEncounter));
 
         var item = '<li class="list-group-item">';
         item += '<button type="button" class="btn btn-danger btn-sm mr-2 rm-encounter-btn">&times;</button>';
@@ -64,14 +68,24 @@ $(document).ready(function(){
   });
 
   $("#edit").click(function() {
-    sessionStorage.setItem('mode', 'edit');
-    sessionStorage.setItem('editing-monster', monster.name);
-    window.location.href='editor/';
+    if (monster) {
+      sessionStorage.setItem('mode', 'edit');
+      sessionStorage.setItem('editing-monster', monster.name);
+      window.location.href='editor/';
+    }
   });
 
   $("#duplicate").click(function() {
-    sessionStorage.setItem('mode', 'duplicate');
-    window.location.href='editor/';
+    if (monster) {
+      sessionStorage.setItem('mode', 'duplicate');
+      window.location.href='editor/';
+    }
+  });
+
+  $('#delete').click(function() {
+    if (monster) {
+      $('#delete-modal').modal('show');
+    }
   });
 
   $('#confirm-delete-statblock').on("click", function() {
@@ -85,10 +99,18 @@ $(document).ready(function(){
     }
 
     monster = null;
+    sessionStorage.setItem('activeMonster', null);
     makeEncounterList();
     makeMonsterCards();
     localStorage.setItem('monsters', JSON.stringify(monsters));
     $("#stat-block-location").empty();
+  });
+
+  $('#view-encounter').click(function () {
+    if (selectedEncounter.length > 0) {
+      sessionStorage.setItem('encounter', JSON.stringify(selectedEncounter));
+      window.location.href='view/';
+    }
   });
 
   $(document).on("click", ".rm-encounter-btn", function() {
@@ -136,7 +158,7 @@ function makeMonsterCards() {
 
   var cards = "";
   for (var j = 0; j < monsterList.length; j++) {
-    if (monster.name === monsterList[j].name)
+    if (monster && monster.name === monsterList[j].name)
       cards += '<div class="card monster-card active-monster">';
     else
       cards += '<div class="card monster-card">';
@@ -165,4 +187,26 @@ function clearMonsters() {
   monsters = null;
   $("#monster-list").empty();
   localStorage.setItem('monsters', monsters);
+}
+
+function ui_load_files(evt) {
+
+    function processFiles(reader) {
+      var data = JSON.parse(this.result);
+      addMonsters(data);
+      makeMonsterCards();
+    }
+
+    var files = evt.target.files;
+
+    for (var i = 0, f; (f = files[i]) !== null; i++) {
+        var reader = new FileReader();
+
+        reader.onload = processFiles;
+
+        reader.readAsText(f);
+    }
+
+    // Reset file input
+    $("#file-load-form")[0].reset();
 }
