@@ -5,21 +5,22 @@ $(document).ready(function() {
 
   switch (mode) {
     case 'new':
-      $.getJSON("/default_template.json", function(json) {
+      $.getJSON("/default_template.json").then(function(json) {
         monster = json;
+        fillForm(monster);
+        $("#live-statblock").html(makeStatblockHTML(monster));
       });
       break;
     case 'duplicate':
       monster.name = monster.name + ' (2)';
+      fillForm(monster);
+      $("#live-statblock").html(makeStatblockHTML(monster));
+      break;
+    case 'edit':
+      fillForm(monster);
+      $("#live-statblock").html(makeStatblockHTML(monster));
       break;
   }
-
-  // TODO: Fill in form from monster stats.
-  fillForm(monster);
-
-  $("#live-statblock").html(makeStatblockHTML(monster));
-
-  $("#live-statblock").html(makeStatblockHTML(monster));
 
   // TODO: Handle naming conflict errors.
   $('#save').click(function() {
@@ -156,6 +157,7 @@ function propertyLineParser(string) {
 
 function contentParser(string) {
   var result = [];
+  var temp_list = [];
   error = false;
   var lines = string.split('\n');
   for (var i = 0; i < lines.length; i++) {
@@ -165,18 +167,25 @@ function contentParser(string) {
     try {
       switch (parts[0].trim().toLowerCase()) {
         case 'property':
+          checkTempList();
           result.push({property_line: {
                        name: parts[1].trim(), desc: parts[2].trim()}});
           break;
         case 'description':
+          checkTempList();
           result.push({property_block: {
                        name: parts[1].trim(), desc: parts[2].trim()}});
           break;
         case 'text':
-          result.push({text:parts[1]});
+          checkTempList();
+          result.push({text:parts[1].trim()});
           break;
         case 'subtitle':
-          result.push({subtitle:parts[1]});
+          checkTempList();
+          result.push({subtitle:parts[1].trim()});
+          break;
+        case 'numbered':
+          temp_list.push(parts[1].trim());
           break;
         default:
           result.push("input_error");
@@ -187,7 +196,15 @@ function contentParser(string) {
       error = true;
     }
   }
+  checkTempList();
   return {result: result, error: error};
+
+  function checkTempList() {
+    if (temp_list.length > 0) {
+      result.push({numbered_list: temp_list});
+      temp_list = [];
+    }
+  }
 }
 
 function fillForm(monster) {
@@ -225,6 +242,10 @@ function fillForm(monster) {
         result += 'subtitle | ' + obj[i].subtitle + '\n\n';
       } else if (obj[i].hasOwnProperty('text')) {
         result += 'text | ' + obj[i].text + '\n\n';
+      } else if (obj[i].hasOwnProperty('numbered_list')) {
+        for (var j = 0; j < obj[i].numbered_list.length; j++) {
+          result += 'numbered | ' + obj[i].numbered_list[j] + '\n\n';
+        }
       }
     }
     return result;

@@ -50,7 +50,7 @@ function makeStatblockHTML(monster) {
       statblock += '<ol>';
       for (var i = 0; i < info.numbered_list.length; i++) {
         statblock += '<li>';
-        statblock += info.numbered_list[i];
+        statblock += markdown.toHTML(info.numbered_list[i]).replace('<p>', '').replace('</p>', '').replace('\\n', '<p>');
         statblock += '</li>';
       }
       statblock += '</ol>';

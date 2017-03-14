@@ -74,6 +74,29 @@
       line-height: 1.5;
     }
 
+    ::content > ol {
+      list-style: none;
+      padding-left: 0px;
+      text-indent: 1em;
+    }
+
+    ::content > ol > li {
+      counter-increment: step-counter;
+    }
+
+    ::content > ol > li::before {
+      content: counter(step-counter) ". ";
+      font-style: italic;
+    }
+
+    ::content > ol > li > p {
+      margin-bottom: 0px;
+    }
+
+    ::content > li {
+      margin-left: 0px;
+    }
+
     /* Last child shouldn't have bottom margin, too much white space. */
     ::content > *:last-child {
       margin-bottom: 0;
