@@ -54,7 +54,10 @@ function makeStatblockHTML(monster) {
         statblock += '</li>';
       }
       statblock += '</ol>';
-      // TODO: Test
+    } else if (info.spell_line) {
+      statblock += '<property-line>';
+      statblock += markdown.toHTML(info.spell_line);
+      statblock += '</property-line>';
     }
   }
 

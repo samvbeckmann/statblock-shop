@@ -187,6 +187,10 @@ function contentParser(string) {
         case 'numbered':
           temp_list.push(parts[1].trim());
           break;
+        case 'spells':
+          checkTempList();
+          result.push({spell_line: parts[1].trim()});
+          break;
         default:
           result.push("input_error");
           error = true;
@@ -246,6 +250,8 @@ function fillForm(monster) {
         for (var j = 0; j < obj[i].numbered_list.length; j++) {
           result += 'numbered | ' + obj[i].numbered_list[j] + '\n\n';
         }
+      } else if (obj[i].hasOwnProperty('spell_line')) {
+        result += 'spells | ' + obj[i].spell_line + '\n\n';
       }
     }
     return result;
