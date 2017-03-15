@@ -1,0 +1,389 @@
+[{
+	"name": "Animated Armor",
+	"heading": "Medium construct, unaligned",
+  "two_column": false,
+	"basic_info": [{
+		"name": "Armor Class",
+		"desc": "18 (natural armor)"
+	}, {
+		"name": "Hit Points",
+		"desc": "33 (6d8 + 6)"
+	}, {
+		"name": "Speed",
+		"desc": "25ft"
+	}],
+	"ability_scores": {
+		"str": 14,
+		"dex": 11,
+		"con": 13,
+		"int": 1,
+		"wis": 3,
+		"cha": 1
+	},
+	"traits": [{
+		"name": "Damage Immunities",
+		"desc": "poison, psychic"
+	}, {
+		"name": "Condition Immunities",
+		"desc": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned"
+	}, {
+		"name": "Senses",
+		"desc": "blindsight 60 ft. (blind beyond this radius), passive Perception 6"
+	}, {
+		"name": "Languages",
+		"desc": "—"
+	}, {
+		"name": "Challenge",
+		"desc": "1 (200 XP)"
+	}],
+	"content": [{
+		"property_block": {
+			"name": "Antimagic Susceptibility",
+			"desc": "The armor is incapacitated while in the area of an _antimagic field_. If targeted by _dispel magic_, the armor must succeed on a Constitution saving throw against the caster’s spell save DC or fall unconscious for 1 minute."
+		}
+	}, {
+		"property_block": {
+			"name": "False Appearance",
+			"desc": "While the armor remains motionless, it is indistinguishable from a normal suit of armor."
+		}
+	}, {
+		"subtitle": "Actions"
+	}, {
+		"property_block": {
+			"name": "Multiattack",
+			"desc": "The armor makes two melee attacks."
+		}
+	}, {
+		"property_block": {
+			"name": "Slam",
+			"desc": "_Melee Weapon Attack:_ +4 to hit, reach 5 ft., one target. _Hit:_ 5 (1d6 + 2) bludgeoning damage."
+		}
+	}]
+}, {
+	"name": "Aboleth",
+	"heading": "Large aberration, lawful evil",
+  "two_column": true,
+	"basic_info": [{
+		"name": "Armor Class",
+		"desc": "17 (natural armor)"
+	}, {
+		"name": "Hit Points",
+		"desc": "135 (18d10 + 16)"
+	}, {
+		"name": "Speed",
+		"desc": "20ft., swin 40ft."
+	}],
+	"ability_scores": {
+		"str": 21,
+		"dex": 9,
+		"con": 15,
+		"int": 18,
+		"wis": 15,
+		"cha": 18
+	},
+	"traits": [{
+		"name": "Saving Throws",
+		"desc": "Con +6, Int +8, Wis +6"
+	}, {
+		"name": "Skills",
+		"desc": "History +12, Perception +10"
+	}, {
+		"name": "Senses",
+		"desc": "darkvision 120ft., passive Perception 20"
+	}, {
+		"name": "Languages",
+		"desc": "Deep Speech, telepathy 120 ft."
+	}, {
+		"name": "Challenge",
+		"desc": "10 (5,900 XP)"
+	}],
+	"content": [{
+		"property_block": {
+			"name": "Amphibious",
+			"desc": "The aboleth can breathe air and water."
+		}
+	}, {
+		"property_block": {
+			"name": "Mucous Cloud",
+			"desc": "While underwater, the aboleth is surrounded by transformative mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a DC 14 Constitution saving throw. On a failure, the creature is diseased for 1d4 hours. The diseased creature can breathe only underwater."
+		}
+	}, {
+		"property_block": {
+			"name": "Probing Telepathy",
+			"desc": "If a creature communicates telepahically with the aboleth, the aboleth learns the creature's greatest desires if the aboleth can see the creature."
+		}
+	}, {
+		"subtitle": "Actions"
+	}, {
+		"property_block": {
+			"name": "Multiattack",
+			"desc": "The aboleth makes three tentacle attacks."
+		}
+	}, {
+		"property_block": {
+			"name": "Tentacle",
+			"desc": "_Melee Weapon Attack:_ +9 to hit, reach 10 ft., one target. _Hit:_ 12 (2d6 + 5) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Constitution saving throw of become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only be _heal_ or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."
+		}
+	}, {
+		"property_block": {
+			"name": "Tail",
+			"desc": "_Melee Weapon Attack:_ +9 to hit, reach 10 ft., one target. _Hit:_ 15 (3d6 + 5) bludgeoning damage."
+		}
+	}, {
+		"property_block": {
+			"name": "Enslave (3/Day)",
+			"desc": "The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed creature is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth."
+		}
+	}, {
+		"subtitle": "Legendary Actions"
+	}, {
+		"text": "The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. The aboleth regains spent legendary actions at the start of its turn."
+	}, {
+		"property_line": {
+			"name": "Detect.",
+			"desc": "The aboleth makes a Wisdom (Perception) check."
+		}
+	}, {
+		"property_line": {
+			"name": "Tail Swipe.",
+			"desc": "The aboleth makes one tail attack."
+		}
+	}, {
+		"property_line": {
+			"name": "Psychic Drain (Costs 2 Actions).",
+			"desc": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes."
+		}
+	}]
+},
+{
+  "name": "Lich",
+  "heading": "Medium undead, any evil alignment",
+  "two_column": true,
+  "basic_info": [
+    {
+      "name": "Armor Class",
+      "desc": "17 (natural armor)"
+    },
+    {
+      "name": "Hit Points",
+      "desc": "135 (18d8 + 54)"
+    },
+    {
+      "name": "Speed",
+      "desc": "30 ft."
+    }
+  ],
+  "ability_scores": {
+    "str": "11",
+    "dex": "16",
+    "con": "16",
+    "int": "20",
+    "wis": "14",
+    "cha": "16"
+  },
+  "traits": [
+    {
+      "name": "Saving Throws",
+      "desc": "Con +10, Int +12, Wis +9"
+    },
+    {
+      "name": "Skills",
+      "desc": "Arcana +18, History +12, Insight +9, Perception +9"
+    },
+    {
+      "name": "Damage Resistances",
+      "desc": "cold, lightening, necrotic"
+    },
+    {
+      "name": "Damage Immunities",
+      "desc": "poison; bludgeoning, piercing, and slashing from nonmagical attacks"
+    },
+    {
+      "name": "Condition Immunities",
+      "desc": "charmed, exhaustion, frightened, paralyzed, poisoned"
+    },
+    {
+      "name": "Senses",
+      "desc": "truesight 120 ft., passive Perception 19"
+    },
+    {
+      "name": "Languages",
+      "desc": "Common plus up to five other languages"
+    },
+    {
+      "name": "Challenge",
+      "desc": "21 (33,000 XP)"
+    }
+  ],
+  "content": [
+    {
+      "property_block": {
+        "name": "Legendary Resistance (3/Day)",
+        "desc": "If the lich fails a saving throw, it can choose to succeed instead."
+      }
+    },
+    {
+      "property_block": {
+        "name": "Rejuvenation",
+        "desc": "If it has a phylactery, a destroyed lich gains a new body in 1d10 days, regaining all its hit points and becoming active again. The new body appears within 5 feed of the phylactery."
+      }
+    },
+    {
+      "property_block": {
+        "name": "Spellcasting",
+        "desc": "The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:"
+      }
+    },
+    {
+      "spell_line": "Cantrips (at will): _magic hand, prestidigitation, ray of frost_"
+    },
+    {
+      "spell_line": "1st level (4 slots): _detect magic, magic missile, shield, thunderwave_"
+    },
+    {
+      "spell_line": "2nd level (3 slots): _detect thoughts, invisibility, Melf's acid arrow, mirror image_"
+    },
+    {
+      "spell_line": "3rd level (3 slots): _animate dead, counterspell, dispel magic, fireball_"
+    },
+    {
+      "spell_line": "4th level (3 slots): _blight, dimension door_"
+    },
+    {
+      "spell_line": "5th level (3 slots): _cloudkill, scrying_"
+    },
+    {
+      "spell_line": "6th level (1 slot): _disintegrate, globe of invulnerability_"
+    },
+    {
+      "spell_line": "7th level (1 slot): _finger of death, plane shift_"
+    },
+    {
+      "spell_line": "8th level (1 slot): _dominate monster, power word stun_"
+    },
+    {
+      "spell_line": "9th level (1 slot): _power word kill_"
+    },
+    {
+      "property_block": {
+        "name": "Turn Resistance",
+        "desc": "The lich has advantage on saving throws against any effect that turns undead."
+      }
+    },
+    {
+      "subtitle": "Actions"
+    },
+    {
+      "property_block": {
+        "name": "Paralyzing Touch",
+        "desc": "_Melee Spell Attack:_ +12 to hit, reach 5 ft., one creature. _Hit:_ 10 (3d6) cold damage. The target must succeed on a DC 18 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on a success."
+      }
+    },
+    {
+      "subtitle": "Legendary Actions"
+    },
+    {
+      "text": "The lich can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. The lich regains spent legendary actions at the start of its turn."
+    },
+    {
+      "property_line": {
+        "name": "Cantrip.",
+        "desc": "The lich casts a cantrip"
+      }
+    },
+    {
+      "property_line": {
+        "name": "Paralyzing Touch (Costs 2 Actions).",
+        "desc": "The lich uses its Paralyzing Touch."
+      }
+    },
+    {
+      "property_line": {
+        "name": "Frightening Gaze (Costs 2 Actions).",
+        "desc": "The lich fixes its gaze on one creature it can see within 10 feet of it. the target must succeed on a DC 18 Wisdom saving throw against this magic or become frightened for 1 minute. the frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune the lich's gaze for the next 24 hours."
+      }
+    },
+    {
+      "property_line": {
+        "name": "Disrupt Life (Costs 3 Actions)",
+        "desc": "Each non-undead creature within 20 feet of the lich must make a DC 18 Constitution saving throw against this magic, taking 21 (6d6) necrotic damage on a failed save, or half as much damage on a successful one."
+      }
+    }
+  ]
+},
+{
+  "name": "Manticore",
+  "heading": "Large monstrosity, lawful evil",
+  "two-column": false,
+  "basic_info": [
+    {
+      "name": "Senses",
+      "desc": "darkvision 60 ft., passive Perception 11"
+    },
+    {
+      "name": "Languages",
+      "desc": "Common"
+    },
+    {
+      "name": "Challenge",
+      "desc": "3 (700 XP)"
+    }
+  ],
+  "ability_scores": {
+    "str": "17",
+    "dex": "16",
+    "con": "17",
+    "int": "7",
+    "wis": "12",
+    "cha": "8"
+  },
+  "traits": [
+    {
+      "name": "Senses",
+      "desc": "darkvision 60 ft., passive Perception 11"
+    },
+    {
+      "name": "Languages",
+      "desc": "Common"
+    },
+    {
+      "name": "Challenge",
+      "desc": "3 (700 XP)"
+    }
+  ],
+  "content": [
+    {
+      "property_block": {
+        "name": "Tail Spike Regrowth",
+        "desc": "The manticore has twenty-four tail spikes. Used spikes regrow when the manticore finishes a long rest."
+      }
+    },
+    {
+      "subtitle": " Actions"
+    },
+    {
+      "property_block": {
+        "name": "Multiattack",
+        "desc": "The manticore makes three attacks: one with its bite and two with its claws or three with its tail spikes."
+      }
+    },
+    {
+      "property_block": {
+        "name": "Bite",
+        "desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 7 (1d8 + 3) piercing damage."
+      }
+    },
+    {
+      "property_block": {
+        "name": "Claw",
+        "desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 6 (1d6 + 3) piercing damage."
+      }
+    },
+    {
+      "property_block": {
+        "name": "Tail Spike",
+        "desc": "_Ranged Weapon Attack:_ +5 to hit, range 100/200 ft., one target. _Hit:_ 7 (1d8 + 3) piercing damage."
+      }
+    }
+  ]
+}]

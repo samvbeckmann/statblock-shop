@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   switch (mode) {
     case 'new':
-      $.getJSON("/default_template.json").then(function(json) {
+      $.getJSON("/data/default_template.json").then(function(json) {
         monster = json;
         fillForm(monster);
         $("#live-statblock").html(makeStatblockHTML(monster));

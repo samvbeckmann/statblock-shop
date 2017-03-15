@@ -15,7 +15,7 @@ $(document).ready(function(){
   });
 
   $("#add-srd").click(function() {
-    $.getJSON("test.json", function(json) {
+    $.getJSON("data/srd.json", function(json) {
       addMonsters(json);
       makeMonsterCards();
     });
