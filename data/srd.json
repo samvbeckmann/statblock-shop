@@ -10,7 +10,7 @@
 		"desc": "33 (6d8 + 6)"
 	}, {
 		"name": "Speed",
-		"desc": "25ft"
+		"desc": "25 ft."
 	}],
 	"ability_scores": {
 		"str": 14,
@@ -71,7 +71,7 @@
 		"desc": "135 (18d10 + 16)"
 	}, {
 		"name": "Speed",
-		"desc": "20ft., swin 40ft."
+		"desc": "20 ft., swim 40 ft."
 	}],
 	"ability_scores": {
 		"str": 21,
@@ -317,16 +317,16 @@
   "two-column": false,
   "basic_info": [
     {
-      "name": "Senses",
-      "desc": "darkvision 60 ft., passive Perception 11"
+      "name": "Armor Class",
+      "desc": "68 (8d10 + 24)"
     },
     {
-      "name": "Languages",
+      "name": "Hit Points",
       "desc": "Common"
     },
     {
-      "name": "Challenge",
-      "desc": "3 (700 XP)"
+      "name": "Speed",
+      "desc": "30 ft., fly 50 ft."
     }
   ],
   "ability_scores": {
