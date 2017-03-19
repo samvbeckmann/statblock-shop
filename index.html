@@ -62,21 +62,22 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-4">
           <form style="display:none" id="file-load-form">
             <input type="file" id="file-load" name="files[]" multiple class="form-control" style="display:none" accept=".json"/>
           </form>
-          <form>
+          <form class="mb-2">
             <div class="form-group mb-2">
               <button type="button" id="add-srd" class="btn btn-secondary mb-2">Add SRD</button>
               <button type="button" id="import" class="btn btn-secondary mb-2">Import</button>
               <button type="button" id="export" class="btn btn-secondary mb-2">Export</button>
-              <button type="button" id="new-monster" class="btn btn-success mb-2">New</button>
               <button type="button" id="clear-list" class="btn btn-danger mb-2" data-toggle="modal" data-target="#clear-modal">Clear</button>
             </div>
             <input id="search-bar" type="search" class="form-control" placeholder="Search">
           </form>
-          <div class="content mt-2 mb-4" id="monster-list">
+          <div class="content">
+            <div class="table table-hover" id="monster-list">
+          </div>
           </div>
         </div>
 
@@ -103,7 +104,7 @@
         </div>
 
         <div class="col">
-          <button type="button" id="add-monster" class="btn btn-primary mb-2">Add</button>
+          <button type="button" id="new-monster" class="btn btn-success mb-2">New</button>
           <button type="button" id="edit" class="btn btn-secondary mb-2">Edit</button>
           <button type="button" id="duplicate" class="btn btn-secondary mb-2">Duplicate</button>
           <button type="button" id="delete" class="btn btn-danger mb-2">Delete</button>

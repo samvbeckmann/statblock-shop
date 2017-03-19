@@ -5,10 +5,26 @@ body {
 .content {
   border: solid 1px lightgrey;
   border-radius: 3px;
-  padding: 10px;
   height:600px;
   overflow-y:scroll;
-  width:100%;
+}
+
+.table {
+  display: table;
+}
+
+.table-name {
+  font-weight: bold;
+}
+
+.table-desc {
+  font-size: 9pt;
+  font-variant: small-caps;
+  color: #6c6c6c;
+}
+
+.table tbody>tr>td.vert-align{
+    vertical-align: middle;
 }
 
 .monster-card {
