@@ -240,7 +240,7 @@ function fillForm(monster) {
     for (var i = 0; i < obj.length; i++) {
       result += obj[i].name + ' | ' + obj[i].desc + '\n';
     }
-    return result;
+    return result.replace(/\n+$/, '');
   }
 
   function contentToText(obj) {
@@ -264,7 +264,7 @@ function fillForm(monster) {
         result += 'spells | ' + obj[i].spell_line + '\n\n';
       }
     }
-    return result;
+    return result.replace(/\n+$/, '');
   }
 
 }
