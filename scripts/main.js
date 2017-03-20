@@ -34,6 +34,13 @@ $(document).ready(function(){
     dlAnchorElem.click();
   });
 
+  $('#sort').click(function() {
+    monsters.sort(function(a,b) {
+      return (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0);
+    });
+    makeMonsterCards();
+  });
+
   $("#confirm-clear-list").click(function() {
     clearMonsters();
     $("#stat-block-location").empty();
@@ -91,7 +98,7 @@ $(document).ready(function(){
   });
 
   $(document).on("click", ".rm-encounter-btn", function() {
-    var listItem = $(this).parent();
+    var listItem = $(this).parent().parent();
     for (var i = 0; i < selectedEncounter.length; i++) {
       if (listItem.text().substring(1) == selectedEncounter[i].name)
         selectedEncounter.splice(i, 1);
@@ -101,7 +108,7 @@ $(document).ready(function(){
     makeMonsterCards();
   });
 
-  $(document).on("click", '.table > tbody > tr', function() {
+  $(document).on("click", '#monster-list > tbody > tr', function() {
     monster = getMonsterObject($(this).find('.table-name').text());
 
     $(".table-active").removeClass("table-active");
@@ -172,7 +179,7 @@ function makeMonsterCards() {
       cards += '<tr>';
 
     if (selectedEncounter)
-    cards += '<td class="vert-align">';
+    cards += '<td class="vert-align fit">';
     if (searchEncounterList(monsterList[j].name) === -1) {
       cards += '<button type="button" class="btn btn-success btn-sm add-monster-btn">+</button>';
     }
@@ -191,13 +198,14 @@ function makeMonsterCards() {
 }
 
 function makeEncounterList() {
-  var encounterList = "";
+  var encounterList = "<tbody>";
   for (var i = 0; i < selectedEncounter.length; i++) {
-    encounterList += '<li class="list-group-item">';
-    encounterList += '<button type="button" class="btn btn-danger btn-sm mr-2 rm-encounter-btn">&times;</button>';
-    encounterList += selectedEncounter[i].name;
-    encounterList += '</li>';
+    encounterList += '<tr><td class="fit">';
+    encounterList += '<button type="button" class="btn btn-warning btn-sm mr-2 rm-encounter-btn">&times;</button></td>';
+    encounterList += '<td class="col-md-10">' + selectedEncounter[i].name + '</td>';
+    encounterList += '</tr>';
   }
+  encounterList += '</tbody>';
   $("#encounter-list").html(encounterList);
 }
 

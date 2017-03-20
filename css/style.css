@@ -2,6 +2,10 @@ body {
   padding-top: 5rem;
 }
 
+#monster-list-col {
+  max-width: 450px;
+}
+
 .content {
   border: solid 1px lightgrey;
   border-radius: 3px;
@@ -27,21 +31,22 @@ body {
     vertical-align: middle;
 }
 
-.monster-card {
-  margin: 5px;
-  float: left;
-  width: 16rem;
-  transition: .3s;
+td.fit {
+  width: 1%;
+  white-space: nowrap;
 }
 
-.monster-card:hover {
-  border-color: #6f9cff;
+.outlined {
+  border: solid 1px lightgrey;
+  border-radius: 3px;
 }
 
-.active-monster {
-  background-color: #ddf3fb;
+#encounter-list {
+  max-width: 475px;
+  padding-left: 0px;
 }
 
+/* Badge outlines */
 .badge-outline {
     color: black;
     border: 1px solid #999;
