@@ -42,6 +42,15 @@ $(document).ready(function() {
 
   $('#two-column-checkbox').change(function() {
     monster.two_column = this.checked;
+
+    if (monster.two_column) {
+      $('#live-statblock').removeClass('one-col-size');
+      $('#live-statblock').addClass('two-col-size');
+    } else {
+      $('#live-statblock').removeClass('two-col-size');
+      $('#live-statblock').addClass('one-col-size');
+    }
+
     $("#live-statblock").html(makeStatblockHTML(monster));
   });
 
@@ -213,6 +222,7 @@ function contentParser(string) {
 
 function fillForm(monster) {
   $('#two-column-checkbox').prop('checked', monster.two_column);
+  $('#live-statblock').addClass(monster.two_column ? 'two-col-size' : 'one-col-size');
   $('#monster-name').val(monster.name);
   $('#monster-header').val(monster.heading);
   $('#basic-info-box').val(propertiesToText(monster.basic_info));

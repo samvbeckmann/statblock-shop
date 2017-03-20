@@ -27,13 +27,6 @@
   <script src="/scripts/statblock-builder.js"></script>
   <script src="/scripts/markdown.min.js"></script>
 
-  <style>
-    body {
-      padding-top: 5rem;
-    }
-  </style>
-
-
 </head>
 <body>
   <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
@@ -57,7 +50,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col" id="statblock-form">
           <form class="form-inline">
 
             <div class="form-group inline mb-3">
@@ -125,7 +118,7 @@
           </form>
 
         </div>
-        <div id="live-statblock" class="col-md-6">
+        <div id="live-statblock" class="col-md-11">
         </div>
       </div>
     </div>

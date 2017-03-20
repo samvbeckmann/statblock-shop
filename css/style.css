@@ -41,6 +41,18 @@ td.fit {
   border-radius: 3px;
 }
 
+.one-col-size {
+  max-width: 450px;
+}
+
+.two-col-size {
+  max-width: 900px;
+}
+
+#statblock-form {
+  max-width: 800px;
+}
+
 #encounter-list {
   max-width: 475px;
   padding-left: 0px;
