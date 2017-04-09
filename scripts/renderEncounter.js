@@ -5,6 +5,9 @@ $(document).ready(function() {
   $('#statblock-area').empty();
 
   for (var x = 0; x < encounter.length; x++) {
-    $('#statblock-area').append(makeStatblockHTML(encounter[x]));
+    var wrappedStatblock = '<div class="encounter-statblock">';
+    wrappedStatblock += makeStatblockHTML(encounter[x]);
+    wrappedStatblock += '</div>';
+    $('#statblock-area').append(wrappedStatblock);
   }
 });
