@@ -14,14 +14,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-  <link rel="import" href="/src/top-stats.html">
-  <link rel="import" href="/src/creature-heading.html">
-  <link rel="import" href="/src/abilities-block.html">
-  <link rel="import" href="/src/property-block.html">
-  <link rel="import" href="/src/property-line.html">
-  <link rel="import" href="/src/stat-block.html">
+  <link rel="import" href="/vendor/statblock5e/top-stats.html">
+  <link rel="import" href="/vendor/statblock5e/creature-heading.html">
+  <link rel="import" href="/vendor/statblock5e/abilities-block.html">
+  <link rel="import" href="/vendor/statblock5e/property-block.html">
+  <link rel="import" href="/vendor/statblock5e/property-line.html">
+  <link rel="import" href="/vendor/statblock5e/stat-block.html">
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/main.css">
 
   <script src="/scripts/common.js"></script>
   <script src="/scripts/statblock-builder.js"></script>
@@ -29,7 +29,7 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse navbar-static-top">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,12 +50,20 @@
 
     <div class="container-fluid">
       <div class="row mb-4">
-        <div class="col" id="statblock-form">
+        <div class="col scrollable" id="statblock-form">
           <form class="form-inline">
 
             <div class="form-group inline mb-3">
               <button type="button" id="save" class="btn btn-success mr-2">Save</button>
-              <button type="button" id="get-pdf" class="btn btn-primary mr-2">Download PDF</button>
+              <div class="dropdown-container">
+                <button type="button" id="exportButton" class="btn btn-primary dropdown-toggle mr-2" form=""data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Export</button>
+                <div class="dropdown-menu" aria-labelledby="exportButton">
+                  <a class="dropdown-item disabled" style="color: #7e7e7e;">PDF<span class="badge badge-info badge-outline ml-2">In Progress</span></a>
+                  <a class="dropdown-item">Homebrewery</a>
+                  <a class="dropdown-item">HTML</a>
+                  <a class="dropdown-item">JSON</a>
+                </div>
+              </div>
               <input type="checkbox" class="form-check-input" id="two-column-checkbox">Two Column Layout</input>
             </div>
 
@@ -118,7 +126,7 @@
           </form>
 
         </div>
-        <div id="live-statblock" class="col-md-11">
+        <div id="live-statblock" class="col-md-11 scrollable">
         </div>
       </div>
     </div>
