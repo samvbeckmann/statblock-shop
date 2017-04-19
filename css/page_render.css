@@ -1,0 +1,61 @@
+@page {
+  margin: 0;
+  size: 210mm 297mm;
+  -webkit-print-color-adjust: exact;
+}
+
+.page-background {
+  background: rgb(204,204,204);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page-preview {
+  width: 210mm;
+  height: 296mm;
+  background: white;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.statblock-on-page {
+  padding: 40px;
+}
+
+.page {
+    display: flex;
+    align-content: left;
+    justify-content: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    page-break-after: always;
+    padding: 0;
+}
+
+@media print {
+  .page-preview {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background-color: white;
+  }
+  .page-background {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    /* Set the background to gray to visualize the page size in the print preview */
+    background-color: gray;
+  }
+
+  .statblock-on-page {
+    padding-left: 0px;
+  }
+
+  
+}
