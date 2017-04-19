@@ -318,11 +318,11 @@
   "basic_info": [
     {
       "name": "Armor Class",
-      "desc": "68 (8d10 + 24)"
+      "desc": "14 (nautral armor)"
     },
     {
       "name": "Hit Points",
-      "desc": "Common"
+      "desc": "68 (8d10 + 24)"
     },
     {
       "name": "Speed",
