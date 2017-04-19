@@ -23,9 +23,9 @@
 
   <link rel="stylesheet" href="/css/main.css">
 
-  <script src="/scripts/common.js"></script>
-  <script src="/scripts/statblock-builder.js"></script>
-  <script src="/scripts/markdown.min.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/statblock-builder.js"></script>
+  <script src="/vendor/markdown.min.js"></script>
 
 </head>
 <body>
@@ -48,85 +48,101 @@
       </div>
     </nav>
 
-    <div class="container-fluid">
-      <div class="row mb-4">
-        <div class="col scrollable" id="statblock-form">
-          <form class="form-inline">
+    <form class="form-inline m-3">
 
-            <div class="form-group inline mb-3">
-              <button type="button" id="save" class="btn btn-success mr-2">Save</button>
-              <div class="dropdown-container">
-                <button type="button" id="exportButton" class="btn btn-primary dropdown-toggle mr-2" form=""data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Export</button>
-                <div class="dropdown-menu" aria-labelledby="exportButton">
-                  <a class="dropdown-item disabled" style="color: #7e7e7e;">PDF<span class="badge badge-info badge-outline ml-2">In Progress</span></a>
-                  <a class="dropdown-item">Homebrewery</a>
-                  <a class="dropdown-item">HTML</a>
-                  <a class="dropdown-item">JSON</a>
-                </div>
-              </div>
-              <input type="checkbox" class="form-check-input" id="two-column-checkbox">Two Column Layout</input>
-            </div>
+      <div class="form-group inline">
+        <button type="button" id="save" class="btn btn-success mr-2">Save</button>
+        <div class="dropdown-container">
+          <button type="button" id="exportButton" class="btn btn-primary dropdown-toggle mr-2" form=""data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Export</button>
+          <div class="dropdown-menu" aria-labelledby="exportButton">
+            <a class="dropdown-item disabled" style="color: #7e7e7e;">PDF<span class="badge badge-info badge-outline ml-2">In Progress</span></a>
+            <a class="dropdown-item">Homebrewery</a>
+            <a class="dropdown-item">HTML</a>
+            <a class="dropdown-item">JSON</a>
+          </div>
+        </div>
+        <input type="checkbox" class="form-check-input" id="two-column-checkbox">Two Column Layout</input>
+      </div>
 
-          </form>
+    </form>
+
+    <div class="container-fluid pr-0 pl-0">
+      <div class="row" id="editor-row">
+        <div class="col editor-pane no-side-padding" id="statblock-form">
           <form>
 
-            <div class="form-group">
-              <div class="input-group pb-2">
-                <span class="input-group-addon col-md-3 col-2">Name</span>
-                <input class="form-control" type="text" id="monster-name">
+            <div class="form-group mb-0">
+              <div class="input-group">
+                <span class="input-group-addon no-rounded-corners no-dup-borders col-md-3 col-2">Name</span>
+                <input class="form-control no-rounded-corners no-dup-borders" type="text" id="monster-name">
               </div>
               <div class="input-group">
-                <span class="input-group-addon col-md-3 col-2">Header</span>
-                <input class="form-control" type="text" id="monster-header">
+                <span class="input-group-addon no-rounded-corners no-dup-borders col-md-3 col-2">Header</span>
+                <input class="form-control no-rounded-corners no-dup-borders" type="text" id="monster-header">
               </div>
+            </div>
+
+            <div class="form-group mb-0">
+              <label for="basic-info-box" class="form-label">Basic Info</label>
+              <!-- <textarea id="comments" placeholder="Type many lines of texts in here and you will see magic stuff" class="common no-resize"></textarea> -->
+
+              <textarea class="form-control no-rounded-corners no-dup-borders common no-resize expandable" rows="1" id="basic-info-box"></textarea>
+            </div>
+
+            <div>
+              <p class="form-label">Stats</p>
+              <div class="row mr-0 ml-0">
+                <div class="col background-box">STR</div>
+                <div class="col background-box">DEX</div>
+                <div class="col background-box">CON</div>
+                <div class="col background-box">INT</div>
+                <div class="col background-box">WIS</div>
+                <div class="col background-box">CHA</div>
+              </div>
+              <div class="form-group mb-0 row mr-0 ml-0">
+
+                <div class="input-group col-2 no-side-padding">
+                  <!-- <span class="input-group-addon col-6">STR</span> -->
+                  <input class="form-control no-rounded-corners text-center" type="number" min="1" id="str-score">
+                </div>
+                <div class="input-group col-2 no-side-padding">
+                  <!-- <span class="input-group-addon col-6">DEX</span> -->
+                  <input class="form-control no-rounded-corners text-center" type="number" min="1" id="dex-score">
+                </div>
+                <div class="input-group col-2 no-side-padding">
+                  <!-- <span class="input-group-addon col-6">CON</span> -->
+                  <input class="form-control no-rounded-corners text-center" type="number" min="1" id="con-score">
+                </div>
+                <div class="input-group col-2 no-side-padding">
+                  <!-- <span class="input-group-addon col-6">INT</span> -->
+                  <input class="form-control no-rounded-corners text-center" type="number" min="1" id="int-score">
+                </div>
+                <div class="input-group col-2 no-side-padding">
+                  <!-- <span class="input-group-addon col-6">WIS</span> -->
+                  <input class="form-control no-rounded-corners text-center" type="number" min="1" id="wis-score">
+                </div>
+                <div class="input-group col-2 no-side-padding">
+                  <!-- <span class="input-group-addon col-6">CHA</span> -->
+                  <input class="form-control no-rounded-corners text-center" type="number" min="1" id="cha-score">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group mb-0">
+              <label for="traits-box" class="form-label">Traits</label>
+              <textarea class="form-control expandable" rows="4" id="traits-box"></textarea>
             </div>
 
             <div class="form-group">
-              <label for="basic-info-box">Basic Info:</label>
-              <textarea class="form-control" rows="3" id="basic-info-box"></textarea>
-            </div>
-
-            <div class="form-group row">
-              <div class="input-group col-lg-4 col-6 pb-2">
-                <span class="input-group-addon col-6">STR</span>
-                <input class="form-control" type="number" min="1" id="str-score">
-              </div>
-              <div class="input-group col-lg-4 col-6 pb-2">
-                <span class="input-group-addon col-6">DEX</span>
-                <input class="form-control" type="number" min="1" id="dex-score">
-              </div>
-              <div class="input-group col-lg-4 col-6 pb-2">
-                <span class="input-group-addon col-6">CON</span>
-                <input class="form-control" type="number" min="1" id="con-score">
-              </div>
-              <div class="input-group col-lg-4 col-6 pb-2">
-                <span class="input-group-addon col-6">INT</span>
-                <input class="form-control" type="number" min="1" id="int-score">
-              </div>
-              <div class="input-group col-lg-4 col-6 pb-2">
-                <span class="input-group-addon col-6">WIS</span>
-                <input class="form-control" type="number" min="1" id="wis-score">
-              </div>
-              <div class="input-group col-lg-4 col-6 pb-2">
-                <span class="input-group-addon col-6">CHA</span>
-                <input class="form-control" type="number" min="1" id="cha-score">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="traits-box">Traits:</label>
-              <textarea class="form-control" rows="4" id="traits-box"></textarea>
-            </div>
-
-            <div class="form-group">
-              <label for="main-content">Content:</label>
-              <textarea class="form-control" rows="7" id="main-content"></textarea>
+              <label for="main-content" class="form-label">Content</label>
+              <textarea class="form-control expandable" rows="7" id="main-content"></textarea>
             </div>
 
           </form>
 
         </div>
-        <div id="live-statblock" class="col-md-11 scrollable">
+        <div class="col-md-auto editor-pane no-side-padding" id="live-statblock">
         </div>
       </div>
     </div>

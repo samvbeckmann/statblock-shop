@@ -1,0 +1,42 @@
+#statblock-form {
+}
+
+#live-statblock {
+  padding: 10px;
+  // background-color: $lightest-blue;
+}
+
+.editor-pane {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#editor-row {
+  margin: 0;
+  height: calc(100vh - 126px);
+  max-width: 100%;
+  border-top: $grey solid 1px;
+}
+
+.background-box {
+  text-align: center;
+  background-color: $background-grey;
+  border-bottom: $grey solid 1px;
+  border-left: $grey solid 1px;
+  padding: .5rem .75rem;
+}
+
+.form-label {
+  width: 100%;
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  letter-spacing: 1px;
+  font-size: .7rem;
+  color: #6c6c6c;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  border-bottom: $grey solid 1px;
+}

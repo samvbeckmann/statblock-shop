@@ -1,0 +1,24 @@
+textarea {
+  resize: none;
+}
+
+.hiddendiv {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word; /* future version of deprecated 'word-wrap' */
+}
+
+/* the styles for 'commmon' are applied to both the textarea and the hidden clone */
+/* these must be the same for both */
+.common {
+  // width: 500px;
+  min-height: 2rem;
+  padding: .5rem .75rem;
+  line-height: 1.25;
+  // font-family: Arial, sans-serif;
+  // font-size: 13px;
+  overflow: hidden;
+}

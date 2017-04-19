@@ -1,3 +1,89 @@
+.badge-outline {
+  color: black;
+  border: 1px solid #999;
+  background-color: transparent; }
+
+.badge-outline.badge-warning {
+  border-color: #ffeb67;
+  color: #ffeb67; }
+
+.badge-outline.badge-danger {
+  border-color: #de5244;
+  color: #de5244; }
+
+.badge-outline.badge-info {
+  border-color: #5bc0de;
+  color: #5bc0de; }
+
+#live-statblock {
+  padding: 10px; }
+
+.editor-pane {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+#editor-row {
+  margin: 0;
+  height: calc(100vh - 126px);
+  max-width: 100%;
+  border-top: #c9c9c9 solid 1px; }
+
+.background-box {
+  text-align: center;
+  background-color: #eceeef;
+  border-bottom: #c9c9c9 solid 1px;
+  border-left: #c9c9c9 solid 1px;
+  padding: .5rem .75rem; }
+
+.form-label {
+  width: 100%;
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  letter-spacing: 1px;
+  font-size: .7rem;
+  color: #6c6c6c;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  border-bottom: #c9c9c9 solid 1px; }
+
+textarea {
+  resize: none; }
+
+.hiddendiv {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  /* future version of deprecated 'word-wrap' */ }
+
+/* the styles for 'commmon' are applied to both the textarea and the hidden clone */
+/* these must be the same for both */
+.common {
+  min-height: 2rem;
+  padding: .5rem .75rem;
+  line-height: 1.25;
+  overflow: hidden; }
+
+.no-side-padding {
+  padding-left: 0;
+  padding-right: 0; }
+
+.no-rounded-corners {
+  border-radius: 0; }
+
+.no-dup-borders {
+  border-top-width: 0;
+  border-right-width: 0;
+  box-sizing: border-box; }
+  .no-dup-borders:focus {
+    border-top-width: 1px;
+    border-right-width: 1px; }
+
 #monster-list-col {
   max-width: 450px; }
 
@@ -29,21 +115,8 @@ td.fit {
   border: solid 1px lightgrey;
   border-radius: 3px; }
 
-.one-col-size {
-  max-width: 450px; }
-
-.two-col-size {
-  max-width: 900px; }
-
 .dropdown-container {
   position: relative; }
-
-.scrollable {
-  height: calc(100vh - 80px);
-  overflow: scroll; }
-
-#statblock-form {
-  max-width: 800px; }
 
 #encounter-list {
   max-width: 475px;
@@ -60,23 +133,5 @@ td.fit {
   display: inline-block;
   white-space: normal;
   vertical-align: top; }
-
-/* Badge outlines */
-.badge-outline {
-  color: black;
-  border: 1px solid #999;
-  background-color: transparent; }
-
-.badge-outline.badge-warning {
-  border-color: #ffeb67;
-  color: #ffeb67; }
-
-.badge-outline.badge-danger {
-  border-color: #de5244;
-  color: #de5244; }
-
-.badge-outline.badge-info {
-  border-color: #5bc0de;
-  color: #5bc0de; }
 
 /*# sourceMappingURL=main.css.map */

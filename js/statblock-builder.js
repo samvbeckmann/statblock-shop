@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 
 $(document).ready(function() {
 
@@ -144,7 +145,25 @@ $(document).ready(function() {
       $("#live-statblock").html(makeStatblockHTML(monster));
     }
   });
+
+  let hiddenDiv = document.createElement('div');
+
+  hiddenDiv.classList.add('hiddendiv', 'common');
+  document.body.appendChild(hiddenDiv);
+
+  $('.expandable').each(function() {
+    this.addEventListener('keyup', function() {
+      setTextAreaHeight(this, hiddenDiv);
+    }, false);
+    setTextAreaHeight(this, hiddenDiv);
+  });
 });
+
+function setTextAreaHeight(object, hiddenDiv) {
+    hiddenDiv.innerHTML = object.value + '\n';
+    hiddenDiv.style.width = object.clientWidth + "px";
+    object.style.height = hiddenDiv.getBoundingClientRect().height + 'px';
+}
 
 function propertyLineParser(string) {
   var result = [];
