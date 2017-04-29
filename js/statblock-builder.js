@@ -95,6 +95,11 @@ $(document).ready(function() {
     $("#live-statblock").html(makeStatblockHTML(monster));
   });
 
+  $(document).on('keyup', '.basic-info-name, .basic-info-desc', function() {
+    updateMonsterBasicInfo();
+    $("#live-statblock").html(makeStatblockHTML(monster));
+  });
+
   $("#basic-info-box").keyup(function() {
     try {
       var parsedInfo = propertyLineParser($(this).val());
@@ -146,15 +151,23 @@ $(document).ready(function() {
     }
   });
 
-  let hiddenDiv = document.createElement('div');
-
-  hiddenDiv.classList.add('hiddendiv', 'common');
-  document.body.appendChild(hiddenDiv);
+  // let hiddenDiv = document.createElement('div');
+  //
+  // hiddenDiv.classList.add('hiddendiv', 'common');
+  // document.body.appendChild(hiddenDiv);
 
   $('.expandable').each(function() {
-    this.addEventListener('keyup', function() {
+    var hiddenDiv = document.createElement('div');
+
+    hiddenDiv.classList.add('hiddendiv', 'common');
+    document.body.appendChild(hiddenDiv);
+
+    $(this).on("propertychange change click keyup input paste resize", function(event) {
       setTextAreaHeight(this, hiddenDiv);
-    }, false);
+    });
+    // this.addEventListener('keyup', function() {
+    //   setTextAreaHeight(this, hiddenDiv);
+    // }, false);
     setTextAreaHeight(this, hiddenDiv);
   });
 });
@@ -163,6 +176,15 @@ function setTextAreaHeight(object, hiddenDiv) {
     hiddenDiv.innerHTML = object.value + '\n';
     hiddenDiv.style.width = object.clientWidth + "px";
     object.style.height = hiddenDiv.getBoundingClientRect().height + 'px';
+}
+
+function updateMonsterBasicInfo() {
+  monster.basic_info = [];
+  $('#basic-info-lines .statblock-input-group').each(function() {
+    var name = $(this).find('.basic-info-name').val();
+    var desc = $(this).find('.basic-info-desc').val();
+    monster.basic_info.push({name: name, desc: desc});
+  });
 }
 
 function propertyLineParser(string) {
@@ -245,6 +267,12 @@ function fillForm(monster) {
   $('#monster-name').val(monster.name);
   $('#monster-header').val(monster.heading);
   $('#basic-info-box').val(propertiesToText(monster.basic_info));
+  if (monster.basic_info.length > 0) {
+    $('#basic-info-lines').empty();
+    for (var i = 0; i < monster.basic_info.length; i++) {
+      $('#basic-info-lines').append(makeBasicInfoLine(monster.basic_info[i].name, monster.basic_info[i].desc));
+    }
+  }
   $('#str-score').val(monster.ability_scores.str);
   $('#dex-score').val(monster.ability_scores.dex);
   $('#con-score').val(monster.ability_scores.con);

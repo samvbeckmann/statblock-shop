@@ -1,9 +1,5 @@
-#statblock-form {
-}
-
 #live-statblock {
   padding: 10px;
-  // background-color: $lightest-blue;
 }
 
 .editor-pane {
@@ -14,15 +10,45 @@
 
 #editor-row {
   margin: 0;
-  height: calc(100vh - 126px);
+  height: calc(100vh - 144px);
   max-width: 100%;
   border-top: $grey solid 1px;
+}
+
+#statblock-form {
+  background-color: $background-grey;
+}
+
+.statblock-input-group {
+  background-color: white;
+  border-bottom: 1px solid $grey;
+  // border-top: 1px solid $grey;
+}
+
+.fix-stupid-button {
+  margin: 0 !important;
+  border: 0;
+
+  &:focus {
+    margin: 0 !important;
+  }
+}
+
+.statblock-input-group-part {
+  border-bottom: 0px;
+}
+
+.pixel-wall {
+  width: 1px;
+  margin: 0;
+  padding: 0;
+  background-color: $grey;
 }
 
 .background-box {
   text-align: center;
   background-color: $background-grey;
-  border-bottom: $grey solid 1px;
+  border-top: $grey solid 1px;
   border-left: $grey solid 1px;
   padding: .5rem .75rem;
 }
@@ -32,11 +58,23 @@
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   letter-spacing: 1px;
   font-size: .7rem;
-  color: #6c6c6c;
+  font-weight: bold;
+  color: $grey-blue;
+  background-color: white;
   padding-left: 1rem;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
   margin-bottom: 0;
   text-transform: uppercase;
+  // border-left: $red solid 5px;
   border-bottom: $grey solid 1px;
+}
+
+.switch-lable {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  letter-spacing: 1px;
+  font-size: .7rem;
+  font-weight: bold;
+  color: $grey-blue;
+  text-transform: uppercase;
 }
