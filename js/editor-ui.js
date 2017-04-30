@@ -6,8 +6,16 @@ $(document).ready(function() {
     $('#basic-info-lines').prepend(makeBasicInfoLine('', ''));
   });
 
+  $('#traits-default-btn').click(function() {
+    $('#traits-lines').prepend(makeTraitsLine('', ''));
+  });
+
   $(document).on('click', '.new-basic-info-btn', function() {
     $(this).closest('.statblock-input-group').after(makeBasicInfoLine('', ''));
+  });
+
+  $(document).on('click', '.new-trait-btn', function() {
+    $(this).closest('.statblock-input-group').after(makeTraitsLine('', ''));
   });
 
   $(document).on('click', '.rm-basic-info-btn', function() {
@@ -16,20 +24,40 @@ $(document).ready(function() {
     $("#live-statblock").html(makeStatblockHTML(monster));
   });
 
+  $(document).on('click', '.rm-trait-btn', function() {
+    $(this).closest('.statblock-input-group').remove();
+    updateMonsterTraits();
+    $("#live-statblock").html(makeStatblockHTML(monster));
+  });
+
 });
 
 
 function makeBasicInfoLine(name, desc) {
   return `
-  <div class="input-group statblock-input-group">
-    <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top col-1">-</span>
-    <span class="pixel-wall"></span>
-    <textarea class="basic-info-name form-control common expandable no-dup-borders col-4" rows="1" placeholder="Name" style="min-height: 38px">${name}</textarea>
-    <span class="pixel-wall"></span>
-    <textarea class="basic-info-desc form-control common expandable no-dup-borders" rows="1" placeholder="Description" style="min-height: 38px">${desc}</textarea>
-    <button class="btn btn-outline-danger btn-circle btn-form rm-basic-info-btn" type="button">-</button>
-    <button class="btn btn-outline-success btn-circle btn-form new-basic-info-btn" type="button">+</button>
-  </div>
+    <div class="input-group statblock-input-group">
+      <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top col-1"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      <span class="pixel-wall"></span>
+      <textarea class="basic-info-name form-control common expandable no-dup-borders col-4" rows="1" placeholder="Name" style="min-height: 38px">${name}</textarea>
+      <span class="pixel-wall"></span>
+      <textarea class="basic-info-desc form-control common expandable no-dup-borders" rows="1" placeholder="Description" style="min-height: 38px">${desc}</textarea>
+      <button class="btn btn-outline-danger btn-circle btn-form rm-basic-info-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+      <button class="btn btn-outline-success btn-circle btn-form new-basic-info-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    </div>
+  `;
+}
+
+function makeTraitsLine(name, desc) {
+  return `
+    <div class="input-group statblock-input-group">
+      <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top col-1"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      <span class="pixel-wall"></span>
+      <textarea class="trait-name form-control common expandable no-dup-borders col-4" rows="1" placeholder="Name" style="min-height: 38px">${name}</textarea>
+      <span class="pixel-wall"></span>
+      <textarea class="trait-desc form-control common expandable no-dup-borders" rows="1" placeholder="Description" style="min-height: 38px">${desc}</textarea>
+      <button class="btn btn-outline-danger btn-circle btn-form rm-trait-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+      <button class="btn btn-outline-success btn-circle btn-form new-trait-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    </div>
   `;
 }
 

@@ -17,12 +17,13 @@
 
 #statblock-form {
   background-color: $background-grey;
+  border-right: 11px solid $background-grey;
 }
 
 .statblock-input-group {
   background-color: white;
   border-bottom: 1px solid $grey;
-  // border-top: 1px solid $grey;
+  border-right: 1px solid $grey;
 }
 
 .fix-stupid-button {
@@ -48,9 +49,12 @@
 .background-box {
   text-align: center;
   background-color: $background-grey;
-  border-top: $grey solid 1px;
   border-left: $grey solid 1px;
   padding: .5rem .75rem;
+}
+
+#editor-side {
+  border-right: 1px solid $grey;
 }
 
 .form-label {
@@ -66,7 +70,7 @@
   padding-bottom: 0.5rem;
   margin-bottom: 0;
   text-transform: uppercase;
-  // border-left: $red solid 5px;
+  border-right: 1px solid $grey;
   border-bottom: $grey solid 1px;
 }
 

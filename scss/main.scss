@@ -91,6 +91,10 @@
   @include invis-right-border(0.75rem);
 }
 
+.border-right {
+  border-right: 1px solid $grey;
+}
+
 #monster-list-col {
   max-width: 450px;
 }

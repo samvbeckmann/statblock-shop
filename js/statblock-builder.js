@@ -100,38 +100,9 @@ $(document).ready(function() {
     $("#live-statblock").html(makeStatblockHTML(monster));
   });
 
-  $("#basic-info-box").keyup(function() {
-    try {
-      var parsedInfo = propertyLineParser($(this).val());
-      monster.basic_info = parsedInfo.result;
-      if (parsedInfo.error) {
-        $(this).parent().addClass("has-danger");
-      } else {
-        $(this).parent().removeClass("has-danger");
-      }
-    } catch(err) {
-      console.log(err);
-      $(this).parent().addClass("has-danger");
-    } finally {
-      $("#live-statblock").html(makeStatblockHTML(monster));
-    }
-  });
-
-  $("#traits-box").keyup(function() {
-    try {
-      var parsedTraits = propertyLineParser($(this).val());
-      monster.traits = parsedTraits.result;
-      if (parsedTraits.error) {
-        $(this).parent().addClass("has-danger");
-      } else {
-        $(this).parent().removeClass("has-danger");
-      }
-    } catch(err) {
-      console.log(err);
-      $(this).parent().addClass("has-danger");
-    } finally {
-      $("#live-statblock").html(makeStatblockHTML(monster));
-    }
+  $(document).on('keyup', '.trait-name, .trait-desc', function() {
+    updateMonsterTraits();
+    $("#live-statblock").html(makeStatblockHTML(monster));
   });
 
   $("#main-content").keyup(function() {
@@ -151,11 +122,6 @@ $(document).ready(function() {
     }
   });
 
-  // let hiddenDiv = document.createElement('div');
-  //
-  // hiddenDiv.classList.add('hiddendiv', 'common');
-  // document.body.appendChild(hiddenDiv);
-
   $('.expandable').each(function() {
     var hiddenDiv = document.createElement('div');
 
@@ -165,9 +131,6 @@ $(document).ready(function() {
     $(this).on("propertychange change click keyup input paste resize", function(event) {
       setTextAreaHeight(this, hiddenDiv);
     });
-    // this.addEventListener('keyup', function() {
-    //   setTextAreaHeight(this, hiddenDiv);
-    // }, false);
     setTextAreaHeight(this, hiddenDiv);
   });
 });
@@ -187,22 +150,13 @@ function updateMonsterBasicInfo() {
   });
 }
 
-function propertyLineParser(string) {
-  var result = [];
-  var error = false;
-  var lines = string.split('\n');
-  for (var i = 0; i < lines.length; i++) {
-    if (lines[i] === '')
-      continue;
-    try {
-      var parts = lines[i].match(/([^\\\][^\|]|\\\|)+/g);
-      result.push({name: parts[0].trim(), desc: parts[1].trim()});
-    } catch(err) {
-      result.push("input_error");
-      error = true;
-    }
-  }
-  return {result: result, error: error};
+function updateMonsterTraits() {
+  monster.traits = [];
+  $('#traits-lines .statblock-input-group').each(function() {
+    var name = $(this).find('.trait-name').val();
+    var desc = $(this).find('.trait-desc').val();
+    monster.traits.push({name: name, desc: desc});
+  });
 }
 
 function contentParser(string) {
@@ -266,7 +220,6 @@ function fillForm(monster) {
   $('#live-statblock').addClass(monster.two_column ? 'two-col-size' : 'one-col-size');
   $('#monster-name').val(monster.name);
   $('#monster-header').val(monster.heading);
-  $('#basic-info-box').val(propertiesToText(monster.basic_info));
   if (monster.basic_info.length > 0) {
     $('#basic-info-lines').empty();
     for (var i = 0; i < monster.basic_info.length; i++) {
@@ -279,16 +232,13 @@ function fillForm(monster) {
   $('#int-score').val(monster.ability_scores.int);
   $('#wis-score').val(monster.ability_scores.wis);
   $('#cha-score').val(monster.ability_scores.cha);
-  $('#traits-box').val(propertiesToText(monster.traits));
-  $('#main-content').val(contentToText(monster.content));
-
-  function propertiesToText(obj) {
-    var result = '';
-    for (var i = 0; i < obj.length; i++) {
-      result += obj[i].name + ' | ' + obj[i].desc + '\n';
+  if (monster.traits.length > 0) {
+    $('#traits-lines').empty();
+    for (var j = 0; j < monster.traits.length; j++) {
+      $('#traits-lines').append(makeTraitsLine(monster.traits[j].name, monster.traits[j].desc));
     }
-    return result.replace(/\n+$/, '');
   }
+  $('#main-content').val(contentToText(monster.content));
 
   function contentToText(obj) {
     var result = '';
