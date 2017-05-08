@@ -34,27 +34,13 @@ $(document).ready(function(){
     dlAnchorElem.click();
   });
 
+  $('#sort').click(function() {
+    monsters.sort(function(a,b) {
+      return (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0);
+    });
 
-  $("#add-monster").click(function() {
-    if (monster !== null) {
-      var found = false;
-      for (var i = 0; i < selectedEncounter.length; i++) {
-        if (selectedEncounter[i].name == monster.name) {
-          found = true;
-          break;
-        }
-      }
-      if (!found) {
-        selectedEncounter.push(monster);
-        sessionStorage.setItem('selectedEncounter', JSON.stringify(selectedEncounter));
-
-        var item = '<li class="list-group-item">';
-        item += '<button type="button" class="btn btn-danger btn-sm mr-2 rm-encounter-btn">&times;</button>';
-        item += monster.name;
-        item += '</li>';
-        $("#encounter-list").append(item);
-      }
-    }
+    localStorage.setItem('monsters', JSON.stringify(monsters));
+    makeMonsterCards();
   });
 
   $("#confirm-clear-list").click(function() {
@@ -114,26 +100,57 @@ $(document).ready(function(){
   });
 
   $(document).on("click", ".rm-encounter-btn", function() {
-    var listItem = $(this).parent();
+    var listItem = $(this).parent().parent();
     for (var i = 0; i < selectedEncounter.length; i++) {
       if (listItem.text().substring(1) == selectedEncounter[i].name)
         selectedEncounter.splice(i, 1);
     }
     listItem.remove();
+
+    makeMonsterCards();
   });
 
-  $(document).on("click", ".monster-card", function() {
-    var monsterName = $(this).find('.card-title').text();
-    var monsterObject = monsters.filter(function(item) {
-      return item.name === monsterName;
-    });
+  $(document).on("click", '#monster-list > tbody > tr', function() {
+    monster = getMonsterObject($(this).find('.table-name').text());
 
-    $(".active-monster").removeClass("active-monster");
-    $(this).addClass("active-monster");
-    monster = monsterObject[0];
+    $(".table-active").removeClass("table-active");
+    $(this).addClass("table-active");
     sessionStorage.setItem('activeMonster', JSON.stringify(monster));
 
     $("#stat-block-location").html(makeStatblockHTML(monster));
+  });
+
+
+  $(document).on('click', '.add-monster-btn', function() {
+    var chosenMonsterName = $(this).parent().parent().find('.table-name').text();
+    var chosenMonster = getMonsterObject(chosenMonsterName);
+    if (chosenMonster !== null) {
+      if (searchEncounterList(chosenMonsterName) === -1) {
+        selectedEncounter.push(chosenMonster);
+        sessionStorage.setItem('selectedEncounter', JSON.stringify(selectedEncounter));
+        makeEncounterList();
+
+        $(this).removeClass('btn-success add-monster-btn');
+        $(this).addClass('btn-warning rm-monster-btn');
+        $(this).html('&times;');
+      }
+    }
+  });
+
+  $(document).on('click', '.rm-monster-btn', function () {
+    var chosenMonsterName = $(this).parent().parent().find('.table-name').text();
+    var chosenMonster = getMonsterObject(chosenMonsterName);
+    for (var i = 0; i < selectedEncounter.length; i++) {
+      if (chosenMonsterName === selectedEncounter[i].name)
+        selectedEncounter.splice(i, 1);
+    }
+
+    makeEncounterList();
+
+    $(this).removeClass('btn-warning rm-monster-btn');
+    $(this).addClass('btn-success add-monster-btn');
+    $(this).html('+');
+
   });
 
 });
@@ -156,30 +173,41 @@ function makeMonsterCards() {
     return;
   }
 
-  var cards = "";
+  var cards = "<tbody>";
   for (var j = 0; j < monsterList.length; j++) {
     if (monster && monster.name === monsterList[j].name)
-      cards += '<div class="card monster-card active-monster">';
+      cards += '<tr class=" table-active">';
     else
-      cards += '<div class="card monster-card">';
+      cards += '<tr>';
 
-    cards += '<div class="card-block">';
-    cards += '<h4 class="card-title">' + monsterList[j].name + '</h4>';
-    cards += '<p class="card-text">' + monsterList[j].heading + '</p>';
-    cards += '</div></div>';
+    if (selectedEncounter)
+    cards += '<td class="vert-align fit">';
+    if (searchEncounterList(monsterList[j].name) === -1) {
+      cards += '<button type="button" class="btn btn-success btn-sm add-monster-btn">+</button>';
+    }
+    else {
+      cards += '<button type="button" class="btn btn-warning btn-sm rm-monster-btn">&times;</button>';
+    }
+    cards += '</td><td class="table-entry">';
+    cards += '<div class="table-name">' + monsterList[j].name + '</div>';
+    cards += '<div class="table-desc">' + monsterList[j].heading + '</div>';
+    cards += '</td></tr>';
   }
+
+  cards += "</tbody>";
 
   $("#monster-list").html(cards);
 }
 
 function makeEncounterList() {
-  var encounterList = "";
+  var encounterList = "<tbody>";
   for (var i = 0; i < selectedEncounter.length; i++) {
-    encounterList += '<li class="list-group-item">';
-    encounterList += '<button type="button" class="btn btn-danger btn-sm mr-2 rm-encounter-btn">&times;</button>';
-    encounterList += selectedEncounter[i].name;
-    encounterList += '</li>';
+    encounterList += '<tr><td class="fit">';
+    encounterList += '<button type="button" class="btn btn-warning btn-sm mr-2 rm-encounter-btn">&times;</button></td>';
+    encounterList += '<td class="col-md-10">' + selectedEncounter[i].name + '</td>';
+    encounterList += '</tr>';
   }
+  encounterList += '</tbody>';
   $("#encounter-list").html(encounterList);
 }
 
@@ -209,4 +237,29 @@ function ui_load_files(evt) {
 
     // Reset file input
     $("#file-load-form")[0].reset();
+}
+
+/**
+ * Gets a monsters object by name from the monster list
+ * @param  {string} name Name of monster to be found
+ * @return Object Monster object found, or null if not found
+ */
+function getMonsterObject(name) {
+  return monsters.filter(function(item) {
+    return item.name === name;
+  })[0];
+}
+
+/**
+ * Searches the encounterList for a specific monster name
+ * @param  {string} name Name of monster to search for
+ * @return int index of monster in list, or -1 if not found
+ */
+function searchEncounterList(name) {
+  for (var i = 0; i < selectedEncounter.length; i++) {
+    if (selectedEncounter[i].name == name) {
+      return i;
+    }
+  }
+  return -1;
 }

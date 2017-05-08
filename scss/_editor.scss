@@ -1,0 +1,94 @@
+#live-statblock {
+  padding: 10px;
+}
+
+.editor-pane {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#editor-row {
+  margin: 0;
+  height: calc(100vh - 144px);
+  max-width: 100%;
+  border-top: $grey solid 1px;
+}
+
+#statblock-form {
+  background-color: $background-grey;
+  border-right: 11px solid $background-grey;
+}
+
+.statblock-input-group {
+  background-color: white;
+  border-bottom: 1px solid $grey;
+  border-right: 1px solid $grey;
+}
+
+.stacked-text-blocks {
+  width: 100%;
+}
+
+.ability-field {
+  width: 100% !important;
+  border-radius: 0px;
+}
+
+.trait-dropdown {
+  border-top: 0px;
+  border-bottom: 0px;
+  min-width: calc(80px + 2rem);
+}
+
+.statblock-input-group-part {
+  border-bottom: 0px;
+}
+
+.movement-handle {
+  max-width: 40px;
+}
+
+.pixel-wall {
+  width: 1px;
+  margin: 0;
+  padding: 0;
+  background-color: $grey;
+}
+
+.background-box {
+  text-align: center;
+  background-color: $background-grey;
+  border-left: $grey solid 1px;
+  padding: .5rem .75rem;
+}
+
+#editor-side {
+  border-right: 1px solid $grey;
+}
+
+.form-label {
+  width: 100%;
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  letter-spacing: 1px;
+  font-size: .7rem;
+  font-weight: bold;
+  color: $grey-blue;
+  background-color: white;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  border-right: 1px solid $grey;
+  border-bottom: $grey solid 1px;
+}
+
+.switch-lable {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  letter-spacing: 1px;
+  font-size: .7rem;
+  font-weight: bold;
+  color: $grey-blue;
+  text-transform: uppercase;
+}
