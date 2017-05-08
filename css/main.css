@@ -38,14 +38,23 @@
   border-bottom: 1px solid #c9c9c9;
   border-right: 1px solid #c9c9c9; }
 
-.fix-stupid-button {
-  margin: 0 !important;
-  border: 0; }
-  .fix-stupid-button:focus {
-    margin: 0 !important; }
+.stacked-text-blocks {
+  width: 100%; }
+
+.ability-field {
+  width: 100% !important;
+  border-radius: 0px; }
+
+.trait-dropdown {
+  border-top: 0px;
+  border-bottom: 0px;
+  min-width: calc(80px + 2rem); }
 
 .statblock-input-group-part {
   border-bottom: 0px; }
+
+.movement-handle {
+  max-width: 40px; }
 
 .pixel-wall {
   width: 1px;
@@ -363,6 +372,7 @@ td.fit {
   font-weight: bold;
   height: 30px;
   width: 30px;
+  min-width: 30px;
   text-align: center;
   padding: 6px 0;
   font-size: 12px;

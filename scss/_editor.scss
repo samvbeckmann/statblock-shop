@@ -26,17 +26,27 @@
   border-right: 1px solid $grey;
 }
 
-.fix-stupid-button {
-  margin: 0 !important;
-  border: 0;
+.stacked-text-blocks {
+  width: 100%;
+}
 
-  &:focus {
-    margin: 0 !important;
-  }
+.ability-field {
+  width: 100% !important;
+  border-radius: 0px;
+}
+
+.trait-dropdown {
+  border-top: 0px;
+  border-bottom: 0px;
+  min-width: calc(80px + 2rem);
 }
 
 .statblock-input-group-part {
   border-bottom: 0px;
+}
+
+.movement-handle {
+  max-width: 40px;
 }
 
 .pixel-wall {

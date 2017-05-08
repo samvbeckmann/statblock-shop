@@ -53,6 +53,8 @@ $(document).ready(function() {
     }
 
     $("#live-statblock").html(makeStatblockHTML(monster));
+
+    updateAllExpandables();
   });
 
   $("#monster-name").keyup(function() {
@@ -105,40 +107,40 @@ $(document).ready(function() {
     $("#live-statblock").html(makeStatblockHTML(monster));
   });
 
-  $("#main-content").keyup(function() {
-    try {
-      var parsedContent = contentParser($(this).val());
-      monster.content = parsedContent.result;
-      if (parsedContent.error) {
-        $(this).parent().addClass("has-danger");
-      } else {
-        $(this).parent().removeClass("has-danger");
-      }
-    } catch(err) {
-      console.log(err);
-      $(this).parent().addClass("has-danger");
-    } finally {
-      $("#live-statblock").html(makeStatblockHTML(monster));
-    }
+  $(document).on('keyup', '.ability-field', function() {
+    updateMonsterAbilities();
+    $("#live-statblock").html(makeStatblockHTML(monster));
   });
 
-  $('.expandable').each(function() {
-    var hiddenDiv = document.createElement('div');
-
-    hiddenDiv.classList.add('hiddendiv', 'common');
-    document.body.appendChild(hiddenDiv);
-
-    $(this).on("propertychange change click keyup input paste resize", function(event) {
-      setTextAreaHeight(this, hiddenDiv);
-    });
-    setTextAreaHeight(this, hiddenDiv);
+  $(window).resize(function() {
+    updateAllExpandables();
   });
+
+  $(document).on('keyup', '.expandable', function() {
+    updateExpandableTextArea(this);
+  });
+
+  updateAllExpandables();
 });
 
-function setTextAreaHeight(object, hiddenDiv) {
-    hiddenDiv.innerHTML = object.value + '\n';
-    hiddenDiv.style.width = object.clientWidth + "px";
-    object.style.height = hiddenDiv.getBoundingClientRect().height + 'px';
+// $(window).load(function() {
+
+// })
+
+function updateAllExpandables() {
+  $('.expandable').each(function() {
+    updateExpandableTextArea(this);
+  });
+}
+
+function updateExpandableTextArea(object) {
+  var hiddenDiv = document.createElement('div');
+  hiddenDiv.classList.add('hiddendiv', 'common');
+  document.body.appendChild(hiddenDiv);
+  hiddenDiv.innerHTML = object.value + '\n';
+  hiddenDiv.style.width = object.clientWidth + "px";
+  object.style.height = hiddenDiv.getBoundingClientRect().height + 'px';
+  document.body.removeChild(hiddenDiv);
 }
 
 function updateMonsterBasicInfo() {
@@ -159,60 +161,36 @@ function updateMonsterTraits() {
   });
 }
 
-function contentParser(string) {
-  var result = [];
-  var temp_list = [];
-  error = false;
-  var lines = string.split('\n');
-  for (var i = 0; i < lines.length; i++) {
-    if (lines[i] === '')
-      continue;
-    var parts = lines[i].match(/(\\.|[^|])+/g);
-    try {
-      switch (parts[0].trim().toLowerCase()) {
-        case 'property':
-          checkTempList();
-          result.push({property_line: {
-                       name: parts[1].trim(), desc: parts[2].trim()}});
-          break;
-        case 'description':
-          checkTempList();
-          result.push({property_block: {
-                       name: parts[1].trim(), desc: parts[2].trim()}});
-          break;
-        case 'text':
-          checkTempList();
-          result.push({text:parts[1].trim()});
-          break;
-        case 'subtitle':
-          checkTempList();
-          result.push({subtitle:parts[1].trim()});
-          break;
-        case 'numbered':
-          temp_list.push(parts[1].trim());
-          break;
-        case 'spells':
-          checkTempList();
-          result.push({spell_line: parts[1].trim()});
-          break;
-        default:
-          result.push("input_error");
-          error = true;
-      }
-    } catch(err) {
-      result.push("input_error");
-      error = true;
+function updateMonsterAbilities() {
+  monster.content = [];
+  var numberedBuffer = [];
+  $('#abilities-lines .statblock-input-group').each(function() {
+    if (numberedBuffer.length > 0 && !$(this).hasClass('abilityline-numbered')) {
+      monster.content.push({numbered_list: numberedBuffer});
+      numberedBuffer = [];
     }
-  }
-  checkTempList();
-  return {result: result, error: error};
 
-  function checkTempList() {
-    if (temp_list.length > 0) {
-      result.push({numbered_list: temp_list});
-      temp_list = [];
+    if ($(this).hasClass('abilityline-subtitle')) {
+      var subtitle = $(this).find('.ability-subtitle').val();
+      monster.content.push({subtitle: subtitle});
+    } else if ($(this).hasClass('abilityline-text')) {
+      var text = $(this).find('.ability-text').val();
+      monster.content.push({text: text});
+    } else if ($(this).hasClass('abilityline-spells')) {
+      var spells = $(this).find('.ability-spells').val();
+      monster.content.push({spell_line: spells});
+    } else if ($(this).hasClass('abilityline-trait')) {
+      var traitName = $(this).find('.ability-trait-name').val();
+      var traitDesc = $(this).find('.ability-trait-desc').val();
+      monster.content.push({property_block: {name: traitName, desc: traitDesc}});
+    } else if ($(this).hasClass('abilityline-property')) {
+      var propertyName = $(this).find('.ability-property-name').val();
+      var propertyDesc = $(this).find('.ability-property-desc').val();
+      monster.content.push({property_line: {name: propertyName, desc: propertyDesc}});
+    } else if ($(this).hasClass('abilityline-numbered')) {
+      numberedBuffer.push($(this).find('.ability-numbered').val());
     }
-  }
+  });
 }
 
 function fillForm(monster) {
@@ -238,30 +216,28 @@ function fillForm(monster) {
       $('#traits-lines').append(makeTraitsLine(monster.traits[j].name, monster.traits[j].desc));
     }
   }
-  $('#main-content').val(contentToText(monster.content));
 
-  function contentToText(obj) {
-    var result = '';
-    for (var i = 0; i < obj.length; i ++) {
-      if (obj[i].hasOwnProperty('property_block')) {
-        result += 'description | ' + obj[i].property_block.name;
-        result +=  ' | ' + obj[i].property_block.desc + '\n\n';
-      } else if (obj[i].hasOwnProperty('property_line')) {
-        result += 'property | ' + obj[i].property_line.name;
-        result += ' | ' + obj[i].property_line.desc + '\n\n';
-      } else if (obj[i].hasOwnProperty('subtitle')) {
-        result += 'subtitle | ' + obj[i].subtitle + '\n\n';
-      } else if (obj[i].hasOwnProperty('text')) {
-        result += 'text | ' + obj[i].text + '\n\n';
-      } else if (obj[i].hasOwnProperty('numbered_list')) {
-        for (var j = 0; j < obj[i].numbered_list.length; j++) {
-          result += 'numbered | ' + obj[i].numbered_list[j] + '\n\n';
+  if (monster.content.length > 0) {
+    $('#abilities-lines').empty();
+    for (var ability of monster.content) {
+      if (ability.hasOwnProperty('property_block')) {
+        $('#abilities-lines').append(makeTraitAbilityLine(
+                ability.property_block.name, ability.property_block.desc));
+      } else if (ability.hasOwnProperty('property_line')) {
+        $('#abilities-lines').append(makePropertyAbilityLine(
+                ability.property_line.name, ability.property_line.desc));
+      } else if (ability.hasOwnProperty('subtitle')) {
+        $('#abilities-lines').append(makeSubtitleLine(ability.subtitle));
+      } else if (ability.hasOwnProperty('text')) {
+        $('#abilities-lines').append(makeTextLine(ability.text));
+      } else if (ability.hasOwnProperty('spell_line')) {
+        $('#abilities-lines').append(makeSpellsLine(ability.spell_line));
+      } else if (ability.hasOwnProperty('numbered_list')) {
+        for (var numItem of ability.numbered_list) {
+          $('#abilities-lines').append(makeNumberedLine(numItem));
         }
-      } else if (obj[i].hasOwnProperty('spell_line')) {
-        result += 'spells | ' + obj[i].spell_line + '\n\n';
       }
     }
-    return result.replace(/\n+$/, '');
   }
 
 }
