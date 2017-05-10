@@ -111,7 +111,7 @@ textarea {
 /* the styles for 'commmon' are applied to both the textarea and the hidden clone */
 /* these must be the same for both */
 .common {
-  min-height: 2rem;
+  min-height: 38px;
   padding: .5rem .75rem;
   line-height: 1.25;
   overflow: hidden; }
