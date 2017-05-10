@@ -189,7 +189,7 @@ function makeSubtitleLine(subtitle) {
 }
 
 function makeSpellsLine(content) {
-  var textHTML = `<textarea class="ability-spells ability-field form-control common expandable no-dup-borders" rows="1" placeholder="Subtitle" style="min-height: 38px">${content}</textarea>`;
+  var textHTML = `<textarea class="ability-spells ability-field form-control common expandable no-dup-borders" rows="1" placeholder="Spells" style="min-height: 38px">${content}</textarea>`;
   return makeGenericAbility('Spells', 'abilityline-spells', textHTML);
 }
 
