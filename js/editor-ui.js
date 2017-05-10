@@ -11,7 +11,7 @@ $(document).ready(function() {
   });
 
   $('#abilities-default-btn').click(function() {
-    $('#abilities-lines').prepend(makeSubtitleLine(''));
+    $('#abilities-lines').prepend(makeTraitAbilityLine('', ''));
   });
 
   $(document).on('click', '.new-basic-info-btn', function() {
