@@ -176,10 +176,10 @@
                 Content
               </label>
               <div id="abilities-lines">
-                <div class="input-group statblock-input-group dropup">
+                <div class="input-group statblock-input-group abilityline-trait dropup">
                   <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
                   <button type="button" class="btn btn-secondary dropdown-toggle no-rounded-corners trait-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Subtitle
+                    Trait
                   </button>
                   <div class="dropdown-menu">
                     <button class="dropdown-item trait-btn" type="button">Trait</button>
@@ -187,9 +187,12 @@
                     <button class="dropdown-item text-btn" type="button">Text</button>
                     <button class="dropdown-item property-btn" type="button">Property</button>
                     <button class="dropdown-item spells-btn" type="button">Spells</button>
-                    <button class="dropdown-item numbered-btn" type="button">Numbered</button>
+                    <button class="dropdown-item numbered-btn" type="button">Number</button>
                   </div>
-                  <textarea class="ability-name ability-field form-control common expandable no-dup-borders" rows="1" placeholder="Subtitle" style="min-height: 38px"></textarea>
+                  <div class="stacked-text-blocks">
+                    <textarea class="ability-trait-name ability-field form-control common expandable no-dup-top no-dup-right no-dup-left" rows="1" placeholder="Name"></textarea>
+                    <textarea class="ability-trait-desc ability-field form-control common expandable no-dup-borders" rows="1" placeholder="Description"></textarea>
+                  </div>
                   <button class="btn btn-outline-danger btn-circle btn-form rm-ability-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
                   <button class="btn btn-outline-success btn-circle btn-form new-ability-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
                 </div>
