@@ -11,7 +11,7 @@ $(document).ready(function() {
   });
 
   $('#abilities-default-btn').click(function() {
-    $('#abilities-lines').prepend(makeSubtitleLine(''));
+    $('#abilities-lines').prepend(makeTraitAbilityLine('', ''));
   });
 
   $(document).on('click', '.new-basic-info-btn', function() {
@@ -189,7 +189,7 @@ function makeSubtitleLine(subtitle) {
 }
 
 function makeSpellsLine(content) {
-  var textHTML = `<textarea class="ability-spells ability-field form-control common expandable no-dup-borders" rows="1" placeholder="Subtitle" style="min-height: 38px">${content}</textarea>`;
+  var textHTML = `<textarea class="ability-spells ability-field form-control common expandable no-dup-borders" rows="1" placeholder="Spells" style="min-height: 38px">${content}</textarea>`;
   return makeGenericAbility('Spells', 'abilityline-spells', textHTML);
 }
 
@@ -207,7 +207,7 @@ function makeTraitAbilityLine(name, desc) {
   var content = `
     <div class="stacked-text-blocks">
       <textarea class="ability-trait-name ability-field form-control common expandable no-dup-top no-dup-right no-dup-left" rows="1" placeholder="Name">${name}</textarea>
-      <textarea class="ability-trait-desc ability-field form-control common expandable no-dup-borders"" rows="1" placeholder="Description">${desc}</textarea>
+      <textarea class="ability-trait-desc ability-field form-control common expandable no-dup-borders" rows="1" placeholder="Description">${desc}</textarea>
     </div>
   `;
   return makeGenericAbility('Trait', 'abilityline-trait', content);

@@ -50,6 +50,9 @@
   border-bottom: 0px;
   min-width: calc(80px + 2rem); }
 
+.ability-score-input {
+  padding-left: 25px; }
+
 .statblock-input-group-part {
   border-bottom: 0px; }
 
@@ -111,7 +114,7 @@ textarea {
 /* the styles for 'commmon' are applied to both the textarea and the hidden clone */
 /* these must be the same for both */
 .common {
-  min-height: 2rem;
+  min-height: 38px;
   padding: .5rem .75rem;
   line-height: 1.25;
   overflow: hidden; }

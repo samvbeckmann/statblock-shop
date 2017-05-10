@@ -1,389 +1,2319 @@
-[{
-	"name": "Animated Armor",
-	"heading": "Medium construct, unaligned",
-  "two_column": false,
-	"basic_info": [{
-		"name": "Armor Class",
-		"desc": "18 (natural armor)"
-	}, {
-		"name": "Hit Points",
-		"desc": "33 (6d8 + 6)"
-	}, {
-		"name": "Speed",
-		"desc": "25 ft."
-	}],
-	"ability_scores": {
-		"str": 14,
-		"dex": 11,
-		"con": 13,
-		"int": 1,
-		"wis": 3,
-		"cha": 1
+[
+	{
+		"name": "Aarakocra",
+		"heading": "Medium humanoid (aarakocra), neutral good",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "12"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "13 (3d8)"
+			},
+			{
+				"name": "Speed",
+				"desc": "20 ft., fly 50 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "10",
+			"dex": "14",
+			"con": "10",
+			"int": "11",
+			"wis": "12",
+			"cha": "11"
+		},
+		"traits": [
+			{
+				"name": "Skills",
+				"desc": "Perception +5"
+			},
+			{
+				"name": "Senses",
+				"desc": "passive Perception 15"
+			},
+			{
+				"name": "Languages",
+				"desc": "Aarakocra, Auran"
+			},
+			{
+				"name": "Challenge",
+				"desc": "1/4 (50 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Dive Attack",
+					"desc": "If the aarakocra is flying and dives at least 30 feet straight toward a target and then hits with a melee weapon attack, the attack deals an extra 3 (1d6) damage to the target."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Talon",
+					"desc": "_Melee Weapon Attack:_ +4 to hit, reach 5 ft., one target. _Hit:_ 4 (1d4 + 2) slashing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Javelin",
+					"desc": "_Melee or Ranged Weapon Attack:_ +4 to hit, reach 5 ft. or range 30/120 ft., one target. _Hit:_ 5 (1d6 + 2) piercing damage."
+				}
+			}
+		]
 	},
-	"traits": [{
-		"name": "Damage Immunities",
-		"desc": "poison, psychic"
-	}, {
-		"name": "Condition Immunities",
-		"desc": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned"
-	}, {
-		"name": "Senses",
-		"desc": "blindsight 60 ft. (blind beyond this radius), passive Perception 6"
-	}, {
-		"name": "Languages",
-		"desc": "—"
-	}, {
-		"name": "Challenge",
-		"desc": "1 (200 XP)"
-	}],
-	"content": [{
-		"property_block": {
-			"name": "Antimagic Susceptibility",
-			"desc": "The armor is incapacitated while in the area of an _antimagic field_. If targeted by _dispel magic_, the armor must succeed on a Constitution saving throw against the caster’s spell save DC or fall unconscious for 1 minute."
-		}
-	}, {
-		"property_block": {
-			"name": "False Appearance",
-			"desc": "While the armor remains motionless, it is indistinguishable from a normal suit of armor."
-		}
-	}, {
-		"subtitle": "Actions"
-	}, {
-		"property_block": {
-			"name": "Multiattack",
-			"desc": "The armor makes two melee attacks."
-		}
-	}, {
-		"property_block": {
-			"name": "Slam",
-			"desc": "_Melee Weapon Attack:_ +4 to hit, reach 5 ft., one target. _Hit:_ 5 (1d6 + 2) bludgeoning damage."
-		}
-	}]
-}, {
-	"name": "Aboleth",
-	"heading": "Large aberration, lawful evil",
-  "two_column": true,
-	"basic_info": [{
-		"name": "Armor Class",
-		"desc": "17 (natural armor)"
-	}, {
-		"name": "Hit Points",
-		"desc": "135 (18d10 + 16)"
-	}, {
-		"name": "Speed",
-		"desc": "20 ft., swim 40 ft."
-	}],
-	"ability_scores": {
-		"str": 21,
-		"dex": 9,
-		"con": 15,
-		"int": 18,
-		"wis": 15,
-		"cha": 18
+	{
+		"name": "Aboleth",
+		"heading": "Large aberration, lawful evil",
+		"two_column": true,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "17 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "135 (18d10 + 16)"
+			},
+			{
+				"name": "Speed",
+				"desc": "20 ft., swim 40 ft."
+			}
+		],
+		"ability_scores": {
+			"str": 21,
+			"dex": 9,
+			"con": 15,
+			"int": 18,
+			"wis": 15,
+			"cha": 18
+		},
+		"traits": [
+			{
+				"name": "Saving Throws",
+				"desc": "Con +6, Int +8, Wis +6"
+			},
+			{
+				"name": "Skills",
+				"desc": "History +12, Perception +10"
+			},
+			{
+				"name": "Senses",
+				"desc": "darkvision 120ft., passive Perception 20"
+			},
+			{
+				"name": "Languages",
+				"desc": "Deep Speech, telepathy 120 ft."
+			},
+			{
+				"name": "Challenge",
+				"desc": "10 (5,900 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Amphibious",
+					"desc": "The aboleth can breathe air and water."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Mucous Cloud",
+					"desc": "While underwater, the aboleth is surrounded by transformative mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a DC 14 Constitution saving throw. On a failure, the creature is diseased for 1d4 hours. The diseased creature can breathe only underwater."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Probing Telepathy",
+					"desc": "If a creature communicates telepahically with the aboleth, the aboleth learns the creature's greatest desires if the aboleth can see the creature."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The aboleth makes three tentacle attacks."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Tentacle",
+					"desc": "_Melee Weapon Attack:_ +9 to hit, reach 10 ft., one target. _Hit:_ 12 (2d6 + 5) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Constitution saving throw of become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only be _heal_ or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Tail",
+					"desc": "_Melee Weapon Attack:_ +9 to hit, reach 10 ft., one target. _Hit:_ 15 (3d6 + 5) bludgeoning damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Enslave (3/Day)",
+					"desc": "The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed creature is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth."
+				}
+			},
+			{
+				"subtitle": "Legendary Actions"
+			},
+			{
+				"text": "The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. The aboleth regains spent legendary actions at the start of its turn."
+			},
+			{
+				"property_line": {
+					"name": "Detect.",
+					"desc": "The aboleth makes a Wisdom (Perception) check."
+				}
+			},
+			{
+				"property_line": {
+					"name": "Tail Swipe.",
+					"desc": "The aboleth makes one tail attack."
+				}
+			},
+			{
+				"property_line": {
+					"name": "Psychic Drain (Costs 2 Actions).",
+					"desc": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes."
+				}
+			}
+		]
 	},
-	"traits": [{
-		"name": "Saving Throws",
-		"desc": "Con +6, Int +8, Wis +6"
-	}, {
-		"name": "Skills",
-		"desc": "History +12, Perception +10"
-	}, {
-		"name": "Senses",
-		"desc": "darkvision 120ft., passive Perception 20"
-	}, {
-		"name": "Languages",
-		"desc": "Deep Speech, telepathy 120 ft."
-	}, {
-		"name": "Challenge",
-		"desc": "10 (5,900 XP)"
-	}],
-	"content": [{
-		"property_block": {
-			"name": "Amphibious",
-			"desc": "The aboleth can breathe air and water."
-		}
-	}, {
-		"property_block": {
-			"name": "Mucous Cloud",
-			"desc": "While underwater, the aboleth is surrounded by transformative mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a DC 14 Constitution saving throw. On a failure, the creature is diseased for 1d4 hours. The diseased creature can breathe only underwater."
-		}
-	}, {
-		"property_block": {
-			"name": "Probing Telepathy",
-			"desc": "If a creature communicates telepahically with the aboleth, the aboleth learns the creature's greatest desires if the aboleth can see the creature."
-		}
-	}, {
-		"subtitle": "Actions"
-	}, {
-		"property_block": {
-			"name": "Multiattack",
-			"desc": "The aboleth makes three tentacle attacks."
-		}
-	}, {
-		"property_block": {
-			"name": "Tentacle",
-			"desc": "_Melee Weapon Attack:_ +9 to hit, reach 10 ft., one target. _Hit:_ 12 (2d6 + 5) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Constitution saving throw of become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only be _heal_ or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."
-		}
-	}, {
-		"property_block": {
-			"name": "Tail",
-			"desc": "_Melee Weapon Attack:_ +9 to hit, reach 10 ft., one target. _Hit:_ 15 (3d6 + 5) bludgeoning damage."
-		}
-	}, {
-		"property_block": {
-			"name": "Enslave (3/Day)",
-			"desc": "The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed creature is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance.\\nWhenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth."
-		}
-	}, {
-		"subtitle": "Legendary Actions"
-	}, {
-		"text": "The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. The aboleth regains spent legendary actions at the start of its turn."
-	}, {
-		"property_line": {
-			"name": "Detect.",
-			"desc": "The aboleth makes a Wisdom (Perception) check."
-		}
-	}, {
-		"property_line": {
-			"name": "Tail Swipe.",
-			"desc": "The aboleth makes one tail attack."
-		}
-	}, {
-		"property_line": {
-			"name": "Psychic Drain (Costs 2 Actions).",
-			"desc": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes."
-		}
-	}]
-},
-{
-  "name": "Lich",
-  "heading": "Medium undead, any evil alignment",
-  "two_column": true,
-  "basic_info": [
-    {
-      "name": "Armor Class",
-      "desc": "17 (natural armor)"
-    },
-    {
-      "name": "Hit Points",
-      "desc": "135 (18d8 + 54)"
-    },
-    {
-      "name": "Speed",
-      "desc": "30 ft."
-    }
-  ],
-  "ability_scores": {
-    "str": "11",
-    "dex": "16",
-    "con": "16",
-    "int": "20",
-    "wis": "14",
-    "cha": "16"
-  },
-  "traits": [
-    {
-      "name": "Saving Throws",
-      "desc": "Con +10, Int +12, Wis +9"
-    },
-    {
-      "name": "Skills",
-      "desc": "Arcana +18, History +12, Insight +9, Perception +9"
-    },
-    {
-      "name": "Damage Resistances",
-      "desc": "cold, lightening, necrotic"
-    },
-    {
-      "name": "Damage Immunities",
-      "desc": "poison; bludgeoning, piercing, and slashing from nonmagical attacks"
-    },
-    {
-      "name": "Condition Immunities",
-      "desc": "charmed, exhaustion, frightened, paralyzed, poisoned"
-    },
-    {
-      "name": "Senses",
-      "desc": "truesight 120 ft., passive Perception 19"
-    },
-    {
-      "name": "Languages",
-      "desc": "Common plus up to five other languages"
-    },
-    {
-      "name": "Challenge",
-      "desc": "21 (33,000 XP)"
-    }
-  ],
-  "content": [
-    {
-      "property_block": {
-        "name": "Legendary Resistance (3/Day)",
-        "desc": "If the lich fails a saving throw, it can choose to succeed instead."
-      }
-    },
-    {
-      "property_block": {
-        "name": "Rejuvenation",
-        "desc": "If it has a phylactery, a destroyed lich gains a new body in 1d10 days, regaining all its hit points and becoming active again. The new body appears within 5 feed of the phylactery."
-      }
-    },
-    {
-      "property_block": {
-        "name": "Spellcasting",
-        "desc": "The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:"
-      }
-    },
-    {
-      "spell_line": "Cantrips (at will): _magic hand, prestidigitation, ray of frost_"
-    },
-    {
-      "spell_line": "1st level (4 slots): _detect magic, magic missile, shield, thunderwave_"
-    },
-    {
-      "spell_line": "2nd level (3 slots): _detect thoughts, invisibility, Melf's acid arrow, mirror image_"
-    },
-    {
-      "spell_line": "3rd level (3 slots): _animate dead, counterspell, dispel magic, fireball_"
-    },
-    {
-      "spell_line": "4th level (3 slots): _blight, dimension door_"
-    },
-    {
-      "spell_line": "5th level (3 slots): _cloudkill, scrying_"
-    },
-    {
-      "spell_line": "6th level (1 slot): _disintegrate, globe of invulnerability_"
-    },
-    {
-      "spell_line": "7th level (1 slot): _finger of death, plane shift_"
-    },
-    {
-      "spell_line": "8th level (1 slot): _dominate monster, power word stun_"
-    },
-    {
-      "spell_line": "9th level (1 slot): _power word kill_"
-    },
-    {
-      "property_block": {
-        "name": "Turn Resistance",
-        "desc": "The lich has advantage on saving throws against any effect that turns undead."
-      }
-    },
-    {
-      "subtitle": "Actions"
-    },
-    {
-      "property_block": {
-        "name": "Paralyzing Touch",
-        "desc": "_Melee Spell Attack:_ +12 to hit, reach 5 ft., one creature. _Hit:_ 10 (3d6) cold damage. The target must succeed on a DC 18 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on a success."
-      }
-    },
-    {
-      "subtitle": "Legendary Actions"
-    },
-    {
-      "text": "The lich can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. The lich regains spent legendary actions at the start of its turn."
-    },
-    {
-      "property_line": {
-        "name": "Cantrip.",
-        "desc": "The lich casts a cantrip"
-      }
-    },
-    {
-      "property_line": {
-        "name": "Paralyzing Touch (Costs 2 Actions).",
-        "desc": "The lich uses its Paralyzing Touch."
-      }
-    },
-    {
-      "property_line": {
-        "name": "Frightening Gaze (Costs 2 Actions).",
-        "desc": "The lich fixes its gaze on one creature it can see within 10 feet of it. the target must succeed on a DC 18 Wisdom saving throw against this magic or become frightened for 1 minute. the frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune the lich's gaze for the next 24 hours."
-      }
-    },
-    {
-      "property_line": {
-        "name": "Disrupt Life (Costs 3 Actions).",
-        "desc": "Each non-undead creature within 20 feet of the lich must make a DC 18 Constitution saving throw against this magic, taking 21 (6d6) necrotic damage on a failed save, or half as much damage on a successful one."
-      }
-    }
-  ]
-},
-{
-  "name": "Manticore",
-  "heading": "Large monstrosity, lawful evil",
-  "two-column": false,
-  "basic_info": [
-    {
-      "name": "Armor Class",
-      "desc": "14 (nautral armor)"
-    },
-    {
-      "name": "Hit Points",
-      "desc": "68 (8d10 + 24)"
-    },
-    {
-      "name": "Speed",
-      "desc": "30 ft., fly 50 ft."
-    }
-  ],
-  "ability_scores": {
-    "str": "17",
-    "dex": "16",
-    "con": "17",
-    "int": "7",
-    "wis": "12",
-    "cha": "8"
-  },
-  "traits": [
-    {
-      "name": "Senses",
-      "desc": "darkvision 60 ft., passive Perception 11"
-    },
-    {
-      "name": "Languages",
-      "desc": "Common"
-    },
-    {
-      "name": "Challenge",
-      "desc": "3 (700 XP)"
-    }
-  ],
-  "content": [
-    {
-      "property_block": {
-        "name": "Tail Spike Regrowth",
-        "desc": "The manticore has twenty-four tail spikes. Used spikes regrow when the manticore finishes a long rest."
-      }
-    },
-    {
-      "subtitle": " Actions"
-    },
-    {
-      "property_block": {
-        "name": "Multiattack",
-        "desc": "The manticore makes three attacks: one with its bite and two with its claws or three with its tail spikes."
-      }
-    },
-    {
-      "property_block": {
-        "name": "Bite",
-        "desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 7 (1d8 + 3) piercing damage."
-      }
-    },
-    {
-      "property_block": {
-        "name": "Claw",
-        "desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 6 (1d6 + 3) piercing damage."
-      }
-    },
-    {
-      "property_block": {
-        "name": "Tail Spike",
-        "desc": "_Ranged Weapon Attack:_ +5 to hit, range 100/200 ft., one target. _Hit:_ 7 (1d8 + 3) piercing damage."
-      }
-    }
-  ]
-}]
+	{
+		"name": "Animated Armor",
+		"heading": "Medium construct, unaligned",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "18 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "33 (6d8 + 6)"
+			},
+			{
+				"name": "Speed",
+				"desc": "25ft"
+			}
+		],
+		"ability_scores": {
+			"str": 14,
+			"dex": 11,
+			"con": 13,
+			"int": 1,
+			"wis": 3,
+			"cha": 1
+		},
+		"traits": [
+			{
+				"name": "Damage Immunities",
+				"desc": "poison, psychic"
+			},
+			{
+				"name": "Condition Immunities",
+				"desc": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned"
+			},
+			{
+				"name": "Senses",
+				"desc": "blindsight 60 ft. (blind beyond this radius), passive Perception 6"
+			},
+			{
+				"name": "Languages",
+				"desc": "—"
+			},
+			{
+				"name": "Challenge",
+				"desc": "1 (200 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Antimagic Susceptibility",
+					"desc": "The armor is incapacitated while in the area of an _antimagic field_. If targeted by _dispel magic_, the armor must succeed on a Constitution saving throw against the caster’s spell save DC or fall unconscious for 1 minute."
+				}
+			},
+			{
+				"property_block": {
+					"name": "False Appearance",
+					"desc": "While the armor remains motionless, it is indistinguishable from a normal suit of armor."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The armor makes two melee attacks."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Slam",
+					"desc": "_Melee Weapon Attack:_ +4 to hit, reach 5 ft., one target. _Hit:_ 5 (1d6 + 2) bludgeoning damage."
+				}
+			}
+		]
+	},
+	{
+		"name": "Ankheg",
+		"heading": "Large monstrosity, unaligned",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "14 (natural armor), 11 while prone"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "39 (6d10 + 6)"
+			},
+			{
+				"name": "Speed",
+				"desc": "30 ft., burrow 10 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "17",
+			"dex": "11",
+			"con": "14",
+			"int": "1",
+			"wis": "13",
+			"cha": "6"
+		},
+		"traits": [
+			{
+				"name": "Senses",
+				"desc": "darkvision 60 ft., tremorsense 60ft., passive Perception 11"
+			},
+			{
+				"name": "Languages",
+				"desc": "—"
+			},
+			{
+				"name": "Challenge",
+				"desc": "2 (450 XP)"
+			}
+		],
+		"content": [
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Bite",
+					"desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 10 (2d6 + 3) slashing damage plus 3 (1d6) acid damage. If the target is a Large or smaller creature, it is grappled (escape DC 13). Until this grapple ends, the ankheg can bite only the grappled creature and has advantage on attack rolls to do so."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Acid Spray (Recharge 6)",
+					"desc": "The ankheg spits acid in a line that is 30 feet long and 5 feet wide, provided that it has no creature grappled. Each creature in that line must make a DC 13 Dexterity saving throw, taking 10 (3d6) acid damage on a failed save, or half as much damage on a successful one."
+				}
+			}
+		]
+	},
+	{
+		"name": "Azer",
+		"heading": "Medium elemental, lawful neutral",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "17 (natural armor, shield"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "39 (6d8 + 12)"
+			},
+			{
+				"name": "Speed",
+				"desc": "30 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "17",
+			"dex": "12",
+			"con": "15",
+			"int": "12",
+			"wis": "13",
+			"cha": "10"
+		},
+		"traits": [
+			{
+				"name": "Saving Throws",
+				"desc": "Con +4"
+			},
+			{
+				"name": "Damage Immunities",
+				"desc": "fire, poison"
+			},
+			{
+				"name": "Condition Immunities",
+				"desc": "poisoned"
+			},
+			{
+				"name": "Senses",
+				"desc": "passive Perception 11"
+			},
+			{
+				"name": "Languages",
+				"desc": "Ignan"
+			},
+			{
+				"name": "Challenge",
+				"desc": "2 (450 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Heated Body",
+					"desc": "A creature that touches the azer or hits it with a melee attack while within 5 feet of it takes 5 (1d10) fire damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Heated Weapons",
+					"desc": "When the azer hits with a metal melee weapon, it deals an extra 3 (1d6) fire damage (included in the attack)."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Illumination",
+					"desc": "The azer sheds bright light in a 10-­foot radius and dim light for an additional 10 feet."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Warhammer",
+					"desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 7 (1d8 + 3) bludgeoning damage, or 8 (1d10 + 3) bludgeoning damage if used with two hands to make a melee attack, plus 3 (1d6) fire damage."
+				}
+			}
+		]
+	},
+	{
+		"name": "Basilisk",
+		"heading": "Medium monstrosity, unaligned",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "15 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "52 (8d8 + 16)"
+			},
+			{
+				"name": "Speed",
+				"desc": "20 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "16",
+			"dex": "8",
+			"con": "15",
+			"int": "2",
+			"wis": "8",
+			"cha": "7"
+		},
+		"traits": [
+			{
+				"name": "Senses",
+				"desc": "darkvision 60 ft., passive Perception 9"
+			},
+			{
+				"name": "Languages",
+				"desc": "—"
+			},
+			{
+				"name": "Challenge",
+				"desc": "3 (700 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Petrifying Gaze",
+					"desc": "If a creature starts its turn within 30 feet of the basilisk and the two of them can see each other, the basilisk can force the creature to make a DC 12 Constitution saving throw if the basilisk isn’t incapacitated. On a failed save, the creature magically begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified until freed by the _greater restoration_ spell or other magic.\n\nA creature that isn’t surprised can avert its eyes to avoid the saving throw at the start of its turn. If it does so, it can’t see the basilisk until the start of its next turn, when it can avert its eyes again. If it looks at the basilisk in the meantime, it must immediately make the save.\n\nIf the basilisk sees its reflection within 30 feet of it in bright light, it mistakes itself for a rival and targets itself with its gaze."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Bite",
+					"desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 10 (2d6 + 3) piercing damage plus73 (2d6) poison damage."
+				}
+			}
+		]
+	},
+	{
+		"name": "Behir",
+		"heading": "huge monstrosity, neutral evil",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "17 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "168 (16d12 + 64)"
+			},
+			{
+				"name": "Speed",
+				"desc": "50 ft., climb 40 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "23",
+			"dex": "16",
+			"con": "18",
+			"int": "7",
+			"wis": "14",
+			"cha": "12"
+		},
+		"traits": [
+			{
+				"name": "Skills",
+				"desc": "Perception +6, Stealth +7"
+			},
+			{
+				"name": "Damage Immunities",
+				"desc": "lightning"
+			},
+			{
+				"name": "Senses",
+				"desc": "darkvision 90 ft., passive Perception 16"
+			},
+			{
+				"name": "Languages",
+				"desc": "Draconic"
+			},
+			{
+				"name": "Challenge",
+				"desc": "11 (7,200 XP)"
+			}
+		],
+		"content": [
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The behir makes two attacks: one with its bite and one to constrict."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Bite",
+					"desc": "_Melee Weapon Attack:_ +10 to hit, reach 5 ft., one Large or smaller creature. _Hit:_ 17 (2d10 + 6) bludgeoning damage plus 17 (2d10 + 6) slashing damage. The target is grappled (escape DC 16) if the behir isn’t already constricting a creature, and the target is restrained until this grapple ends."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Lightning Breath (Recharge 5-6)",
+					"desc": "The behir exhales a line of lightning that is 20 feet long and 5 feet wide. Each creature in that line must make a DC 16 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Swallow",
+					"desc": "The behir makes one bite attack against a Medium or smaller target it is grappling. If the attack hits, the target is also swallowed, and the grapple ends. While swallowed, the target is blinded and restrained, it has total cover against attacks and other effects outside the behir, and it takes 21 (6d6) acid damage at the start of each of the behir’s turns. A behir can have only one creature swallowed at a time.\n\nIf the behir takes 30 damage or more on a single turn from the swallowed creature, the behir must succeed on a DC 14 Constitution saving throw at the end of that turn or regurgitate the creature, which falls prone in a space within 10 feet of the behir. If the behir dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 15 feet of movement, exiting prone."
+				}
+			}
+		]
+	},
+	{
+		"name": "Beholder",
+		"heading": "Large aberration, lawful evil",
+		"two-column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "18 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "180 (19d10 + 76)"
+			},
+			{
+				"name": "Speed",
+				"desc": "0 ft., fly 20 ft. (hover)"
+			}
+		],
+		"ability_scores": {
+			"str": 10,
+			"dex": "14",
+			"con": "18",
+			"int": "17",
+			"wis": "15",
+			"cha": "17"
+		},
+		"traits": [
+			{
+				"name": "Saving Throws",
+				"desc": "Int +8, Wis +7, Cha + 8"
+			},
+			{
+				"name": "Skills",
+				"desc": "Perception +12"
+			},
+			{
+				"name": "Condition Immunities",
+				"desc": "prone"
+			},
+			{
+				"name": "Senses",
+				"desc": "darkvision 120 ft., passive Perception 22"
+			},
+			{
+				"name": "Languages",
+				"desc": "Deep Speech, Undercommon"
+			},
+			{
+				"name": "Challenge",
+				"desc": "13 (10,000 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Antimagic Cone",
+					"desc": "The beholder's central eye creates an area of antimagic, as in the _antimagic field_ spell, in a 150-foot cone. At the start of each of it's turns, the beholder decides which way the cone faces and whether the cone is active. The area works against the beholders own eye rays."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Bite",
+					"desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 14 (4d6) piercing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Eye Rays",
+					"desc": "The beholder shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it:"
+				}
+			},
+			{
+				"numbered_list": [
+					"_Charm Ray._ The targeted creature must succeed on a DC 16 Wisdom saving throw or be charmed by the beholder for 1 hour, or until the beholder harms the creature.",
+					"_Paralyzing Ray._ The targeted creature must succeed on a DC 16 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+					"_Fear Ray._ The targeted creature must succeed on a DC 16 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+					"_Slowing Ray._ The targeted creature must succeed on a DC 16 Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on it's turns, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+					"_Enervation Ray._ the targeted creature must make a DC 16 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one.",
+					"_Telekinetic Ray._ If the target is a creature, it must succeed on a DC 16 Strength saving throw or the beholder moves it up to 30 feet in any direction. It is restrained by the ray's telekinetic grip until the start of the beholder's next turn, or until the beholder is incapacitated. \\n If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The beholder can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container.",
+					"_Sleep Ray._ The targeted creature must succeed on a DC 16 Wisdom saving throw, or fall asleep and remain unconscious for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead.",
+					"_Petrification Ray._ The targeted creature must make a DC 16 Dexterity saving throw. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is fully petrified until freed by the _greater restoration_ spell or other magic.",
+					"_Disintegration Ray._ If the target is a creature, it must succeed on a DC 16 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. \\n If the target is a Large or smaller nonmagical object or creation of magical force, it is disintegrated without a saving throw. If the target is Huge or larger object or creation of magical force, this ray disintegrates a 10-foot cube of it.",
+					"_Death Ray._ The targeted creature must succeed on a DC 16 Dexterity saving throw or take 55 (10d10) necrotic damage. The target dies if the ray reduces it to 0 hit points."
+				]
+			},
+			{
+				"subtitle": "Legendary Actions"
+			},
+			{
+				"text": "The beholder can take 3 legendary actions, using the Eye Ray option below. It can take only one legendary action at a time and only at the end of another creature's turn. The beholder regains spent legendary actions at the start of its turn."
+			},
+			{
+				"property_line": {
+					"name": "Eye Ray.",
+					"desc": "The beholder uses one random eye ray."
+				}
+			}
+		],
+		"two_column": true
+	},
+	{
+		"name": "Bugbear",
+		"heading": "Medium humanoid (goblinoid), chaotic evil",
+		"two-column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "16 (hide armor, shield)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "27 (5d8 + 5)"
+			},
+			{
+				"name": "Speed",
+				"desc": "30 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "15",
+			"dex": "14",
+			"con": "13",
+			"int": "8",
+			"wis": "11",
+			"cha": "9"
+		},
+		"traits": [
+			{
+				"name": "Skills",
+				"desc": "Stealth +6, Survival +2"
+			},
+			{
+				"name": "Senses",
+				"desc": "darkvision 60 ft., passive Perception 10"
+			},
+			{
+				"name": "Languages",
+				"desc": "Common, Goblin"
+			},
+			{
+				"name": "Challenge",
+				"desc": "1 (200 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Brute",
+					"desc": "A melee weapon deals one extra die of its damage when the bugbear hits with it (included in the attack)."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Surprise Attack",
+					"desc": "If the bugbear surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 7 (2d6) damage from the attack."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Morningstar",
+					"desc": "_Melee Weapon Attack:_ +4 to hit, reach 5 ft., one target. _Hit:_ 11 (2d8 + 2) slashing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Javelin",
+					"desc": "_Melee or Ranged Weapon Attack:_ +4 to hit, reach 5 ft. or range 30/120 ft., one target. _Hit:_ 9 (2d6 + 2) piercing damage or 5 (1d6 + 2) piercing damage at range."
+				}
+			}
+		],
+		"two_column": false
+	},
+	{
+		"name": "Bulette",
+		"heading": "Large monstrosity, unaligned",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "17 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "94 (9d10 + 45)"
+			},
+			{
+				"name": "Speed",
+				"desc": "40 ft., burrow 40 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "19",
+			"dex": "11",
+			"con": "21",
+			"int": "2",
+			"wis": "10",
+			"cha": "5"
+		},
+		"traits": [
+			{
+				"name": "Skills",
+				"desc": "Perception +6"
+			},
+			{
+				"name": "Senses",
+				"desc": "darkvision 60 ft., tremorsense 60ft., passive Perception 16"
+			},
+			{
+				"name": "Languages",
+				"desc": "—"
+			},
+			{
+				"name": "Challenge",
+				"desc": "5 (1,800 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Standing Leap",
+					"desc": "The bulette’s long jump is up to 30 feet and its high jump is up to 15 feet, with or without a running start."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Bite",
+					"desc": "_Melee Weapon Attack:_ +7 to hit, reach 5 ft., one target. _Hit:_ 30 (4d12 + 4) piercing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Deadly Leap",
+					"desc": "If the bulette jumps at least 15 feet as part of its movement, it can then use this action to land on its feet in a space that contains one or more other creatures. Each of those creatures must succeed on a DC 16 Strength or Dexterity saving throw (target’s choice) or be knocked prone and take 14 (3d6 + 4) bludgeoning damage plus 14 (3d6 + 4) slashing damage. On a successful save, the creature takes only half the damage, isn’t knocked prone, and is pushed 5 feet out of the bulette’s space into an unoccupied space of the creature’s choice. If no unoccupied space is within range, the creature instead falls prone in the bulette’s space."
+				}
+			}
+		]
+	},
+	{
+		"name": "Centaur",
+		"heading": "Large monstrosity, neutral good",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "12"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "45 (6d10 + 12)"
+			},
+			{
+				"name": "Speed",
+				"desc": "50 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "18",
+			"dex": "14",
+			"con": "14",
+			"int": "9",
+			"wis": "13",
+			"cha": "11"
+		},
+		"traits": [
+			{
+				"name": "Skills",
+				"desc": "Atheletics +6, Perception +3, Survival +3"
+			},
+			{
+				"name": "Senses",
+				"desc": "passive Perception 13"
+			},
+			{
+				"name": "Languages",
+				"desc": "Elvish, Sylvan"
+			},
+			{
+				"name": "Challenge",
+				"desc": "2 (450 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Charge",
+					"desc": "If the centaur moves at least 30 feet straight toward a target and then hits it with a pike attack on the same turn, the target takes an extra 10 (3d6) piercing damage."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The centaur makes two attacks: one with its pike and one with its hooves or two with its longbow."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Pike",
+					"desc": "_Melee Weapon Attack:_ +6 to hit, reach 10 ft., one target. _Hit:_ 9 (1d10 + 4) piercing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Hooves",
+					"desc": "_Melee Weapon Attack:_ +6 to hit, reach 5 ft., one target. _Hit:_ 11 (2d6 + 4) bludgeoning damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Longbow",
+					"desc": "_Ranged Weapon Attack:_ +4 to hit, range 150/600 ft., one target. _Hit:_ 6 (1d8 + 2) piercing damage."
+				}
+			}
+		]
+	},
+	{
+		"name": "Chimera",
+		"heading": "Large monstrosity, chaotic evil",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "14 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "114 (12d10 + 48)"
+			},
+			{
+				"name": "Speed",
+				"desc": "30 ft., fly 60 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "19",
+			"dex": "11",
+			"con": "19",
+			"int": "3",
+			"wis": "14",
+			"cha": "10"
+		},
+		"traits": [
+			{
+				"name": "Skills",
+				"desc": "Perception +8"
+			},
+			{
+				"name": "Senses",
+				"desc": "darkvision 60 ft., passiver Perception 18"
+			},
+			{
+				"name": "Languages",
+				"desc": "understands Draconic but can't speak"
+			},
+			{
+				"name": "Challenge",
+				"desc": "6 (2,300 XP)"
+			}
+		],
+		"content": [
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The chimera makes three attacks: one with its bite, one with its horns, and one with its claws. When its fire breath is available, it can use the breath in place of its bite or horns."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Bite",
+					"desc": "_Melee Weapon Attack:_ +7 to hit, reach 5 ft., one target. _Hit:_ 11 (2d6 + 4) piercing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Horns",
+					"desc": "_Melee Weapon Attack:_ +7 to hit, reach 5 ft., one target. _Hit:_ 10 (1d12 + 4) bludgeoning damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Claws",
+					"desc": "_Melee Weapon Attack:_ +7 to hit, reach 5 ft., one target. _Hit:_ 11 (2d6 + 4) slashing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Fire Breath (Recharge 5-6)",
+					"desc": "The dragon head exhales fire in a 15-­‐foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 31 (7d8) fire damage on a failed save, or half as much damage on a successful one."
+				}
+			}
+		]
+	},
+	{
+		"name": "Chuul",
+		"heading": "Large aberration, chaotic evil",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "16"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "93 (11d10 + 33)"
+			},
+			{
+				"name": "Speed",
+				"desc": "30 ft., swim 30 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "19",
+			"dex": "10",
+			"con": "16",
+			"int": "5",
+			"wis": "11",
+			"cha": "5"
+		},
+		"traits": [
+			{
+				"name": "Skills",
+				"desc": "Perception +4"
+			},
+			{
+				"name": "Damage Immunities",
+				"desc": "poison"
+			},
+			{
+				"name": "Condition Immunities",
+				"desc": "poisoned"
+			},
+			{
+				"name": "Senses",
+				"desc": "darkvision 60 ft., passive Perception 14"
+			},
+			{
+				"name": "Languages",
+				"desc": "understands Deep Speech but can't speak"
+			},
+			{
+				"name": "Challenge",
+				"desc": "4 (1,100 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Amphibious",
+					"desc": "The chuul can breathe air and water."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Sense Magic",
+					"desc": "The chuul senses magic within 120 feet of it at will. This trait otherwise works like the detect magic spell but isn’t itself magical."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The chuul makes two pincer attacks. If the chuul is grappling a creature, the chuul can also use its tentacles once."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Pincer",
+					"desc": "_Melee Weapon Attack:_ +6 to hit, reach 10 ft., one target. _Hit:_ 11 (2d6 + 4) bludgeoning damage. The target is grappled (escape DC 14) if it is a Large or smaller creature and the chuul doesn’t have two other creatures grappled."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Tentacles",
+					"desc": "One creature grappled by the chuul must succeed on a DC 13 Constitution saving throw or be poisoned for 1 minute. Until this poison ends, the target is paralyzed. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+				}
+			}
+		]
+	},
+	{
+		"name": "Cloaker",
+		"heading": "Large aberration, chaotic neutral",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "14 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "78 (12d10 + 12)"
+			},
+			{
+				"name": "Speed",
+				"desc": "10 ft., swim 40 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "17",
+			"dex": "15",
+			"con": "12",
+			"int": "13",
+			"wis": "12",
+			"cha": "14"
+		},
+		"traits": [
+			{
+				"name": "Skills",
+				"desc": "Stealth +5"
+			},
+			{
+				"name": "Senses",
+				"desc": "darkvision 60 ft., passive Perception 11"
+			},
+			{
+				"name": "Languages",
+				"desc": "Deep Speech, Undercommon"
+			},
+			{
+				"name": "Challenge",
+				"desc": "8 (3,900 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Damage Transfer",
+					"desc": "While attached to a creature, the cloaker takes only half the damage dealt to it (rounded down), and that creature takes the other half."
+				}
+			},
+			{
+				"property_block": {
+					"name": "False Appearance",
+					"desc": "While the cloaker remains motionless without its underside exposed, it is indistinguishable from a dark leather cloak."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Light Sensitivity",
+					"desc": "While in bright light, the cloaker has disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The cloaker makes two attacks: one with its bite and one with its tail."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Bite",
+					"desc": "_Melee Weapon Attack:_ +6 to hit, reach 5 ft., one creature. _Hit:_ 10 (2d6 + 3) piercing damage, and if the target is Large or smaller, the cloaker attaches to it. If the cloaker has advantage against the target, the cloaker attaches to the target’s head, and the target is blinded and unable to breathe while the cloaker is attached. While attached, the cloaker can make this attack only against the target and has advantage on the attack roll. The cloaker can detach itself by spending 5 feet of its movement. A creature, including the target, can take its action to detach the cloaker by succeeding on a DC 16 Strength check."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Tail",
+					"desc": "_Melee Weapon Attack:_ +6 to hit, reach 10 ft., one creature. _Hit:_ 7 (1d8 + 3) slashing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Moan",
+					"desc": "Each creature within 60 feet of the cloaker that can hear its moan and that isn’t an aberration must succeed on a DC 13 Wisdom saving throw or become frightened until the end of the cloaker’s next turn. If a creature’s saving throw is successful, the creature is immune to the cloaker’s moan for the next 24 hours."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Phantasms (Recharges after a Short or Long Rest)",
+					"desc": "The cloaker magically creates three illusory duplicates of itself if it isn’t in bright light. The duplicates move with it and mimic its actions, shifting position so as to make it impossible to track which cloaker is the real one. If the cloaker is ever in an area of bright light, the duplicates disappear.\n\nWhenever any creature targets the cloaker with an attack or a harmful spell while a duplicate remains, that creature rolls randomly to determine whether it targets the cloaker or one of the duplicates. A creature is unaffected by this magical effect if it can’t see or if it relies on senses other than sight.\n\nA duplicate has the cloaker’s AC and uses its saving throws. If an attack hits a duplicate, or if a duplicate fails a saving throw against an effect that deals damage, the duplicate disappears."
+				}
+			}
+		]
+	},
+	{
+		"name": "Cockatrice",
+		"heading": "Small monstrosity, unaligned",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "11"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "27 (6d6 + 6)"
+			},
+			{
+				"name": "Speed",
+				"desc": "20 ft., fly 40 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "6",
+			"dex": "12",
+			"con": "12",
+			"int": "2",
+			"wis": "13",
+			"cha": "5"
+		},
+		"traits": [
+			{
+				"name": "Senses",
+				"desc": "darkvision 60 ft., passive Perception 11"
+			},
+			{
+				"name": "Languages",
+				"desc": "—"
+			},
+			{
+				"name": "Challenge",
+				"desc": "1/2 (100 XP)"
+			}
+		],
+		"content": [
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Bite",
+					"desc": "_Melee Weapon Attack:_ +3 to hit, reach 5 ft., one creature. _Hit:_ 3 (1d4 + 1) piercing damage, and the target must succeed on a DC 11 Constitution saving throw against being magically petrified. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified for 24 hours."
+				}
+			}
+		]
+	},
+	{
+		"name": "Couatl",
+		"heading": "Medium celestial, lawful good",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "19"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "97 (13d8 + 39)"
+			},
+			{
+				"name": "Speed",
+				"desc": "30 ft., fly 90 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "16",
+			"dex": "20",
+			"con": "17",
+			"int": "18",
+			"wis": "20",
+			"cha": "18"
+		},
+		"traits": [
+			{
+				"name": "Saving Throws",
+				"desc": "Con +5, Wis +7, Cha +6"
+			},
+			{
+				"name": "Damage Resistances",
+				"desc": "radiant"
+			},
+			{
+				"name": "Damage Immunities",
+				"desc": "psychic; bludgeoning, piercing, and slashing from nonmagical attacks"
+			},
+			{
+				"name": "Senses",
+				"desc": "truesight 120 ft., passive Perception 15"
+			},
+			{
+				"name": "Languages",
+				"desc": "all, telepathy 120 ft."
+			},
+			{
+				"name": "Challenge",
+				"desc": "4 (1,100 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Innate Spellcasting",
+					"desc": "The couatl’s spellcasting ability is Charisma (spell save DC 14). It can innately cast the following spells, requiring only verbal components:"
+				}
+			},
+			{
+				"spell_line": "At will: _detect evil and good, detect magic, detect thoughts_"
+			},
+			{
+				"spell_line": "3/day each: _bless, create food and water, cure wounds, lesser restoration, protection from poison, sanctuary, shield_"
+			},
+			{
+				"spell_line": "1/day each: _dream, greater restoration, scrying_"
+			},
+			{
+				"property_block": {
+					"name": "Magic Weapons",
+					"desc": "The couatl's weapon attacks are magical"
+				}
+			},
+			{
+				"property_block": {
+					"name": "Shielded Mind",
+					"desc": "The couatl is immune to scrying and to any effect that would sense its emotions, read its thoughts, or detect its location."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Bite",
+					"desc": "_Melee Weapon Attack:_ +8 to hit, reach 5 ft., one creature. _Hit:_ 8 (1d6 + 5) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 24 hours. Until this poison ends, the target is unconscious. Another creature can use an action to shake the target awake."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Constrict",
+					"desc": "_Melee Weapon Attack:_ +6 to hit, reach 10 ft., one Medium or smaller creature. _Hit:_ 10 (2d6 + 3) bludgeoning damage, and the target is grappled (escape DC 15). Until this grapple ends, the target is restrained, and the couatl can’t constrict another target."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Change Shape",
+					"desc": "The couatl magically polymorphs into a humanoid or beast that has a challenge rating equal to or less than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the couatl’s choice).\n\nIn a new form, the couatl retains its game statistics and ability to speak, but its AC, movement modes, Strength, Dexterity, and other actions are replaced by those of the new form, and it gains any statistics and capabilities (except class features, legendary actions, and lair actions) that the new form has but that it lacks. If the new form has a bite attack, the couatl can use its bite in that form."
+				}
+			}
+		]
+	},
+	{
+		"name": "Death Tyrant",
+		"heading": "Large undead, lawful evil",
+		"two-column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "19 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "187 (25d10 + 50)"
+			},
+			{
+				"name": "Speed",
+				"desc": "0 ft., fly 20 ft. (hover)"
+			}
+		],
+		"ability_scores": {
+			"str": 10,
+			"dex": "14",
+			"con": "14",
+			"int": "19",
+			"wis": "15",
+			"cha": "19"
+		},
+		"traits": [
+			{
+				"name": "Saving Throws",
+				"desc": "Str +5, Con +7, Int +9, Wis +7, Cha +9"
+			},
+			{
+				"name": "Skills",
+				"desc": "Perception +12"
+			},
+			{
+				"name": "Damage Immunities",
+				"desc": "poison"
+			},
+			{
+				"name": "Condition Immunities",
+				"desc": "charmed, exhaustion, paralyzed, petrified, poisoned, prone"
+			},
+			{
+				"name": "Senses",
+				"desc": "darkvision 120 ft., passive Perception 22"
+			},
+			{
+				"name": "Languages",
+				"desc": "Deep Speech, Undercommon"
+			},
+			{
+				"name": "Challenge",
+				"desc": "14 (11,500 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Negative Energy Cone",
+					"desc": "The death tyrant's central eye emits an invisible, magical 150-foot cone of negative energy. At the start of each of it's turns, the death tyrant decides which way the cone faces and whether the cone is active. \\n Any creature in that area can't regain hit points. Any humanoid that dies there becomes a zombie under the tyrant's command. The dead humanoid retains its place in the initiative order and animates at the start of its next turn, provided that its body hasn't been completely destroyed."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Bite",
+					"desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 14 (4d6) piercing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Eye Rays",
+					"desc": "The death tyrant shoots three of the following magical eye rays at random (reroll duplicates), choosing one to three targets it can see within 120 feet of it:"
+				}
+			},
+			{
+				"numbered_list": [
+					"_Charm Ray._ The targeted creature must succeed on a DC 17 Wisdom saving throw or be charmed by the tyrant for 1 hour, or until the tyrant harms the creature.",
+					"_Paralyzing Ray._ The targeted creature must succeed on a DC 17 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+					"_Fear Ray._ The targeted creature must succeed on a DC 17 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+					"_Slowing Ray._ The targeted creature must succeed on a DC 17 Dexterity saving throw. On a failed save, the target's speed is halved for 1 minute. In addition, the creature can't take reactions, and it can take either an action or a bonus action on it's turns, not both. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+					"_Enervation Ray._ the targeted creature must make a DC 17 Constitution saving throw, taking 36 (8d8) necrotic damage on a failed save, or half as much damage on a successful one.",
+					"_Telekinetic Ray._ If the target is a creature, it must succeed on a DC 17 Strength saving throw or the beholder moves it up to 30 feet in any direction. It is restrained by the ray's telekinetic grip until the start of the tyrant's next turn, or until the tyrant is incapacitated. \\n If the target is an object weighing 300 pounds or less that isn't being worn or carried, it is moved up to 30 feet in any direction. The tyrant can also exert fine control on objects with this ray, such as manipulating a simple tool or opening a door or a container.",
+					"_Sleep Ray._ The targeted creature must succeed on a DC 17 Wisdom saving throw, or fall asleep and remain unconscious for 1 minute. The target awakens if it takes damage or another creature takes an action to wake it. This ray has no effect on constructs and undead.",
+					"_Petrification Ray._ The targeted creature must make a DC 17 Dexterity saving throw. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is fully petrified until freed by the _greater restoration_ spell or other magic.",
+					"_Disintegration Ray._ If the target is a creature, it must succeed on a DC 17 Dexterity saving throw or take 45 (10d8) force damage. If this damage reduces the creature to 0 hit points, its body becomes a pile of fine gray dust. \\n If the target is a Large or smaller nonmagical object or creation of magical force, it is disintegrated without a saving throw. If the target is Huge or larger object or creation of magical force, this ray disintegrates a 10-foot cube of it.",
+					"_Death Ray._ The targeted creature must succeed on a DC 17 Dexterity saving throw or take 55 (10d10) necrotic damage. The target dies if the ray reduces it to 0 hit points."
+				]
+			},
+			{
+				"subtitle": "Legendary Actions"
+			},
+			{
+				"text": "The death tyrant can take 3 legendary actions, using the Eye Ray option below. It can take only one legendary action at a time and only at the end of another creature's turn. The tyrant regains spent legendary actions at the start of its turn."
+			},
+			{
+				"property_line": {
+					"name": "Eye Ray.",
+					"desc": "The death tyrant uses one random eye ray."
+				}
+			}
+		],
+		"two_column": true
+	},
+	{
+		"name": "Deva",
+		"heading": "Medium celestial, lawful good",
+		"two_column": true,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "17 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "136 (16d8 + 64)"
+			},
+			{
+				"name": "Speed",
+				"desc": "30 ft., fly 90 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "18",
+			"dex": "18",
+			"con": "18",
+			"int": "17",
+			"wis": "20",
+			"cha": "20"
+		},
+		"traits": [
+			{
+				"name": "Saving Throws",
+				"desc": "Wis +9, Cha +9"
+			},
+			{
+				"name": "Skills",
+				"desc": "Insight +9, Perception +9"
+			},
+			{
+				"name": "Damage Resistances",
+				"desc": "radiant; bludgeoning, piercing, and slashing from nonmagical attacks"
+			},
+			{
+				"name": "Condition Immunities",
+				"desc": "charmed, exhaustion, frightened"
+			},
+			{
+				"name": "Senses",
+				"desc": "darkvision 120 ft., passive Perception 19"
+			},
+			{
+				"name": "Languages",
+				"desc": "all, telepathy 120 ft."
+			},
+			{
+				"name": "Challenge",
+				"desc": "10 (5,900 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Angelic Weapons",
+					"desc": "The deva's weapon attacks are magical. When the deva hits with any weapon, the weapon deals an extra 4d8 radiant damage (included in the attack)."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Innate Spellcasting",
+					"desc": "The deva's spellcasting ability is Charisma (spell save DC 17). The deva can innately cast the following spells, requiring only verbal components:"
+				}
+			},
+			{
+				"spell_line": "At will: _detect evil and good_"
+			},
+			{
+				"spell_line": "1/day each: _commune, raise dead_"
+			},
+			{
+				"property_block": {
+					"name": "Magic Resistance",
+					"desc": "The deva has advantage on saving throws against spells and other magical effects."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The deva makes two melee attacks."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Mace",
+					"desc": "_Melee Weapon Attack:_ +8 to hit, reach 5 ft., one target. _Hit:_ 7 (1d6 + 4) bludgeoning damage plus 18 (4d8) radiant damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Healing Touch (3/Day)",
+					"desc": "The deva touches another creature. The target magically regains 20 (4d8 + 2) hit points and is freed from any curse, disease, poison, blindness, or deafness."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Change Shape",
+					"desc": "The deva magically polymorphs into a humanoid or beast that has a challenge rating equal to or less than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the deva’s choice). \\n In a new form, the deva retains its game statistics and ability to speak, but its AC, movement modes, Strength, Dexterity, and special senses are replaced by those of the new form, and it gains any statistics and capabilities (except class features, legendary actions, and lair actions) that the new form has but that it lacks."
+				}
+			}
+		]
+	},
+	{
+		"name": "Flying Sword",
+		"heading": "Small construct, unaligned",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "17 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "17 5d6)"
+			},
+			{
+				"name": "Speed",
+				"desc": "0 ft., fly 50 ft. (hover)"
+			}
+		],
+		"ability_scores": {
+			"str": "12",
+			"dex": "15",
+			"con": "11",
+			"int": "1",
+			"wis": "5",
+			"cha": "1"
+		},
+		"traits": [
+			{
+				"name": "Damage Immunities",
+				"desc": "poison, psychic"
+			},
+			{
+				"name": "Condition Immunities",
+				"desc": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned"
+			},
+			{
+				"name": "Senses",
+				"desc": "blindsight 60 ft. (blind beyond this radius), passive Perception 7"
+			},
+			{
+				"name": "Languages",
+				"desc": "—"
+			},
+			{
+				"name": "Challenge",
+				"desc": "1/4 (50 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Antimagic Susceptibility",
+					"desc": "The sword is incapacitated while in the area of an _antimagic field_. If targeted by _dispel magic_, the sword must succeed on a Constitution saving throw against the caster’s spell save DC or fall unconscious for 1 minute."
+				}
+			},
+			{
+				"property_block": {
+					"name": "False Appearance",
+					"desc": "While the sword remains motionless, it is indistinguishable from a normal sword."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Longsword",
+					"desc": "_Melee Weapon Attack:_ +3 to hit, reach 5 ft., one target. _Hit:_ 5 (1d8 + 1) slashing damage."
+				}
+			}
+		]
+	},
+	{
+		"name": "Githyanki Warrior",
+		"heading": "Medium humanoid (gith), lawful evil",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "17 (half plate)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "49 (9d8 + 9)"
+			},
+			{
+				"name": "Speed",
+				"desc": "30 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "15",
+			"dex": "14",
+			"con": "12",
+			"int": "13",
+			"wis": "13",
+			"cha": "10"
+		},
+		"traits": [
+			{
+				"name": "Saving Throws",
+				"desc": "Con +3, Int +3, Wis +3"
+			},
+			{
+				"name": "Senses",
+				"desc": "passive Perception 11"
+			},
+			{
+				"name": "Languages",
+				"desc": "Gith"
+			},
+			{
+				"name": "Challenge",
+				"desc": "3 (700 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Innate Spellcasting (Psionics)",
+					"desc": "The githyanki's innate spellcasting ability is Intelligence. It can innately cast the following spells, requiring no components:"
+				}
+			},
+			{
+				"spell_line": "At will: _mage hand_ (the hand is invisible)"
+			},
+			{
+				"spell_line": "3/day each: _jump, misty step, nondetection_ (self only)"
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The githyanki makes two greatsword attacks."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Greatsword",
+					"desc": "_Melee Weapon Attack:_ +4 to hit, reach 5 ft., one target. _Hit:_ 9 (2d6 + 2) slashing damage plus 7 (2d6) psychic damage."
+				}
+			}
+		]
+	},
+	{
+		"name": "Knight",
+		"heading": "Medium humanoid (any race), any alignment",
+		"two-column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "18 (plate)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "52 (8d8 + 16)"
+			},
+			{
+				"name": "Speed",
+				"desc": "30 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "16",
+			"dex": "11",
+			"con": "14",
+			"int": "11",
+			"wis": "11",
+			"cha": "15"
+		},
+		"traits": [
+			{
+				"name": "Saving Throws",
+				"desc": "Con +4, Wis +2"
+			},
+			{
+				"name": "Senses",
+				"desc": "passive Perception 10"
+			},
+			{
+				"name": "Languages",
+				"desc": "any one language (usually Common)"
+			},
+			{
+				"name": "Challenge",
+				"desc": "3"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Brave",
+					"desc": "the knight has advantage on saving throws against being frightened."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The knight makes two melee attacks."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Greatsword",
+					"desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 10 (2d6 + 3) slashing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Heavy Crossbow",
+					"desc": "_Ranged Weapon Attack:_ +2 to hit, range 100/400 ft., one target. _Hit:_ 4 (1d8) piercing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Leadership (Recharges after a Short or Long Rest)",
+					"desc": "For  1 minute, the knight can utter a special command or warning whenever a nonhostile creature that it can see within 30 feet of it makes an attack roll or saving throw. The creature can add a d4 to its roll provided it can hear and understand the knight. A creature can benefit from only one Leadership die at a time. This effect ends if the knight is incapacitated."
+				}
+			},
+			{
+				"subtitle": "Reactions"
+			},
+			{
+				"property_block": {
+					"name": "Parry",
+					"desc": "The knight adds 2 to its AC against one melee attack that would hit it. To do so, the knight must see the attacker and be wielding a melee weapon."
+				}
+			}
+		]
+	},
+	{
+		"name": "Lich",
+		"heading": "Medium undead, any evil alignment",
+		"two_column": true,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "17 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "135 (18d8 + 54)"
+			},
+			{
+				"name": "Speed",
+				"desc": "30 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "11",
+			"dex": "16",
+			"con": "16",
+			"int": "20",
+			"wis": "14",
+			"cha": "16"
+		},
+		"traits": [
+			{
+				"name": "Saving Throws",
+				"desc": "Con +10, Int +12, Wis +9"
+			},
+			{
+				"name": "Skills",
+				"desc": "Arcana +18, History +12, Insight +9, Perception +9"
+			},
+			{
+				"name": "Damage Resistances",
+				"desc": "cold, lightening, necrotic"
+			},
+			{
+				"name": "Damage Immunities",
+				"desc": "poison; bludgeoning, piercing, and slashing from nonmagical attacks"
+			},
+			{
+				"name": "Condition Immunities",
+				"desc": "charmed, exhaustion, frightened, paralyzed, poisoned"
+			},
+			{
+				"name": "Senses",
+				"desc": "truesight 120 ft., passive Perception 19"
+			},
+			{
+				"name": "Languages",
+				"desc": "Common plus up to five other languages"
+			},
+			{
+				"name": "Challenge",
+				"desc": "21 (33,000 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Legendary Resistance (3/Day)",
+					"desc": "If the lich fails a saving throw, it can choose to succeed instead."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Rejuvenation",
+					"desc": "If it has a phylactery, a destroyed lich gains a new body in 1d10 days, regaining all its hit points and becoming active again. The new body appears within 5 feed of the phylactery."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Spellcasting",
+					"desc": "The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared:"
+				}
+			},
+			{
+				"spell_line": "Cantrips (at will): _magic hand, prestidigitation, ray of frost_"
+			},
+			{
+				"spell_line": "1st level (4 slots): _detect magic, magic missile, shield, thunderwave_"
+			},
+			{
+				"spell_line": "2nd level (3 slots): _detect thoughts, invisibility, Melf's acid arrow, mirror image_"
+			},
+			{
+				"spell_line": "3rd level (3 slots): _animate dead, counterspell, dispel magic, fireball_"
+			},
+			{
+				"spell_line": "4th level (3 slots): _blight, dimension door_"
+			},
+			{
+				"spell_line": "5th level (3 slots): _cloudkill, scrying_"
+			},
+			{
+				"spell_line": "6th level (1 slot): _disintegrate, globe of invulnerability_"
+			},
+			{
+				"spell_line": "7th level (1 slot): _finger of death, plane shift_"
+			},
+			{
+				"spell_line": "8th level (1 slot): _dominate monster, power word stun_"
+			},
+			{
+				"spell_line": "9th level (1 slot): _power word kill_"
+			},
+			{
+				"property_block": {
+					"name": "Turn Resistance",
+					"desc": "The lich has advantage on saving throws against any effect that turns undead."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Paralyzing Touch",
+					"desc": "_Melee Spell Attack:_ +12 to hit, reach 5 ft., one creature. _Hit:_ 10 (3d6) cold damage. The target must succeed on a DC 18 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on a success."
+				}
+			},
+			{
+				"subtitle": "Legendary Actions"
+			},
+			{
+				"text": "The lich can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time and only at the end of another creature's turn. The lich regains spent legendary actions at the start of its turn."
+			},
+			{
+				"property_line": {
+					"name": "Cantrip.",
+					"desc": "The lich casts a cantrip."
+				}
+			},
+			{
+				"property_line": {
+					"name": "Paralyzing Touch (Costs 2 Actions).",
+					"desc": "The lich uses its Paralyzing Touch."
+				}
+			},
+			{
+				"property_line": {
+					"name": "Frightening Gaze (Costs 2 Actions).",
+					"desc": "The lich fixes its gaze on one creature it can see within 10 feet of it. the target must succeed on a DC 18 Wisdom saving throw against this magic or become frightened for 1 minute. the frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune the lich's gaze for the next 24 hours."
+				}
+			},
+			{
+				"property_line": {
+					"name": "Disrupt Life (Costs 3 Actions).",
+					"desc": "Each non-undead creature within 20 feet of the lich must make a DC 18 Constitution saving throw against this magic, taking 21 (6d6) necrotic damage on a failed save, or half as much damage on a successful one."
+				}
+			}
+		]
+	},
+	{
+		"name": "Manticore",
+		"heading": "Large monstrosity, lawful evil",
+		"two-column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "14 (nautral armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "68 (8d10 + 24)"
+			},
+			{
+				"name": "Speed",
+				"desc": "30 ft., fly 50 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "17",
+			"dex": "16",
+			"con": "17",
+			"int": "7",
+			"wis": "12",
+			"cha": "8"
+		},
+		"traits": [
+			{
+				"name": "Senses",
+				"desc": "darkvision 60 ft., passive Perception 11"
+			},
+			{
+				"name": "Languages",
+				"desc": "Common"
+			},
+			{
+				"name": "Challenge",
+				"desc": "3 (700 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Tail Spike Regrowth",
+					"desc": "The manticore has twenty-four tail spikes. Used spikes regrow when the manticore finishes a long rest."
+				}
+			},
+			{
+				"subtitle": " Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The manticore makes three attacks: one with its bite and two with its claws or three with its tail spikes."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Bite",
+					"desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 7 (1d8 + 3) piercing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Claw",
+					"desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one target. _Hit:_ 6 (1d6 + 3) piercing damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Tail Spike",
+					"desc": "_Ranged Weapon Attack:_ +5 to hit, range 100/200 ft., one target. _Hit:_ 7 (1d8 + 3) piercing damage."
+				}
+			}
+		]
+	},
+	{
+		"name": "Planetar",
+		"heading": "Large celestial, lawful good",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "19 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "200 (16d10 + 112)"
+			},
+			{
+				"name": "Speed",
+				"desc": "40 ft., fly 120 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "24",
+			"dex": "20",
+			"con": "24",
+			"int": "19",
+			"wis": "22",
+			"cha": "25"
+		},
+		"traits": [
+			{
+				"name": "Saving Throws",
+				"desc": "Con +12, Wis +11, Cha +12"
+			},
+			{
+				"name": "Skills",
+				"desc": "Perception +9"
+			},
+			{
+				"name": "Damage Resistances",
+				"desc": "radiant; bludgeoning, piercing, and slashing from nonmagical attacks"
+			},
+			{
+				"name": "Condition Immunities",
+				"desc": "charmed, exhaustion, frightened"
+			},
+			{
+				"name": "Senses",
+				"desc": "darkvision 120 ft., passive Perception 21"
+			},
+			{
+				"name": "Languages",
+				"desc": "all, telepathy 120 ft."
+			},
+			{
+				"name": "Challenge",
+				"desc": "16 (15,000 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Angelic Weapons",
+					"desc": "The planetar's weapon attacks are magical. When the planetar hits with any weapon, the weapon deals an extra 5d8 radiant damage (included in the attack)."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Divine Awareness",
+					"desc": "The planetar knows if it hears a lie."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Innate Spellcasting",
+					"desc": "The planetar's spellcasting ability is Charisma (spell save DC 20). The planetar can innately cast the following spells, requiring no material components:"
+				}
+			},
+			{
+				"spell_line": "At will: _detect evil and good, invisibility (self only)_"
+			},
+			{
+				"spell_line": "3/day each: blade barrier, dispel evil and good, flame strike, raise dead_"
+			},
+			{
+				"spell_line": "1/day each: _commune, control weather, insect plague_"
+			},
+			{
+				"property_block": {
+					"name": "Magic Resistance",
+					"desc": "The planetar has advantage on saving throws against spells and other magical effects."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The planetar makes two melee attacks."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Greatsword",
+					"desc": "_Melee Weapon Attack:_ +12 to hit, reach 5 ft., one target. _Hit:_ 21 (4d6 + 7) slashing damage plus 22 (5d8) radiant damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Healing Touch (4/Day)",
+					"desc": "The planetar touches another creature. The target magically regains 30 (6d8 + 3) hit points and is freed from any curse, disease, poison, blindness, or deafness."
+				}
+			}
+		]
+	},
+	{
+		"name": "Rug of Smothering",
+		"heading": "Large construct, unaligned",
+		"two_column": false,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "12"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "33 (6d10)"
+			},
+			{
+				"name": "Speed",
+				"desc": "10 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "17",
+			"dex": "14",
+			"con": "10",
+			"int": "1",
+			"wis": "3",
+			"cha": "1"
+		},
+		"traits": [
+			{
+				"name": "Damage Immunities",
+				"desc": "poison, psychic"
+			},
+			{
+				"name": "Condition Immunities",
+				"desc": "blinded, charmed, deafened, frightened, paralyzed, petrified, poisoned"
+			},
+			{
+				"name": "Senses",
+				"desc": "blindsight 60 ft. (blind beyond this radius), passive Perception 6"
+			},
+			{
+				"name": "Languages",
+				"desc": "—"
+			},
+			{
+				"name": "Challenge",
+				"desc": "2 (450 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Antimagic Susceptibility",
+					"desc": "The rug is incapacitated while in the area of an _antimagic field_. If targeted by _dispel magic_, the rug must succeed on a Constitution saving throw against the caster’s spell save DC or fall unconscious for 1 minute."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Damage Transfer",
+					"desc": "When it is grappling a creature, the rug take only half the damage dealt to it, and the creature grappled by the rug takes the other half."
+				}
+			},
+			{
+				"property_block": {
+					"name": "False Appearance",
+					"desc": "While the rug remains motionless, it is indistinguishable from a normal rug."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Smother",
+					"desc": "_Melee Weapon Attack:_ +5 to hit, reach 5 ft., one Medium or smaller creature. _Hit:_ The creature is grappled (escape DC 13). Until this grapple ends, the target is restrained, blinded, and at risk of suffocating, and the rug can’t smother another target. In addition, at the start of each of the target’s turns, the target takes 10 (2d6 + 3) bludgeoning damage."
+				}
+			}
+		]
+	},
+	{
+		"name": "Solar",
+		"heading": "Large celestial, lawful good",
+		"two_column": true,
+		"basic_info": [
+			{
+				"name": "Armor Class",
+				"desc": "21 (natural armor)"
+			},
+			{
+				"name": "Hit Points",
+				"desc": "243 (86d10 + 144)"
+			},
+			{
+				"name": "Speed",
+				"desc": "50 ft., fly 150 ft."
+			}
+		],
+		"ability_scores": {
+			"str": "26",
+			"dex": "22",
+			"con": "26",
+			"int": "25",
+			"wis": "25",
+			"cha": "30"
+		},
+		"traits": [
+			{
+				"name": "Saving Throws",
+				"desc": "Int +14, Wis +14, Cha +17"
+			},
+			{
+				"name": "Skills",
+				"desc": "Perception +14"
+			},
+			{
+				"name": "Damage Resistances",
+				"desc": "radiant; bludgeoning, piercing, and slashing from nonmagical attacks"
+			},
+			{
+				"name": "Damage Immunities",
+				"desc": "necrotic, poison"
+			},
+			{
+				"name": "Condition Immunities",
+				"desc": "charmed, exhaustion, frightened, poisoned"
+			},
+			{
+				"name": "Senses",
+				"desc": "truesight 120 ft., passive Perception 24"
+			},
+			{
+				"name": "Languages",
+				"desc": "all, telepathy 120 ft."
+			},
+			{
+				"name": "Challenge",
+				"desc": "21 (33,000 XP)"
+			}
+		],
+		"content": [
+			{
+				"property_block": {
+					"name": "Angelic Weapons",
+					"desc": "The solar's weapon attacks are magical. When the solar hits with any weapon, the weapon deals an extra 6d8 radiant damage (included in the attack)."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Divine Awareness",
+					"desc": "The solar knows if it hears a lie."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Innate Spellcasting",
+					"desc": "The solar's spellcasting ability is Charisma (spell save DC 25). The solar can innately cast the following spells, requiring no material components:"
+				}
+			},
+			{
+				"spell_line": "At will: _detect evil and good, invisibility_ (self only)"
+			},
+			{
+				"spell_line": "3/day each: _blade barrier, dispel evil and good, resurrection_"
+			},
+			{
+				"spell_line": "1/day each: _commune, control weather_"
+			},
+			{
+				"property_block": {
+					"name": "Magic Resistance",
+					"desc": "The solar has advantage on saving throws against spells and other magical effects."
+				}
+			},
+			{
+				"subtitle": "Actions"
+			},
+			{
+				"property_block": {
+					"name": "Multiattack",
+					"desc": "The solar makes two greatsword attacks."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Greatsword",
+					"desc": "_Melee Weapon Attack:_ +15 to hit, reach 5 ft., one target. _Hit:_ 22 (4d6 + 8) slashing damage plus 27 (6d8) radiant damage."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Slaying Longbow",
+					"desc": "_Ranged Weapon Attack:_ +13 to hit, range 150/600 ft., one target. _Hit:_ 15 (2d8 + 6) piercing damage plus 27 (6d8) radiant damage. If the target is creature that has 100 hit points or fewer, it must succeed on a DC 15 Constitution saving throw or die."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Flying Sword",
+					"desc": "The solar releases its greatsword to hover magically in an unoccupied space within 5 feet of it. If the solar can see the sword, the solar can mentally command it as a bonus action to fly up to 50 feet and either make one attack against a target or return to the solar’s hands. If the hovering sword is targeted by any effect, the solar is considered to be holding it. The hovering sword falls if the solar dies."
+				}
+			},
+			{
+				"property_block": {
+					"name": "Healing Touch (4/Day)",
+					"desc": "The solar touches another creature. The target magically regains 40 (8d8 + 4) hit points and is freed from any curse, disease, poison, blindness, or deafness."
+				}
+			},
+			{
+				"subtitle": "Legendary Actions"
+			},
+			{
+				"text": "The solar can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature’s turn. The solar regains spent legendary actions at the start of its turn."
+			},
+			{
+				"property_line": {
+					"name": "Teleport.",
+					"desc": "The solar magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see."
+				}
+			},
+			{
+				"property_line": {
+					"name": "Searing Burst (Costs 2 Actions).",
+					"desc": "The solar emits magical, divine energy. Each creature of its choice in a 10-foot radius must make a DC 23 Dexterity saving throw, taking 14 (4d6) fire damage plus 14 (4d6) radiant damage on a failed save, or half as much damage on a successful one."
+				}
+			},
+			{
+				"property_line": {
+					"name": "Blinding Gaze (Costs 3 Actions).",
+					"desc": "The solar targets one creature it can see within 30 feet of it. If the target can see it, the target must succeed on a DC 15 Constitution saving throw or be blinded until magic such as the _lesser restoration_ spell removes the blindness."
+				}
+			}
+		]
+	}
+]
