@@ -3,6 +3,9 @@
 $(document).ready(function() {
 
   var mode = sessionStorage.getItem('mode');
+  if (mode === null) {
+    mode = 'new';
+  }
 
   switch (mode) {
     case 'new':
@@ -43,17 +46,8 @@ $(document).ready(function() {
 
   $('#two-column-checkbox').change(function() {
     monster.two_column = this.checked;
-
-    if (monster.two_column) {
-      $('#live-statblock').removeClass('one-col-size');
-      $('#live-statblock').addClass('two-col-size');
-    } else {
-      $('#live-statblock').removeClass('two-col-size');
-      $('#live-statblock').addClass('one-col-size');
-    }
-
+    handleColumnChange(!monster.two_column);
     $("#live-statblock").html(makeStatblockHTML(monster));
-
     updateAllExpandables();
   });
 
@@ -97,6 +91,10 @@ $(document).ready(function() {
     $("#live-statblock").html(makeStatblockHTML(monster));
   });
 
+  $('#statblock-visible-checkbox').change(function() {
+    handleModeChange(this.checked);
+  });
+
   $(document).on('keyup', '.basic-info-name, .basic-info-desc', function() {
     updateMonsterBasicInfo();
     $("#live-statblock").html(makeStatblockHTML(monster));
@@ -113,6 +111,13 @@ $(document).ready(function() {
   });
 
   $(window).resize(function() {
+    var breakpoint = monster.two_column ? 1500 : 1000;
+    if ($(window).width() > breakpoint) {
+      // $('#statblock-visible-checkbox').checked = false;
+      handleModeChange(false);
+    } else {
+      handleModeChange($('#statblock-visible-checkbox').is(":checked"));
+    }
     updateAllExpandables();
   });
 
@@ -123,16 +128,52 @@ $(document).ready(function() {
   updateAllExpandables();
 });
 
-// $(window).load(function() {
-
-// })
-
+/**
+ * Updates the width of all textAreas marked as expandable.
+ */
 function updateAllExpandables() {
   $('.expandable').each(function() {
     updateExpandableTextArea(this);
   });
 }
 
+/**
+ * Updates classes to reflect a change in number of columns.
+ *
+ * @param  {boolean} singleCol True if the statblock is one column, false if
+ *                             two columns
+ */
+function handleColumnChange(singleCol) {
+  if (singleCol) {
+    $('#live-statblock').removeClass('two-col-small-hidden');
+    $('#live-statblock').addClass('one-col-small-hidden');
+
+    $('#mode-toggle').removeClass('two-col-small-visible');
+    $('#mode-toggle').addClass('one-col-small-visible');
+  } else {
+    $('#live-statblock').removeClass('one-col-small-hidden');
+    $('#live-statblock').addClass('two-col-small-hidden');
+
+    $('#mode-toggle').removeClass('one-col-small-visible');
+    $('#mode-toggle').addClass('two-col-small-visible');
+  }
+}
+
+function handleModeChange(viewMode) {
+  if (viewMode) {
+    $("#live-statblock").addClass('force-show');
+    $('#editor-side').addClass('force-hide');
+  } else {
+    $("#live-statblock").removeClass('force-show');
+    $('#editor-side').removeClass('force-hide');
+    updateAllExpandables();
+  }
+}
+
+/**
+ * Updates the width of the given text area.
+ * @param  {element} object The DOM textarea to be resized
+ */
 function updateExpandableTextArea(object) {
   var hiddenDiv = document.createElement('div');
   hiddenDiv.classList.add('hiddendiv', 'common');
@@ -193,9 +234,15 @@ function updateMonsterAbilities() {
   });
 }
 
+/**
+ * Fills the statblock-editing form when the page is loaded, initializing all
+ * fields.
+ *
+ * @param  {object} monster The object representing the current monster
+ */
 function fillForm(monster) {
   $('#two-column-checkbox').prop('checked', monster.two_column);
-  $('#live-statblock').addClass(monster.two_column ? 'two-col-size' : 'one-col-size');
+  handleColumnChange(!monster.two_column);
   $('#monster-name').val(monster.name);
   $('#monster-header').val(monster.heading);
   if (monster.basic_info.length > 0) {
@@ -239,5 +286,4 @@ function fillForm(monster) {
       }
     }
   }
-
 }

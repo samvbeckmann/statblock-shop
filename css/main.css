@@ -90,13 +90,37 @@
   border-right: 1px solid #c9c9c9;
   border-bottom: #c9c9c9 solid 1px; }
 
-.switch-lable {
+.switch-label {
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   letter-spacing: 1px;
   font-size: .7rem;
   font-weight: bold;
   color: #8D99AE;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 3px; }
+
+.force-show {
+  display: inherit !important; }
+
+.force-hide {
+  display: none !important; }
+
+@media (max-width: 1000px) {
+  .one-col-small-hidden {
+    display: none; } }
+
+@media (max-width: 1500px) {
+  .two-col-small-hidden {
+    display: none; } }
+
+@media (min-width: 1000px) {
+  .one-col-small-visible {
+    display: none; } }
+
+@media (min-width: 1500px) {
+  .two-col-small-visible {
+    display: none; } }
 
 textarea {
   resize: none;

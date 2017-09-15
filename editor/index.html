@@ -6,19 +6,19 @@
   <title>Statblocks for Fun and Profit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous">
-  </script>
-  <!-- <script
-    src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-    crossorigin="anonymous">
-  </script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous"/>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+          integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+          integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+          crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+          integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+          crossorigin="anonymous"></script>
   <script src="https://use.fontawesome.com/b4fdba3a00.js"></script>
 
   <link rel="import" href="/vendor/statblock5e/top-stats.html">
@@ -38,173 +38,198 @@
 </head>
 <body>
   <nav class="navbar navbar-toggleable-md navbar-inverse navbar-static-top">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="/">Statblock Shop
-        <span class="badge badge-warning badge-outline ml-1">Beta</span></a>
+    <button class="navbar-toggler navbar-toggler-right"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">Statblock Shop
+      <span class="badge badge-warning badge-outline ml-1">Beta</span></a>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Docs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/samvbeckmann/statblock-manager">GitHub</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Docs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/samvbeckmann/statblock-shop">GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <div class="container-fluid pr-0 pl-0">
+  <div class="container-fluid pr-0 pl-0">
 
-      <div class="row" style="max-width: 100%">
-        <form class="form-inline ml-3">
+    <div class="row" style="max-width: 100%">
+      <form class="form-inline ml-3">
 
-          <div class="form-group inline row m-3">
-            <button type="button" id="save" class="btn btn-success btn-circle btn-lg mr-2"><i class="fa fa-check" aria-hidden="true"></i></button>
-            <div class="dropdown-container">
-              <button type="button" id="exportButton" class="btn btn-primary btn-circle btn-lg dropdown-toggle mr-2" form=""data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-share" aria-hidden="true"></i></button>
-              <div class="dropdown-menu" aria-labelledby="exportButton">
-                <a class="dropdown-item disabled" style="color: #7e7e7e;">PDF<span class="badge badge-info badge-outline ml-2">In Progress</span></a>
-                <a class="dropdown-item">Homebrewery</a>
-                <a class="dropdown-item">HTML</a>
-                <a class="dropdown-item">JSON</a>
+        <div class="form-group inline row m-3">
+
+          <button type="button" id="save" class="btn btn-outline-success mr-2">
+            <i class="fa fa-check" aria-hidden="true"></i> Save
+          </button>
+
+          <div class="dropdown-container">
+            <button id="exportButton"
+                    type="button"
+                    class="btn btn-outline-primary dropdown-toggle mr-2"
+                    form=""
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+              <i class="fa fa-share" aria-hidden="true"></i> Export
+            </button>
+            <div class="dropdown-menu" aria-labelledby="exportButton">
+              <a class="dropdown-item disabled" style="color: #7e7e7e;">PDF<span class="badge badge-info badge-outline ml-2">In Progress</span></a>
+              <a class="dropdown-item">Homebrewery</a>
+              <a class="dropdown-item">HTML</a>
+              <a class="dropdown-item">JSON</a>
+            </div>
+          </div>
+
+          <!-- <button id="preview-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#preview-modal">Preview</button> -->
+
+          <div id="mode-toggle" class="col">
+            <div class="switch-label">Mode</div>
+            <input class="tgl tgl-flip" id="statblock-visible-checkbox" type="checkbox"/>
+            <label class="tgl-btn mx-auto" data-tg-off="edit" data-tg-on="view" for="statblock-visible-checkbox">
+          </div>
+
+          <div class="col">
+            <div class="switch-label">Cols</div>
+            <input class="tgl tgl-flip" id="two-column-checkbox" type="checkbox"/>
+            <label class="tgl-btn mx-auto" data-tg-off="one" data-tg-on="two" for="two-column-checkbox">
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+
+    <div class="row" id="editor-row">
+      <div class="col editor-pane no-side-padding" id="editor-side">
+        <form id="statblock-form">
+
+          <div class="form-group mb-0">
+            <div class="input-group">
+              <span class="input-group-addon no-rounded-corners no-dup-top col-md-3 col-2">Name</span>
+              <input class="form-control no-rounded-corners no-dup-top" type="text" id="monster-name">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon no-rounded-corners no-dup-top col-md-3 col-2">Header</span>
+              <input class="form-control no-rounded-corners no-dup-top" type="text" id="monster-header">
+            </div>
+          </div>
+
+          <div class="form-group mb-0">
+            <label for="basic-info-box" class="form-label">
+              <button class="btn btn-outline-success btn-circle btn-form" id="basic-info-default-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+              Basic Info
+            </label>
+            <div id="basic-info-lines">
+              <div class="input-group statblock-input-group">
+                <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                <span class="pixel-wall"></span>
+                <textarea class="basic-info-name form-control common expandable no-dup-borders col-4" rows="1" placeholder="Name" style="min-height: 38px"></textarea>
+                <span class="pixel-wall"></span>
+                <textarea class="basic-info-desc form-control common expandable no-dup-borders" rows="1" placeholder="Description" style="min-height: 38px"></textarea>
+                <button class="btn btn-outline-danger btn-circle btn-form rm-basic-info-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                <button class="btn btn-outline-success btn-circle btn-form new-basic-info-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
               </div>
             </div>
-            <button type="button" id="preview" class="btn btn-secondary mr-2 hidden-xl-up">Preview</button>
-            <!-- <input type="checkbox" data-toggle="toggle" data-on="1" data-off="2" class="form-check-input" id="two-column-checkbox"></input> -->
-            <div class="col">
-              <span class="switch-lable">Columns</span>
-              <input class="tgl tgl-flip" id="two-column-checkbox" type="checkbox"/>
-              <label class="tgl-btn mx-auto" data-tg-off="one" data-tg-on="two" for="two-column-checkbox">
-            </div>
+          </div>
 
+          <div>
+            <p class="form-label">Stats</p>
+            <div class="row mr-0 ml-0">
+              <div class="col-2 background-box">STR</div>
+              <div class="col-2 background-box">DEX</div>
+              <div class="col-2 background-box">CON</div>
+              <div class="col-2 background-box">INT</div>
+              <div class="col-2 background-box">WIS</div>
+              <div class="col-2 background-box border-right">CHA</div>
+            </div>
+            <div class="form-group mb-0 row mr-0 ml-0">
+
+              <div class="input-group col-2 no-side-padding">
+                <input class="form-control ability-score-input no-rounded-corners no-dup-right text-center" type="number" min="1" id="str-score">
+              </div>
+              <div class="input-group col-2 no-side-padding">
+                <input class="form-control ability-score-input no-rounded-corners no-dup-right text-center" type="number" min="1" id="dex-score">
+              </div>
+              <div class="input-group col-2 no-side-padding">
+                <input class="form-control ability-score-input no-rounded-corners no-dup-right text-center" type="number" min="1" id="con-score">
+              </div>
+              <div class="input-group col-2 no-side-padding">
+                <input class="form-control ability-score-input no-rounded-corners no-dup-right text-center" type="number" min="1" id="int-score">
+              </div>
+              <div class="input-group col-2 no-side-padding">
+                <input class="form-control ability-score-input no-rounded-corners no-dup-right text-center" type="number" min="1" id="wis-score">
+              </div>
+              <div class="input-group col-2 no-side-padding">
+                <input class="form-control ability-score-input no-rounded-corners text-center" type="number" min="1" id="cha-score">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group mb-0">
+            <label for="traits-box" class="form-label">
+              <button class="btn btn-outline-success btn-circle btn-form" id="traits-default-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+              Traits
+            </label>
+            <div id="traits-lines">
+              <div class="input-group statblock-input-group">
+                <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                <span class="pixel-wall"></span>
+                <textarea class="trait-name form-control common expandable no-dup-borders col-4" rows="1" placeholder="Name" style="min-height: 38px"></textarea>
+                <span class="pixel-wall"></span>
+                <textarea class="trait-desc form-control common expandable no-dup-borders" rows="1" placeholder="Description" style="min-height: 38px"></textarea>
+                <button class="btn btn-outline-danger btn-circle btn-form rm-trait-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                <button class="btn btn-outline-success btn-circle btn-form new-trait-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="main-content" class="form-label">
+              <button class="btn btn-outline-success btn-circle btn-form" id="abilities-default-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+              Abilities
+            </label>
+            <div id="abilities-lines">
+              <div class="input-group statblock-input-group abilityline-trait dropup">
+                <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                <button type="button" class="btn btn-secondary dropdown-toggle no-rounded-corners trait-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Trait
+                </button>
+                <div class="dropdown-menu">
+                  <button class="dropdown-item trait-btn" type="button">Trait</button>
+                  <button class="dropdown-item subtitle-btn" type="button">Subtitle</button>
+                  <button class="dropdown-item text-btn" type="button">Text</button>
+                  <button class="dropdown-item property-btn" type="button">Property</button>
+                  <button class="dropdown-item spells-btn" type="button">Spells</button>
+                  <button class="dropdown-item numbered-btn" type="button">Number</button>
+                </div>
+                <div class="stacked-text-blocks">
+                  <textarea class="ability-trait-name ability-field form-control common expandable no-dup-top no-dup-right no-dup-left" rows="1" placeholder="Name"></textarea>
+                  <textarea class="ability-trait-desc ability-field form-control common expandable no-dup-borders" rows="1" placeholder="Description"></textarea>
+                </div>
+                <button class="btn btn-outline-danger btn-circle btn-form rm-ability-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                <button class="btn btn-outline-success btn-circle btn-form new-ability-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+              </div>
+            </div>
           </div>
 
         </form>
+
       </div>
-
-      <div class="row" id="editor-row">
-        <div class="col editor-pane no-side-padding" id="editor-side">
-          <form id="statblock-form">
-
-            <div class="form-group mb-0">
-              <div class="input-group">
-                <span class="input-group-addon no-rounded-corners no-dup-top col-md-3 col-2">Name</span>
-                <input class="form-control no-rounded-corners no-dup-top" type="text" id="monster-name">
-              </div>
-              <div class="input-group">
-                <span class="input-group-addon no-rounded-corners no-dup-top col-md-3 col-2">Header</span>
-                <input class="form-control no-rounded-corners no-dup-top" type="text" id="monster-header">
-              </div>
-            </div>
-
-            <div class="form-group mb-0">
-              <label for="basic-info-box" class="form-label">
-                <button class="btn btn-outline-success btn-circle btn-form" id="basic-info-default-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                Basic Info
-              </label>
-              <div id="basic-info-lines">
-                <div class="input-group statblock-input-group">
-                  <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
-                  <span class="pixel-wall"></span>
-                  <textarea class="basic-info-name form-control common expandable no-dup-borders col-4" rows="1" placeholder="Name" style="min-height: 38px"></textarea>
-                  <span class="pixel-wall"></span>
-                  <textarea class="basic-info-desc form-control common expandable no-dup-borders" rows="1" placeholder="Description" style="min-height: 38px"></textarea>
-                  <button class="btn btn-outline-danger btn-circle btn-form rm-basic-info-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                  <button class="btn btn-outline-success btn-circle btn-form new-basic-info-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <p class="form-label">Stats</p>
-              <div class="row mr-0 ml-0">
-                <div class="col-2 background-box">STR</div>
-                <div class="col-2 background-box">DEX</div>
-                <div class="col-2 background-box">CON</div>
-                <div class="col-2 background-box">INT</div>
-                <div class="col-2 background-box">WIS</div>
-                <div class="col-2 background-box border-right">CHA</div>
-              </div>
-              <div class="form-group mb-0 row mr-0 ml-0">
-
-                <div class="input-group col-2 no-side-padding">
-                  <input class="form-control ability-score-input no-rounded-corners no-dup-right text-center" type="number" min="1" id="str-score">
-                </div>
-                <div class="input-group col-2 no-side-padding">
-                  <input class="form-control ability-score-input no-rounded-corners no-dup-right text-center" type="number" min="1" id="dex-score">
-                </div>
-                <div class="input-group col-2 no-side-padding">
-                  <input class="form-control ability-score-input no-rounded-corners no-dup-right text-center" type="number" min="1" id="con-score">
-                </div>
-                <div class="input-group col-2 no-side-padding">
-                  <input class="form-control ability-score-input no-rounded-corners no-dup-right text-center" type="number" min="1" id="int-score">
-                </div>
-                <div class="input-group col-2 no-side-padding">
-                  <input class="form-control ability-score-input no-rounded-corners no-dup-right text-center" type="number" min="1" id="wis-score">
-                </div>
-                <div class="input-group col-2 no-side-padding">
-                  <input class="form-control ability-score-input no-rounded-corners text-center" type="number" min="1" id="cha-score">
-                </div>
-              </div>
-            </div>
-
-
-            <div class="form-group mb-0">
-              <label for="traits-box" class="form-label">
-                <button class="btn btn-outline-success btn-circle btn-form" id="traits-default-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                Traits
-              </label>
-              <div id="traits-lines">
-                <div class="input-group statblock-input-group">
-                  <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
-                  <span class="pixel-wall"></span>
-                  <textarea class="trait-name form-control common expandable no-dup-borders col-4" rows="1" placeholder="Name" style="min-height: 38px"></textarea>
-                  <span class="pixel-wall"></span>
-                  <textarea class="trait-desc form-control common expandable no-dup-borders" rows="1" placeholder="Description" style="min-height: 38px"></textarea>
-                  <button class="btn btn-outline-danger btn-circle btn-form rm-trait-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                  <button class="btn btn-outline-success btn-circle btn-form new-trait-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="main-content" class="form-label">
-                <button class="btn btn-outline-success btn-circle btn-form" id="abilities-default-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                Abilities
-              </label>
-              <div id="abilities-lines">
-                <div class="input-group statblock-input-group abilityline-trait dropup">
-                  <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
-                  <button type="button" class="btn btn-secondary dropdown-toggle no-rounded-corners trait-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Trait
-                  </button>
-                  <div class="dropdown-menu">
-                    <button class="dropdown-item trait-btn" type="button">Trait</button>
-                    <button class="dropdown-item subtitle-btn" type="button">Subtitle</button>
-                    <button class="dropdown-item text-btn" type="button">Text</button>
-                    <button class="dropdown-item property-btn" type="button">Property</button>
-                    <button class="dropdown-item spells-btn" type="button">Spells</button>
-                    <button class="dropdown-item numbered-btn" type="button">Number</button>
-                  </div>
-                  <div class="stacked-text-blocks">
-                    <textarea class="ability-trait-name ability-field form-control common expandable no-dup-top no-dup-right no-dup-left" rows="1" placeholder="Name"></textarea>
-                    <textarea class="ability-trait-desc ability-field form-control common expandable no-dup-borders" rows="1" placeholder="Description"></textarea>
-                  </div>
-                  <button class="btn btn-outline-danger btn-circle btn-form rm-ability-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                  <button class="btn btn-outline-success btn-circle btn-form new-ability-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                </div>
-              </div>
-            </div>
-
-          </form>
-
-        </div>
-        <div class="col-md-auto editor-pane no-side-padding hidden-lg-down" id="live-statblock">
-        </div>
-      </div>
+      <div class="col-md-auto editor-pane no-side-padding" id="live-statblock"></div>
     </div>
+  </div>
+
 </body>
 </html>

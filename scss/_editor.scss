@@ -88,11 +88,49 @@
   border-bottom: $grey solid 1px;
 }
 
-.switch-lable {
+.switch-label {
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   letter-spacing: 1px;
   font-size: .7rem;
   font-weight: bold;
   color: $grey-blue;
   text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 3px;
+}
+
+.force-show {
+  display: inherit !important;
+}
+
+.force-hide {
+  display: none !important;
+}
+
+// Utilities for making things visible based on window size and statblock cols
+$one-col-breakpoint: 1000px;
+$two-col-breakpoint: 1500px;
+
+.one-col-small-hidden {
+  @media (max-width: $one-col-breakpoint) {
+    display: none;
+  }
+}
+
+.two-col-small-hidden {
+  @media (max-width: $two-col-breakpoint) {
+    display: none;
+  }
+}
+
+.one-col-small-visible {
+  @media (min-width: $one-col-breakpoint) {
+    display: none;
+  }
+}
+
+.two-col-small-visible {
+  @media (min-width: $two-col-breakpoint) {
+    display: none;
+  }
 }
