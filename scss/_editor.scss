@@ -10,14 +10,14 @@
 
 #editor-row {
   margin: 0;
-  height: calc(100vh - 144px);
+  height: calc(100vh - 139px); // magic number
   max-width: 100%;
   border-top: $grey solid 1px;
 }
 
 #statblock-form {
   background-color: $background-grey;
-  border-right: 11px solid $background-grey;
+  // border-right: 11px solid $background-grey;
 }
 
 .statblock-input-group {
@@ -97,6 +97,11 @@
   text-transform: uppercase;
   text-align: center;
   padding-bottom: 3px;
+}
+
+.editor-ul {
+  margin-bottom: 0;
+  padding: 0;
 }
 
 .force-show {

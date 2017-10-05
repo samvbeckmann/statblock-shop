@@ -25,13 +25,12 @@
 
 #editor-row {
   margin: 0;
-  height: calc(100vh - 144px);
+  height: calc(100vh - 139px);
   max-width: 100%;
   border-top: #c9c9c9 solid 1px; }
 
 #statblock-form {
-  background-color: #eceeef;
-  border-right: 11px solid #eceeef; }
+  background-color: #eceeef; }
 
 .statblock-input-group {
   background-color: white;
@@ -99,6 +98,10 @@
   text-transform: uppercase;
   text-align: center;
   padding-bottom: 3px; }
+
+.editor-ul {
+  margin-bottom: 0;
+  padding: 0; }
 
 .force-show {
   display: inherit !important; }
