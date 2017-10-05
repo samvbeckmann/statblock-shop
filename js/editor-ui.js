@@ -6,7 +6,7 @@ $(document).ready(function() {
     revert: 100,
     stop: function(event, ui) {
       updateMonsterBasicInfo();
-      $("#live-statblock").html(makeStatblockHTML(monster));
+      $('#live-statblock').html(makeStatblockHTML(monster));
     }
   });
 
@@ -14,7 +14,7 @@ $(document).ready(function() {
     revert: 100,
     stop: function(event, ui) {
       updateMonsterTraits();
-      $("#live-statblock").html(makeStatblockHTML(monster));
+      $('#live-statblock').html(makeStatblockHTML(monster));
     }
   });
 
@@ -22,49 +22,63 @@ $(document).ready(function() {
     revert: 100,
     stop: function(event, ui) {
       updateMonsterAbilities();
-      $("#live-statblock").html(makeStatblockHTML(monster));
+      $('#live-statblock').html(makeStatblockHTML(monster));
     }
   });
 
   $('#basic-info-default-btn').click(function() {
-    $('#basic-info-lines').prepend(makeBasicInfoLine('', ''));
+    $(makeBasicInfoLine('', ''))
+      .prependTo($('#basic-info-lines'))
+      .find('.basic-info-name').focus();
   });
 
   $('#traits-default-btn').click(function() {
-    $('#traits-lines').prepend(makeTraitsLine('', ''));
+    $(makeTraitsLine('', ''))
+      .prependTo($('#traits-lines'))
+      .find('.trait-name').focus();
   });
 
   $('#abilities-default-btn').click(function() {
-    $('#abilities-lines').prepend(makeTraitAbilityLine('', ''));
+    $(makeTraitAbilityLine('', ''))
+      .prependTo($('#abilities-lines'))
+      .find('.ability-trait-name').focus();
   });
 
   $(document).on('click', '.new-basic-info-btn', function() {
-    $(this).closest('.statblock-input-group').after(makeBasicInfoLine('', ''));
+    $(this).closest('.statblock-input-group').after(makeBasicInfoLine('', ''))
+      .next().find('.basic-info-name').focus();
   });
 
   $(document).on('click', '.new-trait-btn', function() {
-    $(this).closest('.statblock-input-group').after(makeTraitsLine('', ''));
+    $(this).closest('.statblock-input-group').after(makeTraitsLine('', ''))
+      .next().find('.trait-name').focus();
   });
 
   $(document).on('click', '.new-ability-btn', function() {
     var thisLine = $(this).closest('.statblock-input-group');
     if (thisLine.hasClass('abilityline-subtitle')) {
-      thisLine.after(makeSubtitleLine(''));
+      thisLine.after(makeSubtitleLine(''))
+        .next().find('.ability-subtitle').focus();
       return;
     } else if (thisLine.hasClass('abilityline-text')) {
-      thisLine.after(makeTextLine(''));
+      thisLine.after(makeTextLine(''))
+        .next().find('.ability-text').focus();
       return;
     } else if (thisLine.hasClass('abilityline-spells')) {
-      thisLine.after(makeSpellsLine(''));
+      thisLine.after(makeSpellsLine(''))
+        .next().find('.ability-spells').focus();
       return;
     } else if (thisLine.hasClass('abilityline-numbered')) {
-      thisLine.after(makeNumberedLine(''));
+      thisLine.after(makeNumberedLine(''))
+        .next().find('.ability-numbered').focus();
       return;
     }  else if (thisLine.hasClass('abilityline-trait')) {
-      thisLine.after(makeTraitAbilityLine('', ''));
+      thisLine.after(makeTraitAbilityLine('', ''))
+        .next().find('.ability-trait-name').focus();
       return;
     }  else if (thisLine.hasClass('abilityline-property')) {
-      thisLine.after(makePropertyAbilityLine('', ''));
+      thisLine.after(makePropertyAbilityLine('', ''))
+        .next().find('.ability-property-name').focus();
       return;
     }
   });

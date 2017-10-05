@@ -13,16 +13,19 @@ $(document).ready(function() {
         monster = json;
         fillForm(monster);
         $("#live-statblock").html(makeStatblockHTML(monster));
+        updateHeader();
       });
       break;
     case 'duplicate':
       monster.name = monster.name + ' (2)';
       fillForm(monster);
       $("#live-statblock").html(makeStatblockHTML(monster));
+      updateHeader();
       break;
     case 'edit':
       fillForm(monster);
       $("#live-statblock").html(makeStatblockHTML(monster));
+      updateHeader();
       break;
   }
 
@@ -54,6 +57,7 @@ $(document).ready(function() {
   $("#monster-name").keyup(function() {
     monster.name = $(this).val();
     $("#live-statblock").html(makeStatblockHTML(monster));
+    updateHeader();
   });
 
   $("#monster-header").keyup(function() {
@@ -89,6 +93,11 @@ $(document).ready(function() {
   $("#cha-score").on("input", function() {
     monster.ability_scores.cha = $(this).val();
     $("#live-statblock").html(makeStatblockHTML(monster));
+  });
+
+  $('#monster-tags').keyup(function() {
+    monster.tags = $(this).val().split(' ').filter(Boolean);
+    updateHeader();
   });
 
   $('#statblock-visible-checkbox').change(function() {
@@ -134,6 +143,14 @@ $(document).ready(function() {
 function updateAllExpandables() {
   $('.expandable').each(function() {
     updateExpandableTextArea(this);
+  });
+}
+
+function updateHeader() {
+  $('#display-name').text(monster.name);
+  var tags = $('#tag-list').empty();
+  $.each(monster.tags, function(i, obj) {
+    $('<li>',{text:obj}).appendTo(tags);
   });
 }
 
@@ -286,4 +303,6 @@ function fillForm(monster) {
       }
     }
   }
+
+  $('#monster-tags').val(monster.tags.join(' '));
 }
