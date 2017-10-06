@@ -175,10 +175,8 @@ function makeBasicInfoLine(name, desc) {
   return `
     <li class="input-group statblock-input-group">
       <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
-      <span class="pixel-wall"></span>
-      <textarea class="basic-info-name form-control common expandable no-dup-borders col-4" rows="1" placeholder="Name" style="min-height: 38px">${name}</textarea>
-      <span class="pixel-wall"></span>
-      <textarea class="basic-info-desc form-control common expandable no-dup-borders" rows="1" placeholder="Description" style="min-height: 38px">${desc}</textarea>
+      <textarea class="basic-info-name form-control common expandable no-dup-bottom no-dup-top no-dup-right col-4" rows="1" placeholder="Name" style="min-height: 38px">${name}</textarea>
+      <textarea class="basic-info-desc form-control common expandable no-dup-bottom no-dup-top no-dup-right" rows="1" placeholder="Description" style="min-height: 38px">${desc}</textarea>
       <button class="btn btn-outline-danger btn-circle btn-form rm-basic-info-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
       <button class="btn btn-outline-success btn-circle btn-form new-basic-info-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
     </li>
@@ -189,10 +187,8 @@ function makeTraitsLine(name, desc) {
   return `
     <li class="input-group statblock-input-group">
       <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
-      <span class="pixel-wall"></span>
-      <textarea class="trait-name form-control common expandable no-dup-borders col-4" rows="1" placeholder="Name" style="min-height: 38px">${name}</textarea>
-      <span class="pixel-wall"></span>
-      <textarea class="trait-desc form-control common expandable no-dup-borders" rows="1" placeholder="Description" style="min-height: 38px">${desc}</textarea>
+      <textarea class="trait-name form-control common expandable no-dup-bottom no-dup-top no-dup-right col-4" rows="1" placeholder="Name" style="min-height: 38px">${name}</textarea>
+      <textarea class="trait-desc form-control common expandable no-dup-bottom no-dup-top no-dup-right" rows="1" placeholder="Description" style="min-height: 38px">${desc}</textarea>
       <button class="btn btn-outline-danger btn-circle btn-form rm-trait-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
       <button class="btn btn-outline-success btn-circle btn-form new-trait-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
     </li>
@@ -203,7 +199,7 @@ function makeGenericAbility(name, className, inputContent) {
   return `
   <li class="input-group statblock-input-group ${className} dropup">
     <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
-    <button type="button" class="btn btn-secondary dropdown-toggle no-rounded-corners trait-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="btn btn-light dropdown-toggle no-rounded-corners trait-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       ${name}
     </button>
     <div class="dropdown-menu">

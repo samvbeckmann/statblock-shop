@@ -16,7 +16,8 @@
   color: #5bc0de; }
 
 #live-statblock {
-  padding: 10px; }
+  padding: 10px;
+  overflow-x: scroll; }
 
 .editor-pane {
   height: 100%;
@@ -47,7 +48,9 @@
 .trait-dropdown {
   border-top: 0px;
   border-bottom: 0px;
-  min-width: calc(80px + 2rem); }
+  min-width: calc(80px + 2rem);
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: white; }
 
 .ability-score-input {
   padding-left: 25px; }
@@ -58,12 +61,6 @@
 .movement-handle {
   max-width: 40px; }
 
-.pixel-wall {
-  width: 1px;
-  margin: 0;
-  padding: 0;
-  background-color: #c9c9c9; }
-
 .background-box {
   text-align: center;
   background-color: #eceeef;
@@ -71,7 +68,7 @@
   padding: .5rem .75rem; }
 
 #editor-side {
-  border-right: 1px solid #c9c9c9; }
+  border-right: 1px solid rgba(0, 0, 0, 0.15); }
 
 .form-label {
   width: 100%;
@@ -86,8 +83,8 @@
   padding-bottom: 0.5rem;
   margin-bottom: 0;
   text-transform: uppercase;
-  border-right: 1px solid #c9c9c9;
-  border-bottom: #c9c9c9 solid 1px; }
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: none; }
 
 .switch-label {
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -105,8 +102,7 @@
 
 #display-name {
   font-weight: bold;
-  font-size: 1.5rem;
-  margin-top: 0.5rem; }
+  font-size: 1.5rem; }
 
 #tag-list {
   list-style-type: none;
@@ -125,7 +121,8 @@
 .center-form {
   margin-top: auto;
   margin-bottom: auto;
-  height: 100%; }
+  height: 100%;
+  min-height: 4rem; }
 
 .force-show {
   display: inherit !important; }

@@ -1,5 +1,6 @@
 #live-statblock {
   padding: 10px;
+  overflow-x: scroll;
 }
 
 .editor-pane {
@@ -39,6 +40,8 @@
   border-top: 0px;
   border-bottom: 0px;
   min-width: calc(80px + 2rem);
+  border-color: rgba(0,0,0,.15);
+  background-color: white;
 }
 
 .ability-score-input {
@@ -53,13 +56,6 @@
   max-width: 40px;
 }
 
-.pixel-wall {
-  width: 1px;
-  margin: 0;
-  padding: 0;
-  background-color: $grey;
-}
-
 .background-box {
   text-align: center;
   background-color: $background-grey;
@@ -68,7 +64,7 @@
 }
 
 #editor-side {
-  border-right: 1px solid $grey;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .form-label {
@@ -84,8 +80,8 @@
   padding-bottom: 0.5rem;
   margin-bottom: 0;
   text-transform: uppercase;
-  border-right: 1px solid $grey;
-  border-bottom: $grey solid 1px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: none;
 }
 
 .switch-label {
@@ -107,7 +103,7 @@
 #display-name {
   font-weight: bold;
   font-size: 1.5rem;
-  margin-top: 0.5rem;
+  // margin-top: 0.5rem;
 }
 
 #tag-list {
@@ -131,6 +127,7 @@
   margin-top: auto;
   margin-bottom: auto;
   height: 100%;
+  min-height: 4rem;
 }
 
 .force-show {

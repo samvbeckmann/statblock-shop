@@ -29,6 +29,8 @@ $(document).ready(function() {
       break;
   }
 
+  $('#editor-row').css('height', $(window).height() - 56 - $('#info-row').height());
+
   // TODO: Handle naming conflict errors.
   $('#save').click(function() {
     switch (mode) {
@@ -128,6 +130,9 @@ $(document).ready(function() {
       handleModeChange($('#statblock-visible-checkbox').is(":checked"));
     }
     updateAllExpandables();
+
+    // 56 is height of navbar. Hardcoded for better performance
+    $('#editor-row').css('height', $(window).height() - 56 - $('#info-row').height());
   });
 
   $(document).on('keyup', '.expandable', function() {
