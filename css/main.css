@@ -106,7 +106,8 @@
 
 #tag-list {
   list-style-type: none;
-  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   padding: 0; }
   #tag-list li {
     float: left;

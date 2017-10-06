@@ -4,8 +4,13 @@ if (selectedEncounter === null)
 
 $(document).ready(function(){
 
-  if (monster)
+  if (monster) {
+    var tags = $('#tag-list').empty();
+    $.each(monster.tags, function(i, obj) {
+      $('<li>',{text:obj}).appendTo(tags);
+    });
     $("#stat-block-location").html(makeStatblockHTML(monster));
+  }
 
   if (monsters !== null)
     makeMonsterCards();
@@ -117,6 +122,10 @@ $(document).ready(function(){
     $(this).addClass("table-active");
     sessionStorage.setItem('activeMonster', JSON.stringify(monster));
 
+    var tags = $('#tag-list').empty();
+    $.each(monster.tags, function(i, obj) {
+      $('<li>',{text:obj}).appendTo(tags);
+    });
     $("#stat-block-location").html(makeStatblockHTML(monster));
   });
 
