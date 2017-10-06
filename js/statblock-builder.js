@@ -102,6 +102,11 @@ $(document).ready(function() {
     updateHeader();
   });
 
+  $('#monster-description').keyup(function() {
+    monster.description = $(this).val();
+    $("#live-statblock").html(makeStatblockHTML(monster));
+  });
+
   $('#statblock-visible-checkbox').change(function() {
     handleModeChange(this.checked);
   });
@@ -310,4 +315,5 @@ function fillForm(monster) {
   }
 
   $('#monster-tags').val(monster.tags.join(' '));
+  $('#monster-description').val(monster.description);
 }

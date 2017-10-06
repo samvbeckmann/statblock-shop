@@ -60,6 +60,9 @@ function makeStatblockHTML(monster) {
   }
 
   statblock += '</stat-block>';
+  if (monster.description) {
+    statblock += '<div class="statblock-description"><p>' + monster.description + '</div>';
+  }
 
   return statblock;
 }

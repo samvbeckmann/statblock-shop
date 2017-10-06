@@ -451,6 +451,10 @@ td.fit {
   margin-right: 5px;
   margin-left: 5px; }
 
+.statblock-description {
+  max-width: 400px;
+  margin-top: 1rem; }
+
 .navbar {
   background-color: #2B2D42; }
 
