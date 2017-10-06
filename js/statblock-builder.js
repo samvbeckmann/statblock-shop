@@ -314,6 +314,8 @@ function fillForm(monster) {
     }
   }
 
-  $('#monster-tags').val(monster.tags.join(' '));
+  if (monster.tags) {
+    $('#monster-tags').val(monster.tags.join(' '));
+  }
   $('#monster-description').val(monster.description);
 }
