@@ -4,6 +4,7 @@ $(document).ready(function() {
 
   $('#basic-info-lines').sortable({
     revert: 100,
+    handle: ".movement-handle",
     stop: function(event, ui) {
       updateMonsterBasicInfo();
       $('#live-statblock').html(makeStatblockHTML(monster));
@@ -12,6 +13,7 @@ $(document).ready(function() {
 
   $('#traits-lines').sortable({
     revert: 100,
+    handle: ".movement-handle",
     stop: function(event, ui) {
       updateMonsterTraits();
       $('#live-statblock').html(makeStatblockHTML(monster));
@@ -20,6 +22,7 @@ $(document).ready(function() {
 
   $('#abilities-lines').sortable({
     revert: 100,
+    handle: ".movement-handle",
     stop: function(event, ui) {
       updateMonsterAbilities();
       $('#live-statblock').html(makeStatblockHTML(monster));
@@ -173,10 +176,14 @@ function changeOneFieldAbility(item, func) {
 
 function makeBasicInfoLine(name, desc) {
   return `
-    <li class="input-group statblock-input-group">
-      <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
-      <textarea class="basic-info-name form-control common expandable no-dup-bottom no-dup-top no-dup-right col-4" rows="1" placeholder="Name" style="min-height: 38px">${name}</textarea>
-      <textarea class="basic-info-desc form-control common expandable no-dup-bottom no-dup-top no-dup-right" rows="1" placeholder="Description" style="min-height: 38px">${desc}</textarea>
+    <li class="statblock-input-group row">
+      <span class="movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      <span class="col-4 inline-input-span">
+        <textarea class="basic-info-name form-control common expandable no-dup-borders no-rounded-corners" rows="1" placeholder="Name">${name}</textarea>
+      </span>
+      <span class="col inline-input-span">
+        <textarea class="basic-info-desc form-control common expandable no-dup-borders no-rounded-corners" rows="1" placeholder="Description">${desc}</textarea>
+      </span>
       <button class="btn btn-outline-danger btn-circle btn-form rm-basic-info-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
       <button class="btn btn-outline-success btn-circle btn-form new-basic-info-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
     </li>
@@ -185,10 +192,14 @@ function makeBasicInfoLine(name, desc) {
 
 function makeTraitsLine(name, desc) {
   return `
-    <li class="input-group statblock-input-group">
-      <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
-      <textarea class="trait-name form-control common expandable no-dup-bottom no-dup-top no-dup-right col-4" rows="1" placeholder="Name" style="min-height: 38px">${name}</textarea>
-      <textarea class="trait-desc form-control common expandable no-dup-bottom no-dup-top no-dup-right" rows="1" placeholder="Description" style="min-height: 38px">${desc}</textarea>
+    <li class="statblock-input-group row">
+      <span class="movement-handle"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      <span class="col-4 inline-input-span">
+        <textarea class="trait-name form-control common expandable no-dup-borders no-rounded-corners" rows="1" placeholder="Name">${name}</textarea>
+      </span>
+      <span class="col inline-input-span">
+        <textarea class="trait-desc form-control common expandable no-dup-borders no-rounded-corners" rows="1" placeholder="Description">${desc}</textarea>
+      </span>
       <button class="btn btn-outline-danger btn-circle btn-form rm-trait-btn" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
       <button class="btn btn-outline-success btn-circle btn-form new-trait-btn" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
     </li>

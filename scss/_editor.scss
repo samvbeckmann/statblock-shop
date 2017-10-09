@@ -13,18 +13,18 @@
   margin: 0;
   height: calc(100vh - 139px); // magic number
   max-width: 100%;
-  border-top: $grey solid 1px;
+  border-top: $border-grey solid 1px;
 }
 
 #statblock-form {
   background-color: $background-grey;
-  // border-right: 11px solid $background-grey;
 }
 
 .statblock-input-group {
   background-color: white;
-  border-bottom: 1px solid $grey;
-  border-right: 1px solid $grey;
+  border-bottom: 1px solid $border-grey;
+  border-right: 1px solid $border-grey;
+  margin: 0;
 }
 
 .stacked-text-blocks {
@@ -40,7 +40,7 @@
   border-top: 0px;
   border-bottom: 0px;
   min-width: calc(80px + 2rem);
-  border-color: rgba(0,0,0,.15);
+  border-color: $border-grey;
   background-color: white;
 }
 
@@ -53,18 +53,26 @@
 }
 
 .movement-handle {
-  max-width: 40px;
+  padding: 0.5rem 0.75rem;
+  align-items: center;
+  display: inline-flex;
+  background-color: $offwhite;
+}
+
+.inline-input-span {
+  border-left: 1px solid $border-grey;
+  padding: 0;
 }
 
 .background-box {
   text-align: center;
   background-color: $background-grey;
-  border-left: $grey solid 1px;
+  border-left: $border-grey solid 1px;
   padding: .5rem .75rem;
 }
 
 #editor-side {
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  border-right: 1px solid $border-grey;
 }
 
 .form-label {
@@ -80,7 +88,7 @@
   padding-bottom: 0.5rem;
   margin-bottom: 0;
   text-transform: uppercase;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid $border-grey;
   border-top: none;
 }
 

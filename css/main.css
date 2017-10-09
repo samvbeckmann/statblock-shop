@@ -28,15 +28,16 @@
   margin: 0;
   height: calc(100vh - 139px);
   max-width: 100%;
-  border-top: #c9c9c9 solid 1px; }
+  border-top: rgba(0, 0, 0, 0.15) solid 1px; }
 
 #statblock-form {
   background-color: #eceeef; }
 
 .statblock-input-group {
   background-color: white;
-  border-bottom: 1px solid #c9c9c9;
-  border-right: 1px solid #c9c9c9; }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0; }
 
 .stacked-text-blocks {
   width: 100%; }
@@ -59,12 +60,19 @@
   border-bottom: 0px; }
 
 .movement-handle {
-  max-width: 40px; }
+  padding: 0.5rem 0.75rem;
+  align-items: center;
+  display: inline-flex;
+  background-color: #EDF2F4; }
+
+.inline-input-span {
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0; }
 
 .background-box {
   text-align: center;
   background-color: #eceeef;
-  border-left: #c9c9c9 solid 1px;
+  border-left: rgba(0, 0, 0, 0.15) solid 1px;
   padding: .5rem .75rem; }
 
 #editor-side {
@@ -381,7 +389,7 @@ textarea {
     padding-right: 0.75rem; }
 
 .border-right {
-  border-right: 1px solid #c9c9c9; }
+  border-right: 1px solid rgba(0, 0, 0, 0.15); }
 
 #monster-list-col {
   max-width: 450px; }
