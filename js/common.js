@@ -28,9 +28,7 @@ function makeStatblockHTML(monster) {
   statblock += '</top-stats>';
 
   for (let info of monster.content) {
-    if (info === 'input_error') {
-      statblock += '<p>Input Error</p>';
-    } else if (info.property_line) {
+    if (info.property_line) {
       statblock += '<property-line>';
       statblock += '<h4>' + info.property_line.name + ' </h4>';
       statblock += markdown.toHTML(info.property_line.desc);
@@ -70,37 +68,64 @@ function makeStatblockHTML(monster) {
 function processPropertyLines(array) {
   var result = '';
   for (let line of array) {
-    if (line === 'input_error') {
-      result += '<p>Input Error</p>';
-    } else {
-      result += '<property-line>';
-      result += '<h4>' + line.name + ' </h4>';
-      result += markdown.toHTML(line.desc);
-      result += '</property-line>';
-    }
+    result += '<property-line>';
+    result += '<h4>' + line.name + ' </h4>';
+    result += markdown.toHTML(line.desc);
+    result += '</property-line>';
   }
   return result;
 }
 
-function addMonsters(data) {
+function caseInsensitiveStringCompare(item1, item2) {
+  return item1.toLowerCase() === item2.toLowerCase();
+}
+
+/**
+ * Saves a single monster to the list of monsters.
+ *
+ * @param {Statblock} data Statblock to be added.
+ * @param {Boolean} [save=true] If the local storage should be updated after
+ * this write.
+ * @param {Boolean} [override=false] Determines if this stat block should
+ * override a previous statblock of the same name.
+ * @return True if statblock added, false if not added due to naming conflict.
+ */
+function addMonster(data, save = true, override = false) {
   if (monsters === null) {
-    monsters = data;
-  } else {
-    for (var i = 0; i < data.length; i++) {
-      var found = false;
-      for (var j = 0; j < monsters.length; j++) {
-        if (monsters[j].name == data[i].name) {
-          found = true;
-          break;
-        }
-      }
-      if (!found) {
-        monsters.push(data[i]);
-      }
+    monsters = [data];
+    if (save) localStorage.setItem('monsters', JSON.stringify(monsters));
+    return true;
+  }
+  else {
+    var filtered = monsters.filter(function(value) {
+      return data.name.toLowerCase() === value.name.toLowerCase();
+    });
+    if (filtered.length > 0 && !override) {
+      return false;
+    } else {
+      monsters.push(data);
+      if (save) localStorage.setItem('monsters', JSON.stringify(monsters));
+      return true;
+    }
+  }
+}
+
+/**
+ * 
+ * @param {[Statblock]} data List of statblocks to be added.
+ * @return A list of names of statblocks not added due to a naming conflict.
+ */
+function addMonsters(data) {
+  var conflicts = [];
+  for (var item in data) {
+    var result = addMonster(item, false);
+    if (!result) {
+      conflicts.push(item.name);
     }
   }
 
   localStorage.setItem('monsters', JSON.stringify(monsters));
+  return conflicts;
 }
 
 function removeMonster(name) {

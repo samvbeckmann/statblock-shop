@@ -36,11 +36,11 @@ $(document).ready(function() {
     switch (mode) {
       case 'new':
       case 'duplicate':
-        addMonsters([monster]);
+        addMonster(monster);
         break;
       case 'edit':
         removeMonster(sessionStorage.getItem('editing-monster'));
-        addMonsters([monster]);
+        addMonster(monster);
         break;
       default:
 

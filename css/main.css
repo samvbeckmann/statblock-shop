@@ -110,7 +110,8 @@
 
 #display-name {
   font-weight: bold;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  min-height: 36px; }
 
 #tag-list {
   min-height: 28px;
