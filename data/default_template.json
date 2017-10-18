@@ -2,7 +2,20 @@
 	"name": "",
 	"heading": "",
   "two-column": false,
-	"basic_info": [],
+	"basic_info": [
+    {
+      "name": "Armor Class",
+      "desc": ""
+    },
+    {
+      "name": "Hit Points",
+      "desc": ""
+    },
+    {
+      "name": "Speed",
+      "desc": ""
+    }
+  ],
 	"ability_scores": {
 		"str": 10,
 		"dex": 10,
@@ -12,5 +25,9 @@
 		"cha": 10
 	},
 	"traits": [],
-	"content": []
+	"content": [
+    {
+      "subtitle": "Actions"
+    }
+  ]
 }
