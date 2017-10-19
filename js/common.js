@@ -111,14 +111,14 @@ function addMonster(data, save = true, override = false) {
 }
 
 /**
- * 
+ *
  * @param {[Statblock]} data List of statblocks to be added.
  * @return A list of names of statblocks not added due to a naming conflict.
  */
 function addMonsters(data) {
   var conflicts = [];
-  for (var item in data) {
-    var result = addMonster(item, false);
+  for (var i = 0; i < data.length; i++) {
+    var result = addMonster(data[i], false);
     if (!result) {
       conflicts.push(item.name);
     }
