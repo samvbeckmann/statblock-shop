@@ -103,6 +103,7 @@ function addMonster(data, save = true, override = false) {
     if (filtered.length > 0 && !override) {
       return false;
     } else {
+      monsters = monsters.filter(item => !filtered.includes(item));
       monsters.push(data);
       if (save) localStorage.setItem('monsters', JSON.stringify(monsters));
       return true;

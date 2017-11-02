@@ -61,7 +61,6 @@ $(document).ready(function(){
   $("#edit").click(function() {
     if (monster) {
       sessionStorage.setItem('mode', 'edit');
-      sessionStorage.setItem('editing-monster', monster.name);
       window.location.href='editor/';
     }
   });
