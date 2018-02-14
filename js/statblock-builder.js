@@ -51,6 +51,18 @@ $(document).ready(function() {
     window.location.href='/';
   });
 
+  $('#print').click(function() {
+    sessionStorage.setItem('activeMonster', JSON.stringify(monster));
+    var oHiddFrame = document.createElement("iframe");
+    oHiddFrame.onload = setPrint;
+    oHiddFrame.style.visibility = "hidden";
+    oHiddFrame.style.position = "fixed";
+    oHiddFrame.style.right = "0";
+    oHiddFrame.style.bottom = "0";
+    oHiddFrame.src = 'print-file.html';
+    document.body.appendChild(oHiddFrame);
+  });
+
   $('#two-column-checkbox').change(function() {
     monster.two_column = this.checked;
     handleColumnChange(!monster.two_column);
@@ -320,4 +332,18 @@ function fillForm(monster) {
     $('#monster-tags').val(monster.tags.join(' '));
   }
   $('#monster-description').val(monster.description);
+}
+
+// Print Helper Functions
+
+function closePrint () {
+  document.body.removeChild(this.__container__);
+}
+
+function setPrint () {
+  this.contentWindow.__container__ = this;
+  this.contentWindow.onbeforeunload = closePrint;
+  this.contentWindow.onafterprint = closePrint;
+  this.contentWindow.focus(); // Required for IE
+  this.contentWindow.print();
 }
