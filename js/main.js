@@ -240,7 +240,7 @@ function ui_load_files(evt) {
 
         reader.onload = processFiles;
 
-        reader.readAsText(f);
+        reader.readAsBinaryString(f);
     }
 
     // Reset file input

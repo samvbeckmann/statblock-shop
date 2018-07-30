@@ -59,7 +59,7 @@ function makeStatblockHTML(monster) {
 
   statblock += '</stat-block>';
   if (monster.description) {
-    statblock += '<div class="statblock-description"><p>' + monster.description + '</div>';
+    statblock += '<div class="statblock-description">' + markdown.toHTML(monster.description) + '</div>';
   }
 
   return statblock;
@@ -121,7 +121,7 @@ function addMonsters(data) {
   for (var i = 0; i < data.length; i++) {
     var result = addMonster(data[i], false);
     if (!result) {
-      conflicts.push(item.name);
+      conflicts.push(data[i].name);
     }
   }
 
