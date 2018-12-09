@@ -9,6 +9,7 @@ function makeStatblockHTML(monster) {
   } else {
     statblock = '<stat-block><creature-heading>';
   }
+
   statblock += '<h1>' + monster.name + '</h1>';
   statblock += '<h2>' + monster.heading + '</h2>';
   statblock += '</creature-heading><top-stats>';
@@ -36,7 +37,8 @@ function makeStatblockHTML(monster) {
     } else if (info.property_block) {
       statblock += '<property-block>';
       statblock += '<h4>' + info.property_block.name + '. </h4>';
-      statblock += markdown.toHTML(info.property_block.desc).replace(/\\n/g, '<p>');
+      statblock += markdown.toHTML(info.property_block.desc)
+                    .replace(/\\n/g, '<p>');
       statblock += '</property-block>';
     } else if (info.text) {
       statblock += markdown.toHTML(info.text);
@@ -46,7 +48,10 @@ function makeStatblockHTML(monster) {
       statblock += '<ol>';
       for (var i = 0; i < info.numbered_list.length; i++) {
         statblock += '<li>';
-        statblock += markdown.toHTML(info.numbered_list[i]).replace('<p>', '').replace('</p>', '').replace(/\\n/g, '<p>');
+        statblock += markdown.toHTML(info.numbered_list[i])
+                      .replace('<p>', '')
+                      .replace('</p>', '')
+                      .replace(/\\n/g, '<p>');
         statblock += '</li>';
       }
       statblock += '</ol>';
