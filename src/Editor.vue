@@ -1,65 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-  <meta charset="UTF-8">
-  <title>Statblocks for Fun and Profit</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-          crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-          integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-          crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-  <script src="https://use.fontawesome.com/b4fdba3a00.js"></script>
-
-  <link rel="import" href="/vendor/statblock5e/top-stats.html">
-  <link rel="import" href="/vendor/statblock5e/creature-heading.html">
-  <link rel="import" href="/vendor/statblock5e/abilities-block.html">
-  <link rel="import" href="/vendor/statblock5e/property-block.html">
-  <link rel="import" href="/vendor/statblock5e/property-line.html">
-  <link rel="import" href="/vendor/statblock5e/stat-block.html">
-
-  <link rel="stylesheet" href="/css/main.css">
-
-  <script src="/js/common.js"></script>
-  <script src="/js/statblock-builder.js"></script>
-  <script src="/js/editor-ui.js"></script>
-  <script src="/vendor/markdown.min.js"></script>
-
-</head>
-<body>
-  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-    <a class="navbar-brand" href="/">Statblock Shop
-      <span class="badge badge-warning badge-outline ml-1">Beta</span></a>
-    <button class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#statblock-shop-navbar"
-            aria-controls="statblock-shop-navbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="statblock-shop-navbar">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Docs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/samvbeckmann/statblock-shop">GitHub</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="container-fluid pr-0 pl-0">
+<template>
+    <div class="container-fluid pr-0 pl-0">
 
     <div id="info-row" class="row m-0">
 
@@ -95,7 +35,7 @@
         </form>
       </div>
 
-      <div class="col-auto pl-3 pr-0">
+      <!-- <div class="col-auto pl-3 pr-0">
         <form class="form-inline center-form">
 
           <div>
@@ -111,7 +51,7 @@
           </div>
 
         </form>
-      </div>
+      </div> -->
 
       <div class="col-sm-auto mt-1 mb-1">
         <div id="display-name"></div>
@@ -121,7 +61,8 @@
     </div>
 
     <div class="row" id="editor-row">
-      <div class="col editor-pane no-side-padding" id="editor-side">
+        <edit-pane></edit-pane>
+      <!-- <div class="col editor-pane no-side-padding" id="editor-side">
         <form id="statblock-form">
 
           <div class="form-group mb-0">
@@ -255,9 +196,26 @@
         </form>
 
       </div>
-      <div class="col-md-auto editor-pane no-side-padding" id="live-statblock"></div>
+      <div class="col-md-auto editor-pane no-side-padding" id="live-statblock"></div> -->
     </div>
   </div>
+</template>
 
-</body>
-</html>
+<script>
+import EditPane from './EditPane.vue'
+
+export default {
+   components: {EditPane},
+    data(){
+        return {
+            monster: monster_list[active_monster_id]
+        }
+    }
+}
+</script>
+
+
+<style scoped lang="scss">
+
+
+</style>
