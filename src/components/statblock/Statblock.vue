@@ -10,7 +10,7 @@
       <tapered-rule></tapered-rule>
       <statblock-traits :traits="monster.traits"></statblock-traits>
       <tapered-rule></tapered-rule>
-      <statblock-abilities :abilities="monster.content"></statblock-abilities>
+      <statblock-abilities :abilities="monster.abilities"></statblock-abilities>
     </div>
     <div class="bar"></div>
   </div>

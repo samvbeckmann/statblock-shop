@@ -5,6 +5,7 @@
         class="btn btn-outline-success btn-circle btn-form"
         id="abilities-default-btn"
         type="button"
+        @click="makeNewAbility(0)"
       >
         <i class="fa fa-plus" aria-hidden="true"></i>
       </button>
@@ -13,7 +14,7 @@
     <ul id="abilities-lines" class="editor-ul">
       <li
         class="input-group statblock-input-group abilityline-trait dropup"
-        v-for="(ability, key, index) in active_monster.content"
+        v-for="(ability, index) in active_monster.abilities"
         :key="index"
       >
         <span class="input-group-addon no-rounded-corners no-dup-bottom no-dup-top movement-handle">
@@ -27,75 +28,99 @@
           aria-expanded="false"
         >Trait</button>
         <div class="dropdown-menu">
-          <button class="dropdown-item trait-btn" type="button">Trait</button>
-          <button class="dropdown-item subtitle-btn" type="button">Subtitle</button>
-          <button class="dropdown-item text-btn" type="button">Text</button>
-          <button class="dropdown-item property-btn" type="button">Property</button>
-          <button class="dropdown-item spells-btn" type="button">Spells</button>
-          <button class="dropdown-item numbered-btn" type="button">Number</button>
+          <button
+            class="dropdown-item trait-btn"
+            type="button"
+            @click="changeAbilityType(index, 'property_block')"
+          >Trait</button>
+          <button
+            class="dropdown-item subtitle-btn"
+            type="button"
+            @click="changeAbilityType(index, 'subtitle')"
+          >Subtitle</button>
+          <button
+            class="dropdown-item text-btn"
+            type="button"
+            @click="changeAbilityType(index, 'text')"
+          >Text</button>
+          <button
+            class="dropdown-item property-btn"
+            type="button"
+            @click="changeAbilityType(index, 'property_line')"
+          >Property</button>
+          <button
+            class="dropdown-item spells-btn"
+            type="button"
+            @click="changeAbilityType(index, 'spell_line')"
+          >Spells</button>
+          <button
+            class="dropdown-item numbered-btn"
+            type="button"
+            @click="changeAbilityType(index, 'numbered_list')"
+          >Numbered</button>
         </div>
 
-        <template v-if="ability.subtitle">
+        <template v-if="ability.type === 'subtitle'">
           <textarea
             class="ability-subtitle ability-field form-control common expandable no-dup-borders"
             rows="1"
             placeholder="Subtitle"
             style="min-height: 38px"
-            v-model="ability.subtitle"
+            v-model="ability.content"
           ></textarea>
         </template>
-        <template v-else-if="ability.text">
+        <template v-else-if="ability.type === 'text'">
           <textarea
             class="ability-text ability-field form-control common expandable no-dup-borders"
             rows="1"
             placeholder="Text"
             style="min-height: 38px"
-            v-model="ability.text"
+            v-model="ability.content"
           ></textarea>
         </template>
-        <template v-else-if="ability.spell_line">
+        <template v-else-if="ability.type === 'spell_line'">
           <textarea
             class="ability-spells ability-field form-control common expandable no-dup-borders"
             rows="1"
             placeholder="Spells"
             style="min-height: 38px"
-            v-model="ability.spell_line"
+            v-model="ability.content"
           ></textarea>
         </template>
-        <div v-else-if="ability.property_block" class="stacked-text-blocks">
+        <div v-else-if="ability.type === 'property_block'" class="stacked-text-blocks">
           <textarea
             class="ability-trait-name ability-field form-control common expandable no-dup-top no-dup-right no-dup-left"
             rows="1"
             placeholder="Name"
-            v-model="ability.property_block.name"
+            v-model="ability.content.name"
           ></textarea>
           <textarea
             class="ability-trait-desc ability-field form-control common expandable no-dup-borders"
             rows="1"
             placeholder="Description"
-            v-model="ability.property_block.desc"
+            v-model="ability.content.desc"
           ></textarea>
         </div>
-        <div v-else-if="ability.property_line">
+        <div v-else-if="ability.type === 'property_line'">
           <textarea
             class="ability-property-name ability-field form-control common expandable no-dup-top no-dup-right no-dup-left"
             rows="1"
             placeholder="Name"
-            v-model="ability.property_line.name"
+            v-model="ability.content.name"
           ></textarea>
           <textarea
             class="ability-property-desc ability-field form-control common expandable no-dup-borders"
             rows="1"
             placeholder="Description"
-            v-model="ability.property_line.desc"
+            v-model="ability.content.desc"
           ></textarea>
         </div>
-        <div v-else-if="ability.numbered_list"></div>
+        <div v-else-if="ability.type === 'numbered_list'"></div>
 
-        <button class="btn btn-outline-danger btn-circle btn-form rm-ability-btn" type="button">
+        <button class="btn btn-outline-danger btn-circle btn-form rm-ability-btn" type="button" @click="removeAbility(index)">
           <i class="fa fa-minus" aria-hidden="true"></i>
         </button>
-        <button class="btn btn-outline-success btn-circle btn-form new-ability-btn" type="button">
+        <button class="btn btn-outline-success btn-circle btn-form new-ability-btn" type="button" @click="makeNewAbility(index + 1)">
           <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
       </li>

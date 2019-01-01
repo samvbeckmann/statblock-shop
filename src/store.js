@@ -50,24 +50,28 @@ export default new Vuex.Store({
             "desc": "1/4 (50 XP)"
           }
         ],
-        "content": [
+        "abilities": [
           {
-            "property_block": {
+            "type": "property_block",
+            "content": {
               "name": "Dive Attack",
               "desc": "If the aarakocra is flying and dives at least 30 feet straight toward a target and then hits with a melee weapon attack, the attack deals an extra 3 (1d6) damage to the target."
             }
           },
           {
-            "subtitle": "Actions"
+            "type": "subtitle",
+            "content": "Actions"
           },
           {
-            "property_block": {
+            "type": "property_block",
+            "content": {
               "name": "Talon",
               "desc": "_Melee Weapon Attack:_ +4 to hit, reach 5 ft., one target. _Hit:_ 4 (1d4 + 2) slashing damage."
             }
           },
           {
-            "property_block": {
+            "type": "property_block",
+            "content": {
               "name": "Javelin",
               "desc": "_Melee or Ranged Weapon Attack:_ +4 to hit, reach 5 ft. or range 30/120 ft., one target. _Hit:_ 5 (1d6 + 2) piercing damage."
             }
@@ -197,12 +201,12 @@ export default new Vuex.Store({
     active_monster_id: 0
   },
   getters: {
-    active_monster: state => { 
-        return state.monster_list[state.active_monster_id]
+    active_monster: state => {
+      return state.monster_list[state.active_monster_id]
     }
   },
   mutations: {
-    updateActiveMonsterId (state, n) {
+    updateActiveMonsterId(state, n) {
       state.active_monster_id = n
     },
 
@@ -210,7 +214,7 @@ export default new Vuex.Store({
       console.log(index)
       state.monster_list[state.active_monster_id]
         .basic_info
-        .splice(index, 0, {name: "", desc: ""})
+        .splice(index, 0, { name: "", desc: "" })
     },
 
     removeBasicInfo(state, index) {
@@ -223,7 +227,7 @@ export default new Vuex.Store({
       console.log(index)
       state.monster_list[state.active_monster_id]
         .traits
-        .splice(index, 0, {name: "", desc: ""})
+        .splice(index, 0, { name: "", desc: "" })
     },
 
     removeTrait(state, index) {
@@ -233,15 +237,34 @@ export default new Vuex.Store({
     },
 
     changeAbilityType(state, index, newType) {
+      var previousAbility = state.monster_list[state.active_monster_id].abilities[index]
 
     },
 
     makeNewAbility(state, index) {
-
+      var abilities = state.monster_list[state.active_monster_id].abilities
+      var type = index === 0 ? 'property_block' : abilities[index - 1].type
+      var newAbility = {}
+      newAbility['type'] = type 
+      switch (type) {
+        case "property_block":
+        case "property_line":
+          newAbility['content'] = { "name": "", "desc": "" }
+          break;
+        case "subtitle":
+        case "text":
+        case "spell_line":
+          newAbility['content'] = ""
+          break;
+        case "numbered_list":
+          newAbility['content'] = []
+          break;
+      }
+      abilities.splice(index, 0, newAbility)
     },
 
     removeAbility(state, index) {
-      
+      state.monster_list[state.active_monster_id].abilities.splice(index, 1)
     }
   }
 });

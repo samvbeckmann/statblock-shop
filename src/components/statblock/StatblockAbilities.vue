@@ -1,32 +1,32 @@
 <template>
   <div class="statblock-abilities">
-    <template v-for="(ability, key, index) in abilities">
+    <template v-for="(ability, index) in abilities">
       <statblock-property-block
-        v-if="ability.property_block"
+        v-if="ability.type === 'property_block'"
         :key="index"
-        :name="ability.property_block.name"
-        :desc="ability.property_block.desc"
+        :name="ability.content.name"
+        :desc="ability.content.desc"
       ></statblock-property-block>
 
       <statblock-property-line
-        v-else-if="ability.property_line"
+        v-else-if="ability.type === 'property_line'"
         :key="index"
-        :name="ability.property_line.name"
-        :desc="ability.property_line.desc"
+        :name="ability.content.name"
+        :desc="ability.content.desc"
       ></statblock-property-line>
 
-      <h3 v-if="ability.subtitle" :key="index">{{ability.subtitle}}</h3>
+      <h3 v-else-if="ability.type === 'subtitle'" :key="index">{{ability.content}}</h3>
 
-      <p v-if="ability.text" :key="index">{{ability.text}}</p>
+      <p v-else-if="ability.type === 'text'" :key="index">{{ability.content}}</p>
 
       <statblock-property-line
-        v-else-if="ability.spell_line"
+        v-else-if="ability.type == 'spell_line'"
         :key="index"
-        :desc="ability.spell_line.desc"
+        :desc="ability.content"
       ></statblock-property-line>
 
-      <ol v-else-if="ability.numbered_list" :key="index">
-        <li v-for="(item, key, index) in ability.numbered_list" :key="index">{{item}}</li>
+      <ol v-else-if="ability.type == 'numbered_list'" :key="index">
+        <li v-for="(item, index) in ability.content" :key="index">{{item}}</li>
       </ol>
     </template>
   </div>
