@@ -10,6 +10,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "autosize": "^4.0.2",
     "vue": "^2.5.11",
     "vuex": "^3.0.1"
   },
