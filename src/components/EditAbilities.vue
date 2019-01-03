@@ -26,7 +26,7 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
-        >Trait</button>
+        >{{getDisplayTextForType(ability.type)}}</button>
         <div class="dropdown-menu">
           <button
             class="dropdown-item trait-btn"
@@ -117,10 +117,18 @@
         </div>
         <div v-else-if="ability.type === 'numbered_list'"></div>
 
-        <button class="btn btn-outline-danger btn-circle btn-form rm-ability-btn" type="button" @click="removeAbility(index)">
+        <button
+          class="btn btn-outline-danger btn-circle btn-form rm-ability-btn"
+          type="button"
+          @click="removeAbility(index)"
+        >
           <i class="fa fa-minus" aria-hidden="true"></i>
         </button>
-        <button class="btn btn-outline-success btn-circle btn-form new-ability-btn" type="button" @click="makeNewAbility(index + 1)">
+        <button
+          class="btn btn-outline-success btn-circle btn-form new-ability-btn"
+          type="button"
+          @click="makeNewAbility(index + 1)"
+        >
           <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
       </li>
@@ -136,7 +144,23 @@ export default {
     ...mapGetters(["active_monster"])
   },
   methods: {
-    ...mapMutations(["changeAbilityType", "makeNewAbility", "removeAbility"])
+    ...mapMutations(["changeAbilityType", "makeNewAbility", "removeAbility"]),
+    getDisplayTextForType: function(type) {
+      switch (type) {
+        case "property_block":
+          return "Trait";
+        case "property_line":
+          return "Property";
+        case "subtitle":
+          return "Subtitle";
+        case "text":
+          return "Text";
+        case "spell_line":
+          return "Spells";
+        case "numbered_list":
+          return "Numbered";
+      }
+    }
   }
 };
 </script>

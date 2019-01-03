@@ -1,5 +1,5 @@
 <template>
-  <div class="monster-entry p-2 pl-4 pr-4">
+  <div class="monster-entry p-2 pl-4 pr-4" @click="updateActiveMonsterId(index)">
     <h3>{{monster.name}}</h3>
     <h4>{{monster.heading}}</h4>
     <ul class="tag-list">
@@ -9,12 +9,15 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
-  props: ["monster"],
+  props: ["monster", "index"],
   computed: {
     ...mapGetters(["active_monster"])
+  },
+  methods: {
+    ...mapMutations(['updateActiveMonsterId'])
   }
 };
 </script>

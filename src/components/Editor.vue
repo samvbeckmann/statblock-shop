@@ -1,17 +1,17 @@
 <template>
   <div class="container-fluid pr-0 pl-0">
-    <div id="info-row" class="row m-0">
+    <div id="info-row" class="row m-0 d-flex flex-row">
       <div class="col-auto pr-0">
         <form class="form-inline center-form">
-          <button type="button" id="save" class="btn btn-outline-success mr-2">
-            <i class="fa fa-check" aria-hidden="true"></i> Save
-          </button>
+          <button type="button" id="save" class="btn btn-outline-success mr-2">Duplicate</button>
+          
+          <button type="button" id="print" class="btn btn-outline-danger mr-2">Delete</button>
 
           <div class="dropdown-container">
             <button
               id="exportButton"
               type="button"
-              class="btn btn-outline-primary dropdown-toggle mr-2"
+              class="btn btn-outline-primary dropdown-toggle"
               form
               data-toggle="dropdown"
               aria-haspopup="true"
@@ -29,33 +29,26 @@
               <a class="dropdown-item">JSON</a>
             </div>
           </div>
-
-          <button type="button" id="print" class="btn btn-outline-primary">
-            <i class="fa fa-print" aria-hidden="true"></i> Print
-          </button>
         </form>
       </div>
 
-      <!-- <div class="col-auto pl-3 pr-0">
-        <form class="form-inline center-form">
-
-          <div>
-            <div class="switch-label">Cols</div>
-            <input class="tgl tgl-flip" id="two-column-checkbox" type="checkbox"/>
-            <label class="tgl-btn m-0" data-tg-off="one" data-tg-on="two" for="two-column-checkbox">
-          </div>
-
-          <div id="mode-toggle" class="ml-2">
-            <div class="switch-label">Mode</div>
-            <input class="tgl tgl-flip" id="statblock-visible-checkbox" type="checkbox"/>
-            <label class="tgl-btn m-0" data-tg-off="edit" data-tg-on="view" for="statblock-visible-checkbox">
-          </div>
-
-        </form>
-      </div>-->
-      <div class="col-sm-auto mt-1 mb-1">
+      <div class="col-sm-auto mt-1 mb-1 flex-grow-1">
         <div id="display-name">{{active_monster.name}}</div>
-        <ul id="tag-list"></ul>
+        <ul id="tag-list">
+          <li v-for="(tag, index) in active_monster.tags" :key="index">{{tag}}</li>
+        </ul>
+      </div>
+
+      <div id="switch-col" class="col-auto p-2 align-middle">
+        <div class="custom-control custom-switch align-middle">
+          <input class="checkbox custom-control-input" type="checkbox" id="two-column-switch">
+          <label class="custom-control-label" for="two-column-switch">Two-column layout</label>
+        </div>
+
+        <div class="custom-control custom-switch align-middle">
+          <input class="checkbox custom-control-input" type="checkbox" id="preview-switch">
+          <label class="custom-control-label" for="preview-switch">Preview Enabled</label>
+        </div>
       </div>
     </div>
 
@@ -82,4 +75,7 @@ export default {
 
 
 <style scoped lang="scss">
+#switch-col {
+  float: right;
+}
 </style>
