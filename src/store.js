@@ -76,7 +76,8 @@ export default new Vuex.Store({
               "desc": "_Melee or Ranged Weapon Attack:_ +4 to hit, reach 5 ft. or range 30/120 ft., one target. _Hit:_ 5 (1d6 + 2) piercing damage."
             }
           }
-        ]
+        ],
+        "tags": ["mm", "srd", "cr1/4"]
       },
       {
         "name": "Aboleth",
@@ -196,8 +197,51 @@ export default new Vuex.Store({
               "desc": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes."
             }
           }
-        ]
-      }],
+        ],
+        "tags": ["mm", "cr 10", "legendary"]
+      },
+      {
+        "name": "Another Monster",
+        "heading": "Big and scary"
+      },
+      {
+        "name": "Another Monster",
+        "heading": "Big and scary"
+      },
+      {
+        "name": "Another Monster",
+        "heading": "Big and scary"
+      },
+      {
+        "name": "Another Monster",
+        "heading": "Big and scary"
+      },
+      {
+        "name": "Another Monster",
+        "heading": "Big and scary"
+      },
+      {
+        "name": "Another Monster",
+        "heading": "Big and scary"
+      },
+      {
+        "name": "Another Monster",
+        "heading": "Big and scary"
+      },
+      {
+        "name": "Another Monster",
+        "heading": "Big and scary"
+      },
+      {
+        "name": "Another Monster",
+        "heading": "Big and scary"
+      },
+      {
+        "name": "Another Monster",
+        "heading": "Big and scary"
+      },
+    
+    ],
     active_monster_id: 0
   },
   getters: {
@@ -236,9 +280,32 @@ export default new Vuex.Store({
         .splice(index, 1)
     },
 
-    changeAbilityType(state, index, newType) {
-      var previousAbility = state.monster_list[state.active_monster_id].abilities[index]
+    changeAbilityType(state, payload) {
+      var abilities = state.monster_list[state.active_monster_id].abilities
+      var ability = abilities[payload.index]
+      var nameField = ability.content.name;
+      var descField = ability.content.desc;
 
+      // Special handling of numbered list
+      if (ability.type === 'numbered_list') {
+        nameField = ability.content[0];
+      }
+
+      ability['type'] = payload.type;
+
+      switch (payload.type) {
+        case 'property_block':
+        case 'property_line':
+          ability['content'] = { "name": nameField, "desc": descField };
+          break;
+        case 'subtitle':
+        case 'text':
+        case 'spell_line':
+          ability['content'] = nameField;
+          break;
+        case 'numbered_line':
+          ability['content'] = [nameField]
+      }
     },
 
     makeNewAbility(state, index) {

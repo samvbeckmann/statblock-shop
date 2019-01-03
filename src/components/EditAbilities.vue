@@ -13,7 +13,7 @@
     </label>
     <ul id="abilities-lines" class="editor-ul">
       <li
-        class="input-group statblock-input-group abilityline-trait dropup"
+        class="statblock-input-group dropup row"
         v-for="(ability, index) in active_monster.abilities"
         :key="index"
       >
@@ -31,38 +31,38 @@
           <button
             class="dropdown-item trait-btn"
             type="button"
-            @click="changeAbilityType(index, 'property_block')"
+            @click="changeAbilityType({ 'index': index, 'type': 'property_block' })"
           >Trait</button>
           <button
             class="dropdown-item subtitle-btn"
             type="button"
-            @click="changeAbilityType(index, 'subtitle')"
+            @click="changeAbilityType({ 'index': index, 'type': 'subtitle' })"
           >Subtitle</button>
           <button
             class="dropdown-item text-btn"
             type="button"
-            @click="changeAbilityType(index, 'text')"
+            @click="changeAbilityType({ 'index': index, 'type': 'text' })"
           >Text</button>
           <button
             class="dropdown-item property-btn"
             type="button"
-            @click="changeAbilityType(index, 'property_line')"
+            @click="changeAbilityType({ 'index': index, 'type': 'property_line' })"
           >Property</button>
           <button
             class="dropdown-item spells-btn"
             type="button"
-            @click="changeAbilityType(index, 'spell_line')"
+            @click="changeAbilityType({ 'index': index, 'type': 'spell_line' })"
           >Spells</button>
           <button
             class="dropdown-item numbered-btn"
             type="button"
-            @click="changeAbilityType(index, 'numbered_list')"
+            @click="changeAbilityType({ 'index': index, 'type': 'numbered_list' })"
           >Numbered</button>
         </div>
 
         <template v-if="ability.type === 'subtitle'">
           <textarea
-            class="ability-subtitle ability-field form-control common expandable no-dup-borders"
+            class="form-control no-rounded-corners common no-dup-borders col"
             rows="1"
             placeholder="Subtitle"
             style="min-height: 38px"
@@ -71,7 +71,7 @@
         </template>
         <template v-else-if="ability.type === 'text'">
           <textarea
-            class="ability-text ability-field form-control common expandable no-dup-borders"
+            class="form-control common no-dup-borders col"
             rows="1"
             placeholder="Text"
             style="min-height: 38px"
@@ -80,36 +80,36 @@
         </template>
         <template v-else-if="ability.type === 'spell_line'">
           <textarea
-            class="ability-spells ability-field form-control common expandable no-dup-borders"
+            class="form-control no-rounded-corners common no-dup-borders col"
             rows="1"
             placeholder="Spells"
             style="min-height: 38px"
             v-model="ability.content"
           ></textarea>
         </template>
-        <div v-else-if="ability.type === 'property_block'" class="stacked-text-blocks">
+        <div v-else-if="ability.type === 'property_block'" class="stacked-text-blocks col">
           <textarea
-            class="ability-trait-name ability-field form-control common expandable no-dup-top no-dup-right no-dup-left"
+            class="form-control no-rounded-corners common no-dup-top no-dup-right no-dup-left"
             rows="1"
             placeholder="Name"
             v-model="ability.content.name"
           ></textarea>
           <textarea
-            class="ability-trait-desc ability-field form-control common expandable no-dup-borders"
+            class="form-control no-rounded-corners common no-dup-borders"
             rows="1"
             placeholder="Description"
             v-model="ability.content.desc"
           ></textarea>
         </div>
-        <div v-else-if="ability.type === 'property_line'">
+        <div v-else-if="ability.type === 'property_line'" class="stacked-text-blocks col">
           <textarea
-            class="ability-property-name ability-field form-control common expandable no-dup-top no-dup-right no-dup-left"
+            class="form-control no-rounded-corners common no-dup-top no-dup-right no-dup-left"
             rows="1"
             placeholder="Name"
             v-model="ability.content.name"
           ></textarea>
           <textarea
-            class="ability-property-desc ability-field form-control common expandable no-dup-borders"
+            class="form-control no-rounded-corners common no-dup-borders"
             rows="1"
             placeholder="Description"
             v-model="ability.content.desc"

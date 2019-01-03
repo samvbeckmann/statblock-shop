@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <navbar></navbar>
+    <sidebar></sidebar>
     <editor></editor>
   </div>
 </template>
@@ -8,10 +9,11 @@
 <script>
 import Navbar from './components/Navbar.vue'
 import Editor from './components/Editor.vue'
+import Sidebar from './components/Sidebar.vue'
 
 export default {
   name: 'app',
-  components: {Navbar, Editor}
+  components: { Navbar, Editor, Sidebar }
 }
 </script>
 
