@@ -66,6 +66,7 @@
             rows="1"
             placeholder="Subtitle"
             style="min-height: 38px"
+            v-autosize="ability.content"
             v-model="ability.content"
           ></textarea>
         </template>
@@ -75,6 +76,7 @@
             rows="1"
             placeholder="Text"
             style="min-height: 38px"
+            v-autosize="ability.content"
             v-model="ability.content"
           ></textarea>
         </template>
@@ -84,6 +86,7 @@
             rows="1"
             placeholder="Spells"
             style="min-height: 38px"
+            v-autosize="ability.content"
             v-model="ability.content"
           ></textarea>
         </template>
@@ -92,12 +95,14 @@
             class="form-control no-rounded-corners common no-dup-top no-dup-right no-dup-left"
             rows="1"
             placeholder="Name"
+            v-autosize="ability.content.name"
             v-model="ability.content.name"
           ></textarea>
           <textarea
             class="form-control no-rounded-corners common no-dup-borders"
             rows="1"
             placeholder="Description"
+            v-autosize="ability.content.desc"
             v-model="ability.content.desc"
           ></textarea>
         </div>
@@ -106,12 +111,14 @@
             class="form-control no-rounded-corners common no-dup-top no-dup-right no-dup-left"
             rows="1"
             placeholder="Name"
+            v-autosize="ability.content.name"
             v-model="ability.content.name"
           ></textarea>
           <textarea
             class="form-control no-rounded-corners common no-dup-borders"
             rows="1"
             placeholder="Description"
+            v-autosize="ability.content.desc"
             v-model="ability.content.desc"
           ></textarea>
         </div>
@@ -138,10 +145,14 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+import { Autosize } from '../Autosize.js';
 
 export default {
   computed: {
     ...mapGetters(["active_monster"])
+  },
+  directives: {
+    Autosize
   },
   methods: {
     ...mapMutations(["changeAbilityType", "makeNewAbility", "removeAbility"]),

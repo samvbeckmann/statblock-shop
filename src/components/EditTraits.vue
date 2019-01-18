@@ -25,6 +25,7 @@
             class="trait-name form-control common expandable no-dup-borders no-rounded-corners"
             rows="1"
             placeholder="Name"
+            v-autosize="trait.name"
             v-model="trait.name"
           ></textarea>
         </span>
@@ -33,6 +34,7 @@
             class="trait-desc form-control common expandable no-dup-borders no-rounded-corners"
             rows="1"
             placeholder="Description"
+            v-autosize="trait.desc"
             v-model="trait.desc"
           ></textarea>
         </span>
@@ -57,10 +59,14 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+import { Autosize } from '../Autosize.js';
 
 export default {
   computed: {
     ...mapGetters(["active_monster"])
+  },
+  directives: {
+    Autosize
   },
   methods: {
     ...mapMutations([

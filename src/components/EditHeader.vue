@@ -5,6 +5,7 @@
           <textarea
             class="form-control no-rounded-corners no-dup-top"
             id="monster-name"
+            v-autosize="active_monster.name"
             v-model="active_monster.name"
             rows="1"
           ></textarea>
@@ -14,6 +15,7 @@
           <textarea
             class="form-control no-rounded-corners no-dup-top"
             id="monster-header"
+            v-autosize="active_monster.heading"
             v-model="active_monster.heading"
             rows="1"
           ></textarea>
@@ -23,10 +25,14 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { Autosize } from '../Autosize.js';
 
 export default {
   computed: {
     ...mapGetters(["active_monster"])
+  },
+  directives: {
+    Autosize
   }
 };
 </script>
