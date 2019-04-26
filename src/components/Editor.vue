@@ -41,7 +41,7 @@
 
       <div id="switch-col" class="col-auto p-2 align-middle">
         <div class="custom-control custom-switch align-middle">
-          <input class="checkbox custom-control-input" type="checkbox" id="two-column-switch">
+          <input v-model='twoColumn' class="checkbox custom-control-input" type="checkbox" id="two-column-switch">
           <label class="custom-control-label" for="two-column-switch">Two-column layout</label>
         </div>
 
@@ -63,6 +63,7 @@
 import EditPane from "./EditPane.vue";
 import PreviewPane from "./PreviewPane.vue";
 import { mapState, mapGetters } from "vuex";
+import autosize from 'autosize';
 
 export default {
   components: { EditPane, PreviewPane },
@@ -73,6 +74,24 @@ export default {
       },
       set (value) {
         this.$store.commit('setShowPreview', value)
+
+        // Update all text boxes next tick
+        this.$nextTick(function () {
+          autosize.update(document.querySelectorAll('textarea'));
+        });
+      }
+    },
+    twoColumn: {
+      get () {
+        return this.$store.getters.active_monster.two_column;
+      },
+      set (value) {
+        this.$store.commit('setTwoColumn', value);
+
+        // Update all text boxes next tick
+        this.$nextTick(function () {
+          autosize.update(document.querySelectorAll('textarea'));
+        });
       }
     },
     ...mapState(["monster_list", "active_monster_id, show_preview"]),

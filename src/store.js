@@ -268,8 +268,12 @@ export default new Vuex.Store({
       state.active_monster_id = n;
     },
 
-    setShowPreview(state, newValue) {
-      state.show_preview = newValue;
+    setShowPreview(state, value) {
+      state.show_preview = value;
+    },
+
+    setTwoColumn(state, value) {
+      state.monster_list[state.active_monster_id].two_column = value;
     },
 
     makeNewBasicInfo(state, index) {

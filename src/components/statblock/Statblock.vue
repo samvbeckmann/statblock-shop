@@ -1,7 +1,7 @@
 <template>
   <div class="statblock">
     <div class="bar"></div>
-    <div id="content-wrap">
+    <div class="content-wrap" v-bind:class='{ data_two_column: monster.two_column}'>
       <statblock-heading :monster="monster"></statblock-heading>
       <tapered-rule></tapered-rule>
       <statblock-basic-info :basic_info="monster.basic_info"></statblock-basic-info>
@@ -51,7 +51,7 @@ export default {
   display: inline-block;
 }
 
-#content-wrap {
+.content-wrap {
   font-family: "Noto Sans", "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
   font-size: 13.5px;
   background: #fdf1dc;
@@ -85,7 +85,7 @@ export default {
   column-fill: auto;
 }
 
-#content-wrap .data_two_column {
+.data_two_column {
   /* One column is 400px and the gap between them is 40px. */
   width: 840px;
 }
