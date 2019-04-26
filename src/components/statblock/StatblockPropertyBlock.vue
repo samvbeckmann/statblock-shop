@@ -1,13 +1,23 @@
 <template>
   <div class="statblock-property-block">
-    <h4>{{name}}.</h4>
-    <p>{{desc}}</p>
+    <h4 v-html='mdName'></h4>
+    <p v-html='mdDesc'></p>
   </div>
 </template>
 
 <script>
+var md = require('markdown-it')();
+
 export default {
-  props: ["name", "desc"]
+  props: ["name", "desc"],
+  computed: {
+    mdName: function () {
+      return md.renderInline(this.name) + '.';
+    },
+    mdDesc: function () {
+      return md.renderInline(this.desc);
+    }
+  }
 };
 </script>
 
