@@ -46,7 +46,7 @@
         </div>
 
         <div class="custom-control custom-switch align-middle">
-          <input class="checkbox custom-control-input" type="checkbox" id="preview-switch">
+          <input v-model='showPreview' class="checkbox custom-control-input" type="checkbox" id="preview-switch">
           <label class="custom-control-label" for="preview-switch">Preview Enabled</label>
         </div>
       </div>
@@ -67,7 +67,15 @@ import { mapState, mapGetters } from "vuex";
 export default {
   components: { EditPane, PreviewPane },
   computed: {
-    ...mapState(["monster_list", "active_monster_id"]),
+    showPreview: {
+      get () {
+        return this.$store.state.show_preview;
+      },
+      set (value) {
+        this.$store.commit('setShowPreview', value)
+      }
+    },
+    ...mapState(["monster_list", "active_monster_id, show_preview"]),
     ...mapGetters(["active_monster"])
   }
 };

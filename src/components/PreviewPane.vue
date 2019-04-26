@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-auto editor-pane no-side-padding" id="live-statblock">
+  <div v-if='show_preview' class="col-md-auto editor-pane no-side-padding" id="live-statblock">
       <statblock :monster="active_monster"></statblock>
       <div>
           {{active_monster.description}}
@@ -9,14 +9,13 @@
 
 <script>
 import Statblock from './statblock/Statblock.vue'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 
 export default {
     components: {Statblock},
     computed: {
-        ...mapGetters([
-            'active_monster'
-        ])
+        ...mapState(['show_preview']),
+        ...mapGetters(['active_monster'])
     }
 }
 </script>

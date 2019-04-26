@@ -255,7 +255,8 @@ export default new Vuex.Store({
       },
 
     ],
-    active_monster_id: 0
+    active_monster_id: 0,
+    show_preview: true
   },
   getters: {
     active_monster: state => {
@@ -264,7 +265,11 @@ export default new Vuex.Store({
   },
   mutations: {
     updateActiveMonsterId(state, n) {
-      state.active_monster_id = n
+      state.active_monster_id = n;
+    },
+
+    setShowPreview(state, newValue) {
+      state.show_preview = newValue;
     },
 
     makeNewBasicInfo(state, index) {

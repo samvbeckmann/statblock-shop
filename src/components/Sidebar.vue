@@ -32,8 +32,7 @@ export default {
     ...mapGetters(["active_monster"])
   },
   methods: {
-          ...mapMutations(["updateActiveMonsterId"]),
-
+    ...mapMutations(["updateActiveMonsterId"]),
   }
 };
 </script>
