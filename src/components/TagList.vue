@@ -1,5 +1,5 @@
 <template>
-    <ul class="tag-list">
+    <ul>
         <li v-for="(tag, index) in monster_list[monster_index].tags" :key="index">
             <editable :content="tag" @update="makeUpdateTagCommit(index, $event)"></editable>
         </li>
@@ -57,15 +57,35 @@ export default {
 
 @import '../scss/_variables';
 
+ul {
+  min-height: 28px;
+  list-style-type: none;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0;
+
+  li {
+    height: 22px;
+    float: left;
+    background-color: $offwhite;
+    color: rgb(65, 68, 78);
+    margin-right: 0.5rem;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
+
 .new-tag {
   border-style: dashed;
   border-width: 1px;
   border-color: $grey-blue;
   background: #fff;
   color: $grey-blue;
-  // padding: 10px;
-  // margin: 10px;
-
 }
 
 </style>
