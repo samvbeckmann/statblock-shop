@@ -2,16 +2,16 @@
   <div class="monster-entry p-2 pl-4 pr-4" @click="updateActiveMonsterId(index)">
     <h3>{{monster.name}}</h3>
     <h4>{{monster.heading}}</h4>
-    <ul class="tag-list">
-      <li v-for="(tag, index) in monster.tags" :key="index">{{tag}}</li>
-    </ul>
+    <tag-list :monster_index='index'></tag-list>
   </div>
 </template>
 
 <script>
+import TagList from './TagList.vue';
 import { mapGetters, mapMutations } from "vuex";
 
 export default {
+  components: { TagList },
   props: ["monster", "index"],
   computed: {
     ...mapGetters(["active_monster"])

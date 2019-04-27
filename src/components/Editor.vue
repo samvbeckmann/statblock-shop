@@ -34,9 +34,7 @@
 
       <div class="col-sm-auto mt-1 mb-1 flex-grow-1">
         <div id="display-name">{{active_monster.name}}</div>
-        <ul id="tag-list">
-          <li v-for="(tag, index) in active_monster.tags" :key="index">{{tag}}</li>
-        </ul>
+        <tag-list :monster_index='active_monster_id'></tag-list>
       </div>
 
       <div id="switch-col" class="col-auto p-2 align-middle">
@@ -62,12 +60,16 @@
 <script>
 import EditPane from "./EditPane.vue";
 import PreviewPane from "./PreviewPane.vue";
+import TagList from "./TagList.vue";
 import { mapState, mapGetters } from "vuex";
 import autosize from 'autosize';
 
 export default {
-  components: { EditPane, PreviewPane },
+  components: { EditPane, PreviewPane, TagList },
   computed: {
+    ...mapState(["monster_list", "active_monster_id", "show_preview"]),
+    ...mapGetters(["active_monster"]),
+
     showPreview: {
       get () {
         return this.$store.state.show_preview;
@@ -93,9 +95,7 @@ export default {
           autosize.update(document.querySelectorAll('textarea'));
         });
       }
-    },
-    ...mapState(["monster_list", "active_monster_id, show_preview"]),
-    ...mapGetters(["active_monster"])
+    }
   }
 };
 </script>

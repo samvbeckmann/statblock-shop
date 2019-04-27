@@ -276,6 +276,11 @@ export default new Vuex.Store({
       state.monster_list[state.active_monster_id].two_column = value;
     },
 
+    updateTags(state, payload) {
+      var new_tags = payload.tags.filter(Boolean) // filter out empty strings and nulls
+      state.monster_list[payload.monster_index].tags = new_tags;
+    },
+
     makeNewBasicInfo(state, index) {
       console.log(index)
       state.monster_list[state.active_monster_id]
